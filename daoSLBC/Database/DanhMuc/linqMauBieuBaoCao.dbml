@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqMauBieuBaoCaoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblMauBieuBaoCaoDinhNghia_DanhSach" Method="sp_tblMauBieuBaoCaoDinhNghia_DanhSach">
+    <ElementType Name="sp_tblMauBieuBaoCaoDinhNghia_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TenTat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TieuDe1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TieuDe2" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TieuDe3" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Muc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblMauBieuBaoCaoDinhNghia_ThongTin" Method="sp_tblMauBieuBaoCaoDinhNghia_ThongTin">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblMauBieuBaoCaoDinhNghia_ThongTinResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TenTat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TieuDe1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TieuDe2" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TieuDe3" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Muc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

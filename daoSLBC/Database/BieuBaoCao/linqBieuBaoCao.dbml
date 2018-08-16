@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqBieuBaoCaoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblBieuBaoCao_DanhSach" Method="sp_tblBieuBaoCao_DanhSach">
+    <Parameter Name="DonVi" Parameter="donVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblBieuBaoCao_DanhSachResult">
+      <Column Name="MaBaoCao" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IDBieuDinhNghia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenBieuBaoCao" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao_ThongTin" Method="sp_tblBieuBaoCao_ThongTin">
+    <Parameter Name="MaBaoCao" Parameter="maBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <ElementType Name="sp_tblBieuBaoCao_ThongTinResult">
+      <Column Name="MaBaoCao" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IDBieuDinhNghia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao_DanhSach_ThoiGian" Method="sp_tblBieuBaoCao_DanhSach_ThoiGian">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblBieuBaoCao_DanhSach_ThoiGianResult">
+      <Column Name="MaBaoCao" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IDBieuDinhNghia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenBieuBaoCao" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenTrangThai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NgayTrangThai" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao_DoiTrangThai" Method="sp_tblBieuBaoCao_DoiTrangThai">
+    <Parameter Name="MaBaoCao" Parameter="maBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="IDTrangThai" Parameter="iDTrangThai" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao_Them" Method="sp_tblBieuBaoCao_Them">
+    <Parameter Name="MaBaoCao" Parameter="maBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DonVi" Parameter="donVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="NoiDung" Parameter="noiDung" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="IDBieuDinhNghia" Parameter="iDBieuDinhNghia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TrangThai" Parameter="trangThai" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

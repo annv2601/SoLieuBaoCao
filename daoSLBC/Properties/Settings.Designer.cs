@@ -30,7 +30,8 @@ namespace daoSLBC.Properties {
             ";User ID=sa")]
         public string SoLieuBaoCaoConnectionString {
             get {
-                return ((string)(this["SoLieuBaoCaoConnectionString"]));
+                //return ((string)(this["SoLieuBaoCaoConnectionString"]));
+                return System.Configuration.ConfigurationManager.ConnectionStrings["SoLieuBaoCaoConnectionString"].ConnectionString;
             }
         }
     }

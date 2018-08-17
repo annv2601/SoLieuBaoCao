@@ -62,13 +62,6 @@ namespace daoSLBC.Database.ChiTieu
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuTheoMauBieu_DanhSach")]
-		public ISingleResult<sp_tblChiTieuTheoMauBieu_DanhSachResult> sp_tblChiTieuTheoMauBieu_DanhSach([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu);
-			return ((ISingleResult<sp_tblChiTieuTheoMauBieu_DanhSachResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuTheoMauBieu_ThongTin")]
 		public ISingleResult<sp_tblChiTieuTheoMauBieu_ThongTinResult> sp_tblChiTieuTheoMauBieu_ThongTin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu)
 		{
@@ -82,16 +75,21 @@ namespace daoSLBC.Database.ChiTieu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, thuTu, inDam, inNghieng, sTTsx, nhapTay, layTuDong, nguoiTao);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuTheoMauBieu_DanhSach")]
+		public ISingleResult<sp_tblChiTieuTheoMauBieu_DanhSachResult> sp_tblChiTieuTheoMauBieu_DanhSach([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu);
+			return ((ISingleResult<sp_tblChiTieuTheoMauBieu_DanhSachResult>)(result.ReturnValue));
+		}
 	}
 	
-	public partial class sp_tblChiTieuTheoMauBieu_DanhSachResult
+	public partial class sp_tblChiTieuTheoMauBieu_ThongTinResult
 	{
 		
 		private System.Nullable<int> _IDMauBieu;
 		
 		private System.Nullable<int> _IDChiTieu;
-		
-		private string _TenChiTieu;
 		
 		private string _ThuTu;
 		
@@ -109,7 +107,7 @@ namespace daoSLBC.Database.ChiTieu
 		
 		private string _NguoiTao;
 		
-		public sp_tblChiTieuTheoMauBieu_DanhSachResult()
+		public sp_tblChiTieuTheoMauBieu_ThongTinResult()
 		{
 		}
 		
@@ -141,22 +139,6 @@ namespace daoSLBC.Database.ChiTieu
 				if ((this._IDChiTieu != value))
 				{
 					this._IDChiTieu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenChiTieu", DbType="NVarChar(150)")]
-		public string TenChiTieu
-		{
-			get
-			{
-				return this._TenChiTieu;
-			}
-			set
-			{
-				if ((this._TenChiTieu != value))
-				{
-					this._TenChiTieu = value;
 				}
 			}
 		}
@@ -290,12 +272,16 @@ namespace daoSLBC.Database.ChiTieu
 		}
 	}
 	
-	public partial class sp_tblChiTieuTheoMauBieu_ThongTinResult
+	public partial class sp_tblChiTieuTheoMauBieu_DanhSachResult
 	{
 		
 		private System.Nullable<int> _IDMauBieu;
 		
 		private System.Nullable<int> _IDChiTieu;
+		
+		private string _Ma;
+		
+		private string _TenChiTieu;
 		
 		private string _ThuTu;
 		
@@ -313,7 +299,7 @@ namespace daoSLBC.Database.ChiTieu
 		
 		private string _NguoiTao;
 		
-		public sp_tblChiTieuTheoMauBieu_ThongTinResult()
+		public sp_tblChiTieuTheoMauBieu_DanhSachResult()
 		{
 		}
 		
@@ -345,6 +331,38 @@ namespace daoSLBC.Database.ChiTieu
 				if ((this._IDChiTieu != value))
 				{
 					this._IDChiTieu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ma", DbType="NVarChar(20)")]
+		public string Ma
+		{
+			get
+			{
+				return this._Ma;
+			}
+			set
+			{
+				if ((this._Ma != value))
+				{
+					this._Ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenChiTieu", DbType="NVarChar(150)")]
+		public string TenChiTieu
+		{
+			get
+			{
+				return this._TenChiTieu;
+			}
+			set
+			{
+				if ((this._TenChiTieu != value))
+				{
+					this._TenChiTieu = value;
 				}
 			}
 		}

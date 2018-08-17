@@ -44,7 +44,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ext.Net">
+      <HintPath>..\..\..\Dll_HoTro\WebForm\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\..\Dll_HoTro\WebForm\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll_HoTro\WebForm\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -61,6 +71,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Transformer.NET">
+      <HintPath>..\..\..\Dll_HoTro\WebForm\Transformer.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -68,9 +81,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="MoHinh\frmChiTieuMauBieu.aspx" />
+    <Content Include="MoHinh\ucChiTieuMauBieu.ascx" />
+    <Content Include="Resource\CSS\examples.css" />
+    <Content Include="Resource\CSS\main.css" />
+    <Content Include="Resource\Images\Logo_BaoCao.jpg" />
+    <Content Include="Resource\JS\main.js" />
+    <Content Include="Resource\JS\perfect-scrollbar.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoHinh\frmChiTieuMauBieu.aspx.cs">
+      <DependentUpon>frmChiTieuMauBieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoHinh\frmChiTieuMauBieu.aspx.designer.cs">
+      <DependentUpon>frmChiTieuMauBieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoHinh\ucChiTieuMauBieu.ascx.cs">
+      <DependentUpon>ucChiTieuMauBieu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoHinh\ucChiTieuMauBieu.ascx.designer.cs">
+      <DependentUpon>ucChiTieuMauBieu.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +123,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\daoSLBC\daoSLBC.csproj">
+      <Project>{ec5a70b3-e3b7-477d-99e2-3aef70426f70}</Project>
+      <Name>daoSLBC</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

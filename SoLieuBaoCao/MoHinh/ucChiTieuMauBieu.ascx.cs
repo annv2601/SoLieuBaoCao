@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using daoSLBC.ChiTieu;
 
 namespace SoLieuBaoCao.MoHinh
 {
@@ -73,6 +74,36 @@ namespace SoLieuBaoCao.MoHinh
             InNghieng = false;
             NhapTay = false;
             STTsx = 9;
+        }
+
+        public void DanhSachDanSuatCong()
+        {
+            daChiTieuDanSuat dCTDS = new daChiTieuDanSuat();
+            dCTDS.PT.IDMauBieu = IDmauBieu;
+            dCTDS.PT.IDChiTieu = IDChiTieu;
+
+            stoDSCong.DataSource = dCTDS.DanhSachDanSuatCong();
+            stoDSCong.DataBind();
+        }
+
+        public void DanhSachDanSuatTru()
+        {
+            daChiTieuDanSuat dCTDS = new daChiTieuDanSuat();
+            dCTDS.PT.IDMauBieu = IDmauBieu;
+            dCTDS.PT.IDChiTieu = IDChiTieu;
+
+            stoDSTru.DataSource = dCTDS.DanhSachDanSuatTru();
+            stoDSTru.DataBind();
+        }
+
+        public void DanhSachDanSuatNhan()
+        {
+            daChiTieuDanSuat dCTDS = new daChiTieuDanSuat();
+            dCTDS.PT.IDMauBieu = IDmauBieu;
+            dCTDS.PT.IDChiTieu = IDChiTieu;
+
+            stoDSNhan.DataSource = dCTDS.DanhSachDanSuatNhan();
+            stoDSNhan.DataBind();
         }
         #endregion
     }

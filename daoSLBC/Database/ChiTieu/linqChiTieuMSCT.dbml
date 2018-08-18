@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqChiTieuMSCTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTCong_DanhSach" Method="sp_tblChiTieuGhepMSCTCong_DanhSach">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblChiTieuGhepMSCTCong_DanhSachResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IDMauBieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDChiTieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTTru_Them" Method="sp_tblChiTieuGhepMSCTTru_Them">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTCong_Them" Method="sp_tblChiTieuGhepMSCTCong_Them">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTTru_DanhSach" Method="sp_tblChiTieuGhepMSCTTru_DanhSach">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblChiTieuGhepMSCTTru_DanhSachResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IDMauBieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDChiTieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

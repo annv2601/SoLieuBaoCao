@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTieu\daChiTieu.cs" />
+    <Compile Include="ChiTieu\daChiTieuDanSuat.cs" />
     <Compile Include="ChiTieu\daChiTieuMauBieu.cs" />
+    <Compile Include="ChiTieu\daChiTieuMSCT.cs" />
     <Compile Include="Core\daBase.cs" />
     <Compile Include="Core\daTienIch.cs" />
     <Compile Include="DanhMuc\daDanhMuc.cs" />
@@ -57,10 +60,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>linqChiTieu.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\ChiTieu\linqChiTieuDanSuat.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqChiTieuDanSuat.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\ChiTieu\linqChiTieuMauBieu.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>linqChiTieuMauBieu.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ChiTieu\linqChiTieuMSCT.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqChiTieuMSCT.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\DanhMuc\linqDanhMuc.designer.cs">
       <AutoGen>True</AutoGen>
@@ -102,6 +115,14 @@
     <None Include="Database\ChiTieu\linqChiTieu.dbml.layout">
       <DependentUpon>linqChiTieu.dbml</DependentUpon>
     </None>
+    <None Include="Database\ChiTieu\linqChiTieuDanSuat.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqChiTieuDanSuat.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\ChiTieu\linqChiTieuDanSuat.dbml.layout">
+      <DependentUpon>linqChiTieuDanSuat.dbml</DependentUpon>
+    </None>
     <None Include="Database\ChiTieu\linqChiTieuMauBieu.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>linqChiTieuMauBieu.designer.cs</LastGenOutput>
@@ -109,6 +130,14 @@
     </None>
     <None Include="Database\ChiTieu\linqChiTieuMauBieu.dbml.layout">
       <DependentUpon>linqChiTieuMauBieu.dbml</DependentUpon>
+    </None>
+    <None Include="Database\ChiTieu\linqChiTieuMSCT.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqChiTieuMSCT.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\ChiTieu\linqChiTieuMSCT.dbml.layout">
+      <DependentUpon>linqChiTieuMSCT.dbml</DependentUpon>
     </None>
     <None Include="Database\DanhMuc\linqDanhMuc.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

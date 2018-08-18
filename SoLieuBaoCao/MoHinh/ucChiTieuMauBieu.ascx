@@ -1,4 +1,29 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucChiTieuMauBieu.ascx.cs" Inherits="SoLieuBaoCao.MoHinh.ucChiTieuMauBieu" %>
+ <script type="text/javascript">
+        var editDSCong = function (editor, e)
+        {
+            if (e.value !== e.originalValue)
+            {
+                BangDanSuatCongX.Edit(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+            }
+        }
+
+     var editDSTru = function (editor, e)
+        {
+            if (e.value !== e.originalValue)
+            {
+                BangDanSuatTruX.Edit(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+            }
+     }
+
+     var editDSNhan = function (editor, e)
+        {
+            if (e.value !== e.originalValue)
+            {
+                BangDanSuatNhanX.Edit(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+            }
+        }
+</script>
 <ext:Panel 
     ID="Panel1" 
     runat="server">
@@ -12,6 +37,7 @@
             </Items>
         </ext:FieldContainer>
         
+        <%--Chi tieu mau bieu--%>
         <ext:FormPanel 
             ID="Panel2" 
             runat="server" Border="false" 
@@ -40,5 +66,153 @@
                 </ext:FieldContainer>
             </Items>
         </ext:FormPanel>
+        <%--=============================--%>
+
+        <%--Chi tieu dan suat--%>
+        <ext:FieldSet runat="server" Title="Chỉ tiêu dẫn suất" Layout="HBoxLayout">
+            <Items>
+                <ext:GridPanel
+                    ID="grdDanSuatCong"
+                    runat="server"
+                    Title="Chỉ tiêu cộng" HideHeaders="true"
+                    Width="200"
+                    Height="150">
+                    <Store>
+                        <ext:Store runat="server" ID="stoDSCong">
+                            <Model>
+                                <ext:Model runat="server" IDProperty="STT">
+                                    <Fields>
+                                        <ext:ModelField Name="IDChiTieuDanSuat" />
+                                        <ext:ModelField Name="MaChiTieuDanSuat" />
+                                        <ext:ModelField Name="TenChiTieuDanSuat" />
+                                        <ext:ModelField Name="HeSo" />
+                                        <ext:ModelField Name="STT" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>                            
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel runat="server">
+                        <Columns>
+                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
+                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="140" Align="Center">
+                                <Editor>
+                                    <ext:TextField runat="server" />
+                                </Editor>
+                            </ext:Column>
+                        </Columns>
+                    </ColumnModel>
+                    <SelectionModel>
+                        <ext:CellSelectionModel runat="server">
+                        </ext:CellSelectionModel>
+                    </SelectionModel>
+                    <Plugins>
+                        <ext:CellEditing runat="server" ClicksToEdit="1">
+                            <Listeners>
+                                <Edit Fn="editDSCong" />
+                            </Listeners>
+                        </ext:CellEditing>
+                    </Plugins>
+                </ext:GridPanel>
+
+                <ext:GridPanel
+                    ID="grdDanSuatTru"
+                    runat="server"
+                    Title="Chỉ tiêu trừ" HideHeaders="true"
+                    Width="200"
+                    Height="150" MarginSpec="0 0 0 20">
+                    <Store>
+                        <ext:Store runat="server" ID="stoDSTru">
+                            <Model>
+                                <ext:Model runat="server" IDProperty="STT">
+                                    <Fields>
+                                        <ext:ModelField Name="IDChiTieuDanSuat" />
+                                        <ext:ModelField Name="MaChiTieuDanSuat" />
+                                        <ext:ModelField Name="TenChiTieuDanSuat" />
+                                        <ext:ModelField Name="HeSo" />
+                                        <ext:ModelField Name="STT" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>                            
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel runat="server">
+                        <Columns>
+                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
+                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="140" Align="Center">
+                                <Editor>
+                                    <ext:TextField runat="server" />
+                                </Editor>
+                            </ext:Column>
+                        </Columns>
+                    </ColumnModel>
+                    <SelectionModel>
+                        <ext:CellSelectionModel runat="server">
+                        </ext:CellSelectionModel>
+                    </SelectionModel>
+                    <Plugins>
+                        <ext:CellEditing runat="server" ClicksToEdit="1">
+                            <Listeners>
+                                <Edit Fn="editDSTru" />
+                            </Listeners>
+                        </ext:CellEditing>
+                    </Plugins>
+                </ext:GridPanel>
+
+                <ext:GridPanel
+                    ID="GridPanel1"
+                    runat="server"
+                    Title="Chỉ tiêu nhân" HideHeaders="true"
+                    Width="200"
+                    Height="150" MarginSpec="0 0 0 20">
+                    <Store>
+                        <ext:Store runat="server" ID="stoDSNhan">
+                            <Model>
+                                <ext:Model runat="server" IDProperty="STT">
+                                    <Fields>
+                                        <ext:ModelField Name="IDChiTieuDanSuat" />
+                                        <ext:ModelField Name="MaChiTieuDanSuat" />
+                                        <ext:ModelField Name="TenChiTieuDanSuat" />
+                                        <ext:ModelField Name="HeSo" />
+                                        <ext:ModelField Name="STT" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>                            
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel runat="server">
+                        <Columns>
+                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
+                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="140" Align="Center">
+                                <Editor>
+                                    <ext:TextField runat="server" />
+                                </Editor>
+                            </ext:Column>
+                        </Columns>
+                    </ColumnModel>
+                    <SelectionModel>
+                        <ext:CellSelectionModel runat="server">
+                        </ext:CellSelectionModel>
+                    </SelectionModel>
+                    <Plugins>
+                        <ext:CellEditing runat="server" ClicksToEdit="1">
+                            <Listeners>
+                                <Edit Fn="editDSNhan" />
+                            </Listeners>
+                        </ext:CellEditing>
+                    </Plugins>
+                </ext:GridPanel>
+            </Items>
+        </ext:FieldSet>
+        <%--=============================--%>
+
+        <%--Chi tieu MSCT--%>
+        <ext:FieldSet runat="server" Title="Chỉ tiêu STK1">
+            <Items>
+
+            </Items>
+        </ext:FieldSet>
+        <%--=============================--%>
+
     </Items>
 </ext:Panel>

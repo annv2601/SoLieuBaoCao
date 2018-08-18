@@ -95,6 +95,9 @@ namespace SoLieuBaoCao.MoHinh
             }
             else
             {
+                ucChiTieuMB1.DanhSachDanSuatCong();
+                ucChiTieuMB1.DanhSachDanSuatNhan();
+                ucChiTieuMB1.DanhSachDanSuatTru();
                 wChiTieuMauBieu.Show();
             }
         }

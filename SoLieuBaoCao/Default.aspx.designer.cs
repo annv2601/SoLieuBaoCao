@@ -31,15 +31,6 @@ namespace SoLieuBaoCao {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
-        /// exampleTree control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.TreePanel exampleTree;
-        
-        /// <summary>
         /// TriggerField1 control.
         /// </summary>
         /// <remarks>
@@ -49,12 +40,30 @@ namespace SoLieuBaoCao {
         protected global::Ext.Net.TextField TriggerField1;
         
         /// <summary>
-        /// ExampleTabs control.
+        /// MicroToggleBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TabPanel ExampleTabs;
+        protected global::Ext.Net.Button MicroToggleBtn;
+        
+        /// <summary>
+        /// ChucNangTree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TreeList ChucNangTree;
+        
+        /// <summary>
+        /// TabPanelChinh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TabPanel TabPanelChinh;
     }
 }

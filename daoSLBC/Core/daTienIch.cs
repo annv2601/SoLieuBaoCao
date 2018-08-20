@@ -41,5 +41,10 @@ namespace daoSLBC.Core
             _Na = _Na.AddMonths(1);
             return _Na.AddDays(-1);
         }
+
+        public static string LayBenPhai(string str, int SoKyTu)
+        {
+            return str.Substring(str.Length - SoKyTu, SoKyTu);
+        }
     }
 }

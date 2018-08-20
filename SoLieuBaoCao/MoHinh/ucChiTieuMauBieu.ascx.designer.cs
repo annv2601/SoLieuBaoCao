@@ -85,6 +85,15 @@ namespace SoLieuBaoCao.MoHinh {
         protected global::Ext.Net.Checkbox chkInNghieng;
         
         /// <summary>
+        /// btnCapNhatChiTieuMauBieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnCapNhatChiTieuMauBieu;
+        
+        /// <summary>
         /// chkNhapTay control.
         /// </summary>
         /// <remarks>
@@ -139,13 +148,13 @@ namespace SoLieuBaoCao.MoHinh {
         protected global::Ext.Net.Store stoDSTru;
         
         /// <summary>
-        /// GridPanel1 control.
+        /// grdDanSuatNhan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.GridPanel GridPanel1;
+        protected global::Ext.Net.GridPanel grdDanSuatNhan;
         
         /// <summary>
         /// stoDSNhan control.
@@ -155,5 +164,41 @@ namespace SoLieuBaoCao.MoHinh {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Store stoDSNhan;
+        
+        /// <summary>
+        /// grdMSCTCong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.GridPanel grdMSCTCong;
+        
+        /// <summary>
+        /// stoMSCTCong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store stoMSCTCong;
+        
+        /// <summary>
+        /// grdMSCTTru control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.GridPanel grdMSCTTru;
+        
+        /// <summary>
+        /// stoMSCTTru control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store stoMSCTTru;
     }
 }

@@ -98,7 +98,7 @@ namespace daoSLBC.ChiTieu
                 _pt.IDChiTieuDanSuat = 0;
                 _pt.STT = n;
                 _pt.MaChiTieuDanSuat = "";
-                _pt.HeSo = 0;
+                _pt.HeSo = 1;
                 _pt.TenChiTieuDanSuat = "";
                 lst.Add(_pt);
             }

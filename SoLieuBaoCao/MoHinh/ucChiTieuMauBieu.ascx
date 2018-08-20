@@ -4,7 +4,7 @@
         {
             if (e.value !== e.originalValue)
             {
-                BangDanSuatCongX.Edit(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+                BangDanSuatCongX.EditDSCong(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
             }
         }
 
@@ -12,7 +12,7 @@
         {
             if (e.value !== e.originalValue)
             {
-                BangDanSuatTruX.Edit(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+                BangDanSuatTruX.EditDSTru(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
             }
      }
 
@@ -20,9 +20,25 @@
         {
             if (e.value !== e.originalValue)
             {
-                BangDanSuatNhanX.Edit(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+                BangDanSuatNhanX.EditDSNhan(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+            }
+     }
+
+     var editMSCTCong = function (editor, e)
+        {
+            if (e.value !== e.originalValue)
+            {
+                BangMSCTCongX.EditMSCTCong(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
             }
         }
+
+     var editMSCTTru = function (editor, e)
+        {
+            if (e.value !== e.originalValue)
+            {
+                BangMSCTTruX.EditMSCTTru(e.record.data.STT, e.field, e.originalValue, e.value, e.record.data);
+            }
+     }
 </script>
 <ext:Panel 
     ID="Panel1" 
@@ -54,6 +70,11 @@
                             <ext:TextField runat="server" ID="txtThuTu" Width="140" FieldLabel="Thứ tự" LabelStyle="font-weight:bold;" MarginSpec="0 0 0 0" LabelWidth="70"/>
                             <ext:Checkbox runat="server" ID="chkInDam" Width="140" FieldLabel="In đậm" LabelStyle="font-weight:bold;" MarginSpec="0 0 0 20" LabelWidth="70"/>
                             <ext:Checkbox runat="server" ID="chkInNghieng" Width="140" FieldLabel="In nghiêng" LabelStyle="font-weight:bold;" MarginSpec="0 0 0 20" LabelWidth="80"/>
+                            <ext:Button runat="server" ID="btnCapNhatChiTieuMauBieu" Text="Cập nhật" Icon="Accept" MarginSpec="0 0 0 30">
+                                <DirectEvents>
+                                    <Click OnEvent="btnCapNhatChiTieuMauBieu_Click" />
+                                </DirectEvents>
+                            </ext:Button>
                         </Items>
                         </ext:FieldContainer>
                         <ext:FieldContainer runat="server" Layout="HBoxLayout">
@@ -75,8 +96,8 @@
                     ID="grdDanSuatCong"
                     runat="server"
                     Title="Chỉ tiêu cộng" HideHeaders="true"
-                    Width="200"
-                    Height="150">
+                    Width="180"
+                    Height="250">
                     <Store>
                         <ext:Store runat="server" ID="stoDSCong">
                             <Model>
@@ -95,7 +116,7 @@
                     <ColumnModel runat="server">
                         <Columns>
                             <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
-                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="140" Align="Center">
+                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="120" Align="Center">
                                 <Editor>
                                     <ext:TextField runat="server" />
                                 </Editor>
@@ -119,8 +140,8 @@
                     ID="grdDanSuatTru"
                     runat="server"
                     Title="Chỉ tiêu trừ" HideHeaders="true"
-                    Width="200"
-                    Height="150" MarginSpec="0 0 0 20">
+                    Width="180"
+                    Height="250" MarginSpec="0 0 0 20">
                     <Store>
                         <ext:Store runat="server" ID="stoDSTru">
                             <Model>
@@ -139,7 +160,7 @@
                     <ColumnModel runat="server">
                         <Columns>
                             <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
-                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="140" Align="Center">
+                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="120" Align="Center">
                                 <Editor>
                                     <ext:TextField runat="server" />
                                 </Editor>
@@ -160,11 +181,11 @@
                 </ext:GridPanel>
 
                 <ext:GridPanel
-                    ID="GridPanel1"
+                    ID="grdDanSuatNhan"
                     runat="server"
                     Title="Chỉ tiêu nhân" HideHeaders="true"
-                    Width="200"
-                    Height="150" MarginSpec="0 0 0 20">
+                    Width="240"
+                    Height="250" MarginSpec="0 0 0 20">
                     <Store>
                         <ext:Store runat="server" ID="stoDSNhan">
                             <Model>
@@ -182,8 +203,13 @@
                     </Store>
                     <ColumnModel runat="server">
                         <Columns>
-                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
-                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="140" Align="Center">
+                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>
+                            <ext:NumberColumn runat="server" Text="Hệ số" DataIndex="HeSo" Align="Center" Width="100">
+                                <Editor>
+                                    <ext:NumberField runat="server" AllowDecimals="true" DecimalPrecision="3" />
+                                </Editor>
+                            </ext:NumberColumn>
+                            <ext:Column runat="server" Text="Mã" DataIndex="MaChiTieuDanSuat" Width="120" Align="Center">
                                 <Editor>
                                     <ext:TextField runat="server" />
                                 </Editor>
@@ -207,9 +233,95 @@
         <%--=============================--%>
 
         <%--Chi tieu MSCT--%>
-        <ext:FieldSet runat="server" Title="Chỉ tiêu STK1">
+        <ext:FieldSet runat="server" Title="Chỉ tiêu STK1" Layout="HBoxLayout">
             <Items>
+                <ext:GridPanel
+                    ID="grdMSCTCong"
+                    runat="server"
+                    Title="Chỉ tiêu cộng" HideHeaders="true"
+                    Width="200"
+                    Height="250">
+                    <Store>
+                        <ext:Store runat="server" ID="stoMSCTCong">
+                            <Model>
+                                <ext:Model runat="server" IDProperty="STT">
+                                    <Fields>
+                                        <ext:ModelField Name="IDMauBieu" />
+                                        <ext:ModelField Name="IDChiTieu" />
+                                        <ext:ModelField Name="MSCT" />
+                                        <ext:ModelField Name="TenMSCT" />
+                                        <ext:ModelField Name="STT" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>                            
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel runat="server">
+                        <Columns>
+                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
+                            <ext:Column runat="server" Text="Mã" DataIndex="MSCT" Width="140" Align="Center">
+                                <Editor>
+                                    <ext:TextField runat="server" />
+                                </Editor>
+                            </ext:Column>
+                        </Columns>
+                    </ColumnModel>
+                    <SelectionModel>
+                        <ext:CellSelectionModel runat="server">
+                        </ext:CellSelectionModel>
+                    </SelectionModel>
+                    <Plugins>
+                        <ext:CellEditing runat="server" ClicksToEdit="1">
+                            <Listeners>
+                                <Edit Fn="editMSCTCong" />
+                            </Listeners>
+                        </ext:CellEditing>
+                    </Plugins>
+                </ext:GridPanel>
 
+                <ext:GridPanel
+                    ID="grdMSCTTru"
+                    runat="server"
+                    Title="Chỉ tiêu trừ" HideHeaders="true"
+                    Width="200"
+                    Height="250" MarginSpec="0 0 0 20">
+                    <Store>
+                        <ext:Store runat="server" ID="stoMSCTTru">
+                            <Model>
+                                <ext:Model runat="server" IDProperty="STT">
+                                    <Fields>
+                                        <ext:ModelField Name="IDMauBieu" />
+                                        <ext:ModelField Name="IDChiTieu" />
+                                        <ext:ModelField Name="MSCT" />
+                                        <ext:ModelField Name="TenMSCT" />
+                                        <ext:ModelField Name="STT" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>                            
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel runat="server">
+                        <Columns>
+                            <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>                            
+                            <ext:Column runat="server" Text="Mã" DataIndex="MSCT" Width="140" Align="Center">
+                                <Editor>
+                                    <ext:TextField runat="server" />
+                                </Editor>
+                            </ext:Column>
+                        </Columns>
+                    </ColumnModel>
+                    <SelectionModel>
+                        <ext:CellSelectionModel runat="server">
+                        </ext:CellSelectionModel>
+                    </SelectionModel>
+                    <Plugins>
+                        <ext:CellEditing runat="server" ClicksToEdit="1">
+                            <Listeners>
+                                <Edit Fn="editMSCTTru" />
+                            </Listeners>
+                        </ext:CellEditing>
+                    </Plugins>
+                </ext:GridPanel>
             </Items>
         </ext:FieldSet>
         <%--=============================--%>

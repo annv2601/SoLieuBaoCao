@@ -98,6 +98,8 @@ namespace SoLieuBaoCao.MoHinh
                 ucChiTieuMB1.DanhSachDanSuatCong();
                 ucChiTieuMB1.DanhSachDanSuatNhan();
                 ucChiTieuMB1.DanhSachDanSuatTru();
+                ucChiTieuMB1.DanhSachMSCTCong();
+                ucChiTieuMB1.DanhSachMSCTTru();
                 wChiTieuMauBieu.Show();
             }
         }
@@ -110,6 +112,138 @@ namespace SoLieuBaoCao.MoHinh
             }
 
             return defaultField;
+        }
+        #endregion
+
+        #region Su kien control
+        [DirectMethod(Namespace = "BangDanSuatCongX")]
+        public void EditDSCong(int id, string field, string oldvalue, string newvalue, object BangCTMB)
+        {
+            daChiTieu dCT = new daChiTieu();
+            dCT.CTTim.Ma = newvalue;
+            if (dCT.Tim() == null)
+            {
+                ucChiTieuMB1.DSCongOK(id, false);
+                X.Msg.Alert("", "Không tìm thấy chỉ tiêu dẫn suất có mã là: " + newvalue).Show();
+            }
+            else
+            {
+                daChiTieuDanSuat dDS = new daChiTieuDanSuat();
+                dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+                dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+                dDS.PT.IDChiTieuDanSuat = dCT.CTTim.ID;
+                dDS.PT.MaChiTieuDanSuat = newvalue.ToUpper();
+                dDS.PT.HeSo = 1;
+
+                dDS.ThemDanSuatCong();
+                ucChiTieuMB1.DSCongOK(id, true);
+            }
+        }
+
+        [DirectMethod(Namespace = "BangDanSuatTruX")]
+        public void EditDSTru(int id, string field, string oldvalue, string newvalue, object BangCTMB)
+        {
+            daChiTieu dCT = new daChiTieu();
+            dCT.CTTim.Ma = newvalue;
+            if (dCT.Tim() == null)
+            {
+                ucChiTieuMB1.DSruOK(id, false);
+                X.Msg.Alert("", "Không tìm thấy chỉ tiêu dẫn suất có mã là: " + newvalue).Show();
+            }
+            else
+            {
+                daChiTieuDanSuat dDS = new daChiTieuDanSuat();
+                dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+                dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+                dDS.PT.IDChiTieuDanSuat = dCT.CTTim.ID;
+                dDS.PT.MaChiTieuDanSuat = newvalue.ToUpper();
+                dDS.PT.HeSo = 1;
+
+                dDS.ThemDanSuatTru();
+                ucChiTieuMB1.DSruOK(id, true);
+            }
+        }
+
+        [DirectMethod(Namespace = "BangDanSuatNhanX")]
+        public void EditDSNhan(int id, string field, string oldvalue, string newvalue, object BangCTMB)
+        {
+            if (field != "MaChiTieuDanSuat")
+            {
+                return;
+            }
+            daChiTieu dCT = new daChiTieu();
+            dCT.CTTim.Ma = newvalue;
+            if (dCT.Tim() == null)
+            {
+                ucChiTieuMB1.DSNhanOK(id, false);
+                X.Msg.Alert("", "Không tìm thấy chỉ tiêu dẫn suất có mã là: " + newvalue).Show();
+            }
+            else
+            {
+                daChiTieuDanSuat dDS = new daChiTieuDanSuat();
+                dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+                dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+                dDS.PT.IDChiTieuDanSuat = dCT.CTTim.ID;
+                dDS.PT.MaChiTieuDanSuat = newvalue.ToUpper();
+
+                Newtonsoft.Json.Linq.JObject node = JSON.Deserialize<Newtonsoft.Json.Linq.JObject>(BangCTMB.ToString());
+                try
+                {
+                    dDS.PT.HeSo = Decimal.Parse(node.Property("HeSo").Value.ToString());
+                }
+                catch
+                {
+                    dDS.PT.HeSo = 1;
+                }
+
+
+                dDS.ThemDanSuatNhan();
+                ucChiTieuMB1.DSNhanOK(id, true);
+            }
+        }
+
+        [DirectMethod(Namespace = "BangMSCTCongX")]
+        public void EditMSCTCong(int id, string field, string oldvalue, string newvalue, object BangCTMB)
+        {
+            daChiTieu dCT = new daChiTieu();
+            dCT.MSCT.MSCT = newvalue;
+            if (dCT.TimMSCT() == null)
+            {
+                ucChiTieuMB1.MSCTCongOK(id, false);
+                X.Msg.Alert("", "Không tìm thấy chỉ tiêu trong STK1 có mã là: " + newvalue).Show();
+            }
+            else
+            {
+                daChiTieuMSCT dMSCT = new daChiTieuMSCT();
+                dMSCT.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+                dMSCT.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+                dMSCT.PT.MSCT = newvalue;
+
+                dMSCT.ThemMSCTCong();
+                ucChiTieuMB1.MSCTCongOK(id, true);
+            }
+        }
+
+        [DirectMethod(Namespace = "BangMSCTTruX")]
+        public void EditMSCTTru(int id, string field, string oldvalue, string newvalue, object BangCTMB)
+        {
+            daChiTieu dCT = new daChiTieu();
+            dCT.MSCT.MSCT = newvalue;
+            if (dCT.TimMSCT() == null)
+            {
+                ucChiTieuMB1.DSCongOK(id, false);
+                X.Msg.Alert("", "Không tìm thấy chỉ tiêu trong STK1 có mã là: " + newvalue).Show();
+            }
+            else
+            {
+                daChiTieuMSCT dMSCT = new daChiTieuMSCT();
+                dMSCT.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+                dMSCT.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+                dMSCT.PT.MSCT = newvalue;
+
+                dMSCT.ThemMSCTTru();
+                ucChiTieuMB1.DSCongOK(id, true);
+            }
         }
         #endregion
     }

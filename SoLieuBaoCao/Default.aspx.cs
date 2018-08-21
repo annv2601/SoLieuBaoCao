@@ -38,8 +38,10 @@ namespace SoLieuBaoCao
                 Ext.Net.Node composerNode = new Ext.Net.Node()
                 {
                     Text = composer.Ten,
+                    NodeID=composer.ID.ToString(),
                     IconCls = "x-fa fa-" + composer.BieuTuong
                 };
+                composerNode.CustomAttributes.Add(new ConfigItem("DiaChiURL", "0"));
                 root.Children.Add(composerNode);
 
                 lstCNCon = dCN.lstDanhSachTheoCapTren(composer.ID);
@@ -50,10 +52,12 @@ namespace SoLieuBaoCao
                         Ext.Net.Node NodeCon = new Ext.Net.Node()
                         {
                             Text = ptCon.Ten,
-                            IconCls = "x-fa fa-" + ptCon.BieuTuong,                            
-                            Leaf=true
+                            IconCls = "x-fa fa-" + ptCon.BieuTuong,
+                            NodeID=ptCon.ID.ToString(),
+                            Leaf=true                            
                         };
-                        NodeCon.Listeners.AddScript = "addTabCN(#{TabPanelChinh},'idTabCN" + ptCon.ID.ToString() + "','" + daPhien.LayDiaChiURLChucNang(ptCon.ID, ptCon.dcUrl) + "','" + ptCon.TieuDe + "');";
+                        
+                        NodeCon.CustomAttributes.Add(new ConfigItem("DiaChiURL", daPhien.LayDiaChiURLChucNang(ptCon.ID, ptCon.dcUrl), ParameterMode.Value));
                         composerNode.Children.Add(NodeCon);
                     }
                 }
@@ -65,5 +69,35 @@ namespace SoLieuBaoCao
             ChucNangTree.Store.Add(treeStore);
         }
         #endregion
+
+        protected void btnDangNhap_click(object sender, DirectEventArgs e)
+        {
+            txtMaNSD.Text = "";
+            txtMaDonVi.Text = "";
+            txtMaNSD.Focus();
+            wDangNhap.Show();
+        }
+
+        protected void btnKiemTraDangNhap_click(object sender, DirectEventArgs e)
+        {
+            daDangNhap dDN = new daDangNhap();
+            dDN.MaNSD = txtMaNSD.Text.Trim();
+            dDN.MaDonVi = txtMaDonVi.Text.Trim();
+            UIHelper.daPhien.DaDangNhap = dDN.KiemTra();
+            if(UIHelper.daPhien.DaDangNhap)
+            {
+                wDangNhap.Hide();
+                btnDangNhap.Text = dDN.TenNguoiSuDung;
+                UIHelper.daPhien.MaNSD = dDN.MaNSD;
+                UIHelper.daPhien.MaDonVi = dDN.MaDonVi;
+            }
+            else
+            {
+                X.Msg.Alert("Lỗi","Anh/chị đăng nhập không thành công!").Show();
+                btnDangNhap.Text = "[Đăng nhập]";
+                UIHelper.daPhien.MaNSD = "";
+                UIHelper.daPhien.MaDonVi = "";
+            }
+        }
     }
 }

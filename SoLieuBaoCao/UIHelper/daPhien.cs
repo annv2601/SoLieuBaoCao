@@ -7,10 +7,22 @@ namespace SoLieuBaoCao.UIHelper
 {
     public static class daPhien
     {
-        public static int VaiTro
+        public static bool DaDangNhap
         {
-            get { return (int)HttpContext.Current.Session["BSCVaiTro"]; }
-            set { HttpContext.Current.Session["BSCVaiTro"] = value; }
+            get { return HttpContext.Current.Session["slbcIsLogin"] == null ? false : (bool)HttpContext.Current.Session["slbcIsLogin"]; }
+            set { HttpContext.Current.Session["slbcIsLogin"] = value; }
+        }
+
+        public static string MaNSD
+        {
+            get { return HttpContext.Current.Session["slbcIsMaNSD"] == null ? "" : (string)HttpContext.Current.Session["slbcIsMaNSD"]; }
+            set { HttpContext.Current.Session["slbcIsMaNSD"] = value; }
+        }
+
+        public static string MaDonVi
+        {
+            get { return HttpContext.Current.Session["slbcIsMaDonVi"] == null ? "" : (string)HttpContext.Current.Session["slbcIsMaDonVi"]; }
+            set { HttpContext.Current.Session["slbcIsMaDonVi"] = value; }
         }
 
         public static string LayDiaChiURL(string rDuongDan)

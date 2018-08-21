@@ -31,13 +31,13 @@ namespace SoLieuBaoCao {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
-        /// TriggerField1 control.
+        /// btnDangNhap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField TriggerField1;
+        protected global::Ext.Net.Button btnDangNhap;
         
         /// <summary>
         /// MicroToggleBtn control.
@@ -65,5 +65,41 @@ namespace SoLieuBaoCao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.TabPanel TabPanelChinh;
+        
+        /// <summary>
+        /// wDangNhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Window wDangNhap;
+        
+        /// <summary>
+        /// txtMaNSD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtMaNSD;
+        
+        /// <summary>
+        /// txtMaDonVi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtMaDonVi;
+        
+        /// <summary>
+        /// btnKiemTraDangNhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnKiemTraDangNhap;
     }
 }

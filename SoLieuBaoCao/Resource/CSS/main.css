@@ -35,9 +35,16 @@ body {
 .logo-container {
     width: 250px;
     float: left;
-    padding: 20px 15px 15px;
+    padding: 20px 5px 5px;
 }
 
+.DangNhap-container {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    text-align: center;
+}
 /* platform switcher dropdown */
 
 .platform-selector-container {

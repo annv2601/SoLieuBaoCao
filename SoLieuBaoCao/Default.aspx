@@ -66,7 +66,44 @@
                 }
 
                 tabPanel.setActiveTab(tab);
+        }
+
+        var ClickItemtree = function (me, node)
+        {
+            var pane = App.SelectionPanel,
+                tabPanel = App.TabPanelChinh,
+                id = "idTabCN"+node.get("id"),
+                TieuDe = node.get("text"),
+                url = node.get("DiaChiURL");               
+
+            //alert(node.get("id"));
+
+            if (url != "0")
+            {
+                var tab = tabPanel.getComponent(id);
+
+                if (!tab) {
+                    tab = tabPanel.add({
+                        id       : id,
+                        title    : TieuDe,
+                        closable: true,
+                                              
+                        loader   : {
+                            url      : url,
+                            renderer : "frame",
+                            loadMask : {
+                                showMask : true,
+                                msg      : "Nạp chức năng ..."
+                            }
+                        }
+                    });
+                }
+
+                tabPanel.setActiveTab(tab);
             }
+            
+        }
+
     </script>
 
 </head>
@@ -90,7 +127,7 @@
                             <div class="navigation-bar">
                                 <div class="platform-selector-container">
                                     
-                                </div>                               
+                                </div>
                             </div>
                         </nav>
                     </header>
@@ -108,18 +145,15 @@
                 <TopBar>
                             <ext:Toolbar runat="server" Cls="left-header">
                                 <Items>
-                                    <ext:TextField
-                                        ID="TriggerField1"
-                                        runat="server"
-                                        EnableKeyEvents="true"
-                                        Flex="1"
-                                        EmptyText="Tìm chức năng ..."
-                                        RemoveClearTrigger="true">                                        
-                                    </ext:TextField>
+                                    <ext:Button runat="server" ID="btnDangNhap" Text="[Đăng nhập]" Icon="UserHome" UI="Primary" Width="160" Flex="1">
+                                        <DirectEvents>
+                                            <Click OnEvent="btnDangNhap_click" />
+                                        </DirectEvents>
+                                    </ext:Button>
 
                                     <ext:Button
                                         ID="MicroToggleBtn"
-                                        runat="server"
+                                        runat="server" UI="Success"
                                         Text="< - >"
                                         EnableToggle="true">
                                         <Listeners>
@@ -140,10 +174,10 @@
                         CollapseFirst="false"
                         RootVisible="false"
                         Animate="false"
-                        HideHeaders="true">                        
+                        HideHeaders="true">
                         <Listeners>
-                            
-                        </Listeners>
+                                <SelectionChange Fn="ClickItemtree" />
+                         </Listeners>
                     </ext:TreeList>
                 </Items>
             </ext:Panel>
@@ -161,6 +195,36 @@
             </ext:TabPanel>
         </Items>
     </ext:Viewport>
+
+        <ext:Window runat="server" ID="wDangNhap" Title="Đăng nhập" Icon="Key" Hidden="true"  
+            Width="400" ButtonAlign="Center" DefaultAnchor="100%">
+            <LayoutConfig>
+            <ext:VBoxLayoutConfig Align="Center" Pack="Center" />
+        </LayoutConfig>
+            <Items>
+            <ext:TextField
+                        runat="server"
+                        AllowBlank="false"
+                        FieldLabel="Mã NSD" LabelStyle="font-weight:bold"
+                        ID="txtMaNSD"
+                        EmptyText="Mã Người sử dụng" MarginSpec="10 0 0 0" Width="380"/>
+
+                    <ext:TextField
+                        runat="server"
+                        AllowBlank="false"
+                        FieldLabel="Mã Đơn vị" LabelStyle="font-weight:bold"
+                        ID="txtMaDonVi"
+                        EmptyText="Mã Đơn vị" MarginSpec="10 0 0 0" Width="380"/>
+            
+            </Items>
+            <Buttons>
+                <ext:Button runat="server" Text="Đăng nhập" ID="btnKiemTraDangNhap">
+                    <DirectEvents>
+                        <Click OnEvent="btnKiemTraDangNhap_click" />
+                    </DirectEvents>
+                </ext:Button>
+            </Buttons>
+        </ext:Window>
     </form>
 </body>
 </html>

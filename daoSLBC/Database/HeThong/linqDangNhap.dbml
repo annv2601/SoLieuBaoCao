@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqDangNhapDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_KiemTraDangNhap" Method="sp_KiemTraDangNhap">
+    <Parameter Name="MaNSD" Parameter="maNSD" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_KiemTraDangNhapResult">
+      <Column Name="KetQuaKiemTra" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

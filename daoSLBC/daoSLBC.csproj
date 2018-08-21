@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BieuBaoCao\daBieuBaoCao.cs" />
+    <Compile Include="BieuBaoCao\daTrangThaiBaoCao.cs" />
     <Compile Include="ChiTieu\daChiTieu.cs" />
     <Compile Include="ChiTieu\daChiTieuDanSuat.cs" />
     <Compile Include="ChiTieu\daChiTieuMauBieu.cs" />
@@ -55,6 +56,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>linqBieuBaoCao.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BieuBaoCao\linqTrangThaiBaoCao.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqTrangThaiBaoCao.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\ChiTieu\linqChiTieu.designer.cs">
       <AutoGen>True</AutoGen>
@@ -91,12 +97,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>linqChucNang.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\HeThong\linqDangNhap.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDangNhap.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\SoLieuNgoai\linqSoLieuSTK1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>linqSoLieuSTK1.dbml</DependentUpon>
     </Compile>
     <Compile Include="HeThong\daChucNang.cs" />
+    <Compile Include="HeThong\daDangNhap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -113,6 +125,14 @@
     </None>
     <None Include="Database\BieuBaoCao\linqBieuBaoCao.dbml.layout">
       <DependentUpon>linqBieuBaoCao.dbml</DependentUpon>
+    </None>
+    <None Include="Database\BieuBaoCao\linqTrangThaiBaoCao.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqTrangThaiBaoCao.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\BieuBaoCao\linqTrangThaiBaoCao.dbml.layout">
+      <DependentUpon>linqTrangThaiBaoCao.dbml</DependentUpon>
     </None>
     <None Include="Database\ChiTieu\linqChiTieu.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -169,6 +189,14 @@
     </None>
     <None Include="Database\HeThong\linqChucNang.dbml.layout">
       <DependentUpon>linqChucNang.dbml</DependentUpon>
+    </None>
+    <None Include="Database\HeThong\linqDangNhap.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDangNhap.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\HeThong\linqDangNhap.dbml.layout">
+      <DependentUpon>linqDangNhap.dbml</DependentUpon>
     </None>
     <None Include="Database\SoLieuNgoai\linqSoLieuSTK1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

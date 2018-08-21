@@ -53,13 +53,8 @@ namespace daoSLBC.BieuBaoCao
             sp_tblBieuBaoCao_DanhSachResult pt = new sp_tblBieuBaoCao_DanhSachResult();
             pt.STT = 0;
             pt.MaBaoCao = "000000";
+            pt.TenBieuBaoCao = "Tạo Báo cáo mới";
             pt.urlAnh = "../Resource/Images/TaoBaoCao.png";
-            lst.Add(pt);
-
-            pt = new sp_tblBieuBaoCao_DanhSachResult();
-            pt.STT = 1;
-            pt.MaBaoCao = "000000";
-            pt.urlAnh = "../Resource/Images/BieuBaoCao.png";
             lst.Add(pt);
 
             return daTienIch.ToDataTable(lst);

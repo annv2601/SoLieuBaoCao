@@ -11,6 +11,15 @@ namespace daoSLBC.DanhMuc
 {
     public class daDanhMuc
     {
+        public enum eTrangThai
+        {
+            Nhập_số_liệu=1,
+            Sửa_số_liệu=2,
+            Gửi_Báo_cáo=3,
+            Duyệt_Báo_cáo=4,
+            Khóa_Báo_cáo=5
+        }
+
         private linqDanhMucDataContext lDM = new linqDanhMucDataContext();
         private sp_tblDanhMuc_DanhSachResult _DM = new sp_tblDanhMuc_DanhSachResult();
 

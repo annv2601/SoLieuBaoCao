@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmBieuBaoCao.aspx.cs" Inherits="SoLieuBaoCao.BieuBaoCao.frmBieuBaoCao" %>
-
+<%@ Register src="~/BieuBaoCao/ucBieuBaoCao.ascx" tagname="BieuBC" tagprefix="uc" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,19 +51,44 @@
                             </tpl>
                         </html>                   
                     </Tpl>
-                <%--<DirectEvents>
-                    <ItemDblClick OnEvent="DanhGiaNhanVien_DBClick">
+                <DirectEvents>
+                    <ItemDblClick OnEvent="BieuBaoCao_DBClick">
                         <ExtraParams>
                                 <ext:Parameter
                                     Name="Values"
-                                    Value="#{vNhanVien}.getRowsValues({ selectedOnly : true })"
+                                    Value="#{vBieuBaoCao}.getRowsValues({ selectedOnly : true })"
                                     Mode="Raw"
                                     Encode="true" />
                             </ExtraParams>
                         <EventMask ShowMask="true" Msg="Đang thực hiện ....." />
                     </ItemDblClick>
-                </DirectEvents>--%>
+                </DirectEvents>
                 </ext:DataView>
+
+        <ext:Window runat="server" ID="wTaoBieuBaoCao" Icon="BookAdd" Title="Khởi tạo Biểu báo cáo" TitleAlign="Center"
+            ButtonAlign="Center" Width="400" Height="250" AutoScroll="true" Hidden="true">
+            <Items>
+                <ext:Panel runat="server" Header="false" Layout="FitLayout" Closable="false">
+                    <Content>
+                        <uc:BieuBC ID="ucBieuBC1" runat="server" Title="" />
+                    </Content>
+                </ext:Panel>
+            </Items>
+            <Buttons>
+                <ext:Button runat="server" ID="btnTaoBaoCao" Text="Tạo Báo cáo" Icon="Add" Width="120">
+                    <DirectEvents>
+                        <Click OnEvent="btnTaoBaoCao_Click">
+                            <EventMask ShowMask="true" Msg="Đang khởi tạo ....." />
+                        </Click>
+                    </DirectEvents>
+                </ext:Button>
+                <ext:Button runat="server" Text="Đóng" Icon="Cross" Width="120">
+                    <Listeners>
+                        <Click Handler="#{wTaoBieuBaoCao}.hide()" />
+                    </Listeners>
+                </ext:Button>
+            </Buttons>
+        </ext:Window>
     </form>
 </body>
 </html>

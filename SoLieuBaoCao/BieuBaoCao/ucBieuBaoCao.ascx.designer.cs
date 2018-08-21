@@ -10,60 +10,60 @@
 namespace SoLieuBaoCao.BieuBaoCao {
     
     
-    public partial class frmBieuBaoCao {
+    public partial class ucBieuBaoCao {
         
         /// <summary>
-        /// form1 control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::Ext.Net.Panel Panel1;
         
         /// <summary>
-        /// vBieuBaoCao control.
+        /// slbMauBieuDinhNghia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.DataView vBieuBaoCao;
+        protected global::Ext.Net.SelectBox slbMauBieuDinhNghia;
         
         /// <summary>
-        /// stoBieuBaoCao control.
+        /// stoBieuDN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Store stoBieuBaoCao;
+        protected global::Ext.Net.Store stoBieuDN;
         
         /// <summary>
-        /// wTaoBieuBaoCao control.
+        /// slbThang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Window wTaoBieuBaoCao;
+        protected global::Ext.Net.SelectBox slbThang;
         
         /// <summary>
-        /// ucBieuBC1 control.
+        /// stoThang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SoLieuBaoCao.BieuBaoCao.ucBieuBaoCao ucBieuBC1;
+        protected global::Ext.Net.Store stoThang;
         
         /// <summary>
-        /// btnTaoBaoCao control.
+        /// txtNam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Button btnTaoBaoCao;
+        protected global::Ext.Net.NumberField txtNam;
     }
 }

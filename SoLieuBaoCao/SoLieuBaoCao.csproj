@@ -92,6 +92,7 @@
     <Content Include="App_Readme\Transformer.NET\LICENSE.txt" />
     <Content Include="App_Readme\Transformer.NET\README.txt" />
     <Content Include="BieuBaoCao\frmBieuBaoCao.aspx" />
+    <Content Include="BieuBaoCao\ucBieuBaoCao.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
     <Content Include="MoHinh\frmChiTieuMauBieu.aspx" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="BieuBaoCao\frmBieuBaoCao.aspx.designer.cs">
       <DependentUpon>frmBieuBaoCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BieuBaoCao\ucBieuBaoCao.ascx.cs">
+      <DependentUpon>ucBieuBaoCao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BieuBaoCao\ucBieuBaoCao.ascx.designer.cs">
+      <DependentUpon>ucBieuBaoCao.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -144,6 +152,7 @@
     <Content Include="App_Readme\Ext.NET\LICENSE" />
     <Content Include="App_Readme\Ext.NET\CHANGELOG.md" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

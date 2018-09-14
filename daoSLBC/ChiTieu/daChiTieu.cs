@@ -37,7 +37,7 @@ namespace daoSLBC.ChiTieu
         {
             try
             {
-                CTTim = lCT.sp_tblChiTieuBaoCao_Tim(CTTim.Ma).Single();
+                CTTim = lCT.sp_tblChiTieuBaoCao_Tim(CTTim.Ma,CTTim.Nhom).Single();
                 return CTTim;
             }
             catch

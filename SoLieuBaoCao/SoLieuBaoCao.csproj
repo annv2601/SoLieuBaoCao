@@ -44,11 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Ext.Net, Version=4.7.1.0, Culture=neutral, PublicKeyToken=2e12ce3d0176cd87, processorArchitecture=MSIL">
       <HintPath>..\packages\Ext.NET.4.7.1\lib\net46\Ext.Net.dll</HintPath>
     </Reference>
     <Reference Include="Ext.Net.Utilities, Version=2.5.0.0, Culture=neutral, PublicKeyToken=2c34ac34702a3c23, processorArchitecture=MSIL">
       <HintPath>..\packages\Ext.NET.Utilities.2.5.0\lib\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -56,6 +63,21 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfViewer">
+      <HintPath>..\..\PdfViewer.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -91,30 +113,77 @@
     <Content Include="App_Readme\Ext.NET.Utilities\README.txt" />
     <Content Include="App_Readme\Transformer.NET\LICENSE.txt" />
     <Content Include="App_Readme\Transformer.NET\README.txt" />
+    <Content Include="BaoCao\frmHienThiBaoCao.aspx" />
     <Content Include="BieuBaoCao\frmBieuBaoCao.aspx" />
+    <Content Include="BieuBaoCao\frmBieuNhapB0205.aspx" />
+    <Content Include="BieuBaoCao\frmBieuNhapBCN.aspx" />
+    <Content Include="BieuBaoCao\frmChiTietB0205.aspx" />
+    <Content Include="BieuBaoCao\frmChiTietSoLieuSTK1.aspx" />
     <Content Include="BieuBaoCao\ucBieuBaoCao.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
+    <Content Include="MoHinh\frmMauBieuBaoCao.aspx" />
     <Content Include="MoHinh\frmChiTieuMauBieu.aspx" />
+    <Content Include="MoHinh\ucMauBieuBaoCao.ascx" />
     <Content Include="MoHinh\ucChiTieuMauBieu.ascx" />
     <Content Include="Resource\CSS\DataView.css" />
     <Content Include="Resource\CSS\examples.css" />
     <Content Include="Resource\CSS\main.css" />
     <Content Include="Resource\Images\BaoCao-Logo.ico" />
+    <Content Include="Resource\Images\Bieu02-05.png" />
     <Content Include="Resource\Images\BieuBaoCao.png" />
     <Content Include="Resource\Images\Logo_BaoCao.jpg" />
     <Content Include="Resource\Images\TaoBaoCao.png" />
     <Content Include="Resource\JS\main.js" />
     <Content Include="Resource\JS\perfect-scrollbar.min.js" />
+    <Content Include="SoLieuPhatHanh\frmChiTietPaypost.aspx" />
+    <Content Include="SoLieuPhatHanh\frmTheoDoiPaypost.aspx" />
+    <Content Include="SoNhatKyChung\frmChiTietSoNhatKy.aspx" />
+    <Content Include="SoNhatKyChung\frmSoNhatKyChung1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\frmHienThiBaoCao.aspx.cs">
+      <DependentUpon>frmHienThiBaoCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frmHienThiBaoCao.aspx.designer.cs">
+      <DependentUpon>frmHienThiBaoCao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BieuBaoCao\frmBieuBaoCao.aspx.cs">
       <DependentUpon>frmBieuBaoCao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BieuBaoCao\frmBieuBaoCao.aspx.designer.cs">
       <DependentUpon>frmBieuBaoCao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmBieuNhapB0205.aspx.cs">
+      <DependentUpon>frmBieuNhapB0205.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmBieuNhapB0205.aspx.designer.cs">
+      <DependentUpon>frmBieuNhapB0205.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmBieuNhapBCN.aspx.cs">
+      <DependentUpon>frmBieuNhapBCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmBieuNhapBCN.aspx.designer.cs">
+      <DependentUpon>frmBieuNhapBCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmChiTietB0205.aspx.cs">
+      <DependentUpon>frmChiTietB0205.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmChiTietB0205.aspx.designer.cs">
+      <DependentUpon>frmChiTietB0205.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmChiTietSoLieuSTK1.aspx.cs">
+      <DependentUpon>frmChiTietSoLieuSTK1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BieuBaoCao\frmChiTietSoLieuSTK1.aspx.designer.cs">
+      <DependentUpon>frmChiTietSoLieuSTK1.aspx</DependentUpon>
     </Compile>
     <Compile Include="BieuBaoCao\ucBieuBaoCao.ascx.cs">
       <DependentUpon>ucBieuBaoCao.ascx</DependentUpon>
@@ -130,12 +199,26 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MoHinh\frmMauBieuBaoCao.aspx.cs">
+      <DependentUpon>frmMauBieuBaoCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoHinh\frmMauBieuBaoCao.aspx.designer.cs">
+      <DependentUpon>frmMauBieuBaoCao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MoHinh\frmChiTieuMauBieu.aspx.cs">
       <DependentUpon>frmChiTieuMauBieu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MoHinh\frmChiTieuMauBieu.aspx.designer.cs">
       <DependentUpon>frmChiTieuMauBieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoHinh\ucMauBieuBaoCao.ascx.cs">
+      <DependentUpon>ucMauBieuBaoCao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoHinh\ucMauBieuBaoCao.ascx.designer.cs">
+      <DependentUpon>ucMauBieuBaoCao.ascx</DependentUpon>
     </Compile>
     <Compile Include="MoHinh\ucChiTieuMauBieu.ascx.cs">
       <DependentUpon>ucChiTieuMauBieu.ascx</DependentUpon>
@@ -145,6 +228,34 @@
       <DependentUpon>ucChiTieuMauBieu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoLieuPhatHanh\frmChiTietPaypost.aspx.cs">
+      <DependentUpon>frmChiTietPaypost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoLieuPhatHanh\frmChiTietPaypost.aspx.designer.cs">
+      <DependentUpon>frmChiTietPaypost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoLieuPhatHanh\frmTheoDoiPaypost.aspx.cs">
+      <DependentUpon>frmTheoDoiPaypost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoLieuPhatHanh\frmTheoDoiPaypost.aspx.designer.cs">
+      <DependentUpon>frmTheoDoiPaypost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoNhatKyChung\frmChiTietSoNhatKy.aspx.cs">
+      <DependentUpon>frmChiTietSoNhatKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoNhatKyChung\frmChiTietSoNhatKy.aspx.designer.cs">
+      <DependentUpon>frmChiTietSoNhatKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoNhatKyChung\frmSoNhatKyChung1.aspx.cs">
+      <DependentUpon>frmSoNhatKyChung1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoNhatKyChung\frmSoNhatKyChung1.aspx.designer.cs">
+      <DependentUpon>frmSoNhatKyChung1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UIHelper\daPhien.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +264,9 @@
     <Content Include="App_Readme\Ext.NET\CHANGELOG.md" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Resource\FileMauExcel\MauBoaoCaoNhanhDonVi.xls" />
+    <Content Include="Resource\FileMauExcel\MauChiTietSTK1.xls" />
+    <Content Include="Resource\FileMauExcel\MauBaoCaoB0205.xls" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,9 +275,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaoBieu\BaoBieu.csproj">
+      <Project>{1a6779a1-3a2a-4956-95eb-230cc68d63a3}</Project>
+      <Name>BaoBieu</Name>
+    </ProjectReference>
     <ProjectReference Include="..\daoSLBC\daoSLBC.csproj">
       <Project>{ec5a70b3-e3b7-477d-99e2-3aef70426f70}</Project>
       <Name>daoSLBC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\daoSLKT\daoSLKT.csproj">
+      <Project>{c91c5b3a-23a9-480f-b196-c6041ee6043d}</Project>
+      <Name>daoSLKT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\daoSLTH\daoSLTH.csproj">
+      <Project>{92403b52-30d4-4c19-bcd0-41b5826c0d2d}</Project>
+      <Name>daoSLTH</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

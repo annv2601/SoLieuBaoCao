@@ -17,7 +17,8 @@ namespace daoSLBC.DanhMuc
             Sửa_số_liệu=2,
             Gửi_Báo_cáo=3,
             Duyệt_Báo_cáo=4,
-            Khóa_Báo_cáo=5
+            Khóa_Báo_cáo=5,
+            Khởi_tạo_lại_Báo_cáo=6
         }
 
         private linqDanhMucDataContext lDM = new linqDanhMucDataContext();

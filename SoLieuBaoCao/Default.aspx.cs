@@ -66,16 +66,18 @@ namespace SoLieuBaoCao
 
             root.Expanded = true;
             treeStore.Root.Add(root);
+            treeStore.GetRootNode().ExpandChildren(true);
             ChucNangTree.Store.Add(treeStore);
+            
         }
         #endregion
 
         protected void btnDangNhap_click(object sender, DirectEventArgs e)
         {
             txtMaNSD.Text = "";
-            txtMaDonVi.Text = "";
-            txtMaNSD.Focus();
+            txtMaDonVi.Text = "";            
             wDangNhap.Show();
+            txtMaNSD.Focus();
         }
 
         protected void btnKiemTraDangNhap_click(object sender, DirectEventArgs e)
@@ -90,6 +92,23 @@ namespace SoLieuBaoCao
                 btnDangNhap.Text = dDN.TenNguoiSuDung;
                 UIHelper.daPhien.MaNSD = dDN.MaNSD;
                 UIHelper.daPhien.MaDonVi = dDN.MaDonVi;
+                UIHelper.daPhien.TenNguoiSuDung = dDN.TenNguoiSuDung;
+
+                UIHelper.daPhien.ThongTinDN = dDN.TTDN;
+
+                Notification.Show(new NotificationConfig
+                {
+                    Title = "Hoàn thành",
+                    Icon = Icon.Information,
+                    AlignCfg = new NotificationAlignConfig
+                    {
+                        ElementAnchor = AnchorPoint.Center,
+                        TargetAnchor = AnchorPoint.Center,
+                        OffsetX = -20,
+                        OffsetY = 20                        
+                    },
+                    Html = "Đăng nhập Thành công vào hệ thống"
+                });
             }
             else
             {
@@ -97,6 +116,8 @@ namespace SoLieuBaoCao
                 btnDangNhap.Text = "[Đăng nhập]";
                 UIHelper.daPhien.MaNSD = "";
                 UIHelper.daPhien.MaDonVi = "";
+                UIHelper.daPhien.TenNguoiSuDung = "";
+                UIHelper.daPhien.ThongTinDN = null;
             }
         }
     }

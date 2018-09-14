@@ -74,4 +74,9 @@
       <Column Name="urlAnh" Type="System.String" DbType="VarChar(33) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao_CapNhat_DT_CP" Method="sp_tblBieuBaoCao_CapNhat_DT_CP">
+    <Parameter Name="MaBieuBaoCao" Parameter="maBieuBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="BCN_ThucHien" Parameter="bCN_ThucHien" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

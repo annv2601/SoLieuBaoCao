@@ -27,6 +27,12 @@ namespace SoLieuBaoCao.MoHinh
             stoMauBieu.DataSource = dMB.DanhSach();
             stoMauBieu.DataBind();
         }
+
+        public int Nhom
+        {
+            get { return int.Parse(txtNhom.Text); }
+            set { txtNhom.Text = value.ToString(); }
+        }
         #endregion
 
         #region Su kien
@@ -36,6 +42,11 @@ namespace SoLieuBaoCao.MoHinh
             dCTMB.CTMB.IDMauBieu = int.Parse(cboBieuBaoCao.SelectedItem.Value);
             stoChiTieuMB.DataSource = dCTMB.DanhSach();
             stoChiTieuMB.DataBind();
+
+            daMauBieu dMB = new daMauBieu();
+            dMB.MB.ID = int.Parse(cboBieuBaoCao.SelectedItem.Value);
+            dMB.ThongTin();
+            Nhom = dMB.MB.Nhom.Value;
         }
 
         [DirectMethod(Namespace = "BangChiTieuMBX")]
@@ -121,16 +132,27 @@ namespace SoLieuBaoCao.MoHinh
         {
             daChiTieu dCT = new daChiTieu();
             dCT.CTTim.Ma = newvalue;
+            dCT.CTTim.Nhom = Nhom;
+
+            daChiTieuDanSuat dDS = new daChiTieuDanSuat();
+            dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+            dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+
+            if (newvalue=="")
+            {
+                dDS.PT.MaChiTieuDanSuat = oldvalue;
+                dDS.XoaDanSuatCong();
+                ucChiTieuMB1.DSCongOK(id, true);
+                return;
+            }
+
             if (dCT.Tim() == null)
             {
                 ucChiTieuMB1.DSCongOK(id, false);
                 X.Msg.Alert("", "Không tìm thấy chỉ tiêu dẫn suất có mã là: " + newvalue).Show();
             }
             else
-            {
-                daChiTieuDanSuat dDS = new daChiTieuDanSuat();
-                dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
-                dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+            {                
                 dDS.PT.IDChiTieuDanSuat = dCT.CTTim.ID;
                 dDS.PT.MaChiTieuDanSuat = newvalue.ToUpper();
                 dDS.PT.HeSo = 1;
@@ -145,6 +167,20 @@ namespace SoLieuBaoCao.MoHinh
         {
             daChiTieu dCT = new daChiTieu();
             dCT.CTTim.Ma = newvalue;
+            dCT.CTTim.Nhom = Nhom;
+
+            daChiTieuDanSuat dDS = new daChiTieuDanSuat();
+            dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+            dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+
+            if (newvalue == "")
+            {
+                dDS.PT.MaChiTieuDanSuat = oldvalue;
+                dDS.XoaDanSuatTru();
+                ucChiTieuMB1.DSruOK(id, true);
+                return;
+            }
+
             if (dCT.Tim() == null)
             {
                 ucChiTieuMB1.DSruOK(id, false);
@@ -152,9 +188,6 @@ namespace SoLieuBaoCao.MoHinh
             }
             else
             {
-                daChiTieuDanSuat dDS = new daChiTieuDanSuat();
-                dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
-                dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
                 dDS.PT.IDChiTieuDanSuat = dCT.CTTim.ID;
                 dDS.PT.MaChiTieuDanSuat = newvalue.ToUpper();
                 dDS.PT.HeSo = 1;
@@ -173,16 +206,27 @@ namespace SoLieuBaoCao.MoHinh
             }
             daChiTieu dCT = new daChiTieu();
             dCT.CTTim.Ma = newvalue;
+            dCT.CTTim.Nhom = Nhom;
+
+            daChiTieuDanSuat dDS = new daChiTieuDanSuat();
+            dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+            dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+
+            if (newvalue == "")
+            {
+                dDS.PT.MaChiTieuDanSuat = oldvalue;
+                dDS.XoaDanSuatNhan();
+                ucChiTieuMB1.DSNhanOK(id, true);
+                return;
+            }
+
             if (dCT.Tim() == null)
             {
                 ucChiTieuMB1.DSNhanOK(id, false);
                 X.Msg.Alert("", "Không tìm thấy chỉ tiêu dẫn suất có mã là: " + newvalue).Show();
             }
             else
-            {
-                daChiTieuDanSuat dDS = new daChiTieuDanSuat();
-                dDS.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
-                dDS.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+            {                
                 dDS.PT.IDChiTieuDanSuat = dCT.CTTim.ID;
                 dDS.PT.MaChiTieuDanSuat = newvalue.ToUpper();
 
@@ -207,6 +251,19 @@ namespace SoLieuBaoCao.MoHinh
         {
             daChiTieu dCT = new daChiTieu();
             dCT.MSCT.MSCT = newvalue;
+
+            daChiTieuMSCT dMSCT = new daChiTieuMSCT();
+            dMSCT.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+            dMSCT.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+
+            if (newvalue == "")
+            {
+                dMSCT.PT.MSCT = oldvalue;
+                dMSCT.XoaMSCTCong();
+                ucChiTieuMB1.MSCTCongOK(id, true);
+                return;
+            }
+
             if (dCT.TimMSCT() == null)
             {
                 ucChiTieuMB1.MSCTCongOK(id, false);
@@ -214,9 +271,6 @@ namespace SoLieuBaoCao.MoHinh
             }
             else
             {
-                daChiTieuMSCT dMSCT = new daChiTieuMSCT();
-                dMSCT.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
-                dMSCT.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
                 dMSCT.PT.MSCT = newvalue;
 
                 dMSCT.ThemMSCTCong();
@@ -229,20 +283,30 @@ namespace SoLieuBaoCao.MoHinh
         {
             daChiTieu dCT = new daChiTieu();
             dCT.MSCT.MSCT = newvalue;
+
+            daChiTieuMSCT dMSCT = new daChiTieuMSCT();
+            dMSCT.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
+            dMSCT.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
+
+            if (newvalue == "")
+            {
+                dMSCT.PT.MSCT = oldvalue;
+                dMSCT.XoaMSCTTru();
+                ucChiTieuMB1.MSCTTruOK(id, true);
+                return;
+            }
+
             if (dCT.TimMSCT() == null)
             {
-                ucChiTieuMB1.DSCongOK(id, false);
+                ucChiTieuMB1.MSCTTruOK(id, false);
                 X.Msg.Alert("", "Không tìm thấy chỉ tiêu trong STK1 có mã là: " + newvalue).Show();
             }
             else
             {
-                daChiTieuMSCT dMSCT = new daChiTieuMSCT();
-                dMSCT.PT.IDMauBieu = ucChiTieuMB1.IDmauBieu;
-                dMSCT.PT.IDChiTieu = ucChiTieuMB1.IDChiTieu;
                 dMSCT.PT.MSCT = newvalue;
 
                 dMSCT.ThemMSCTTru();
-                ucChiTieuMB1.DSCongOK(id, true);
+                ucChiTieuMB1.MSCTTruOK(id, true);
             }
         }
         #endregion

@@ -33,6 +33,7 @@
 <body>
     <ext:ResourceManager runat="server" Locale="vi-VN" Theme="Triton" />
     <form id="form1" runat="server">
+        <ext:Hidden runat="server" ID="txtNhom" />
         <ext:GridPanel runat="server" ID="grdChiTieuMB" TitleAlign="Center" MinHeight="300" Height="1000">
             <Store>
                 <ext:Store runat="server" ID="stoChiTieuMB" OnReadData="DanhSachChiTieuMauBieuTD">

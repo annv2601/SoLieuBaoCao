@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuPhatHanh" Class="linqPhatHanhPayPostDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuPhatHanh;User ID=sa" SettingsObjectName="daoSLPH.Properties.Settings" SettingsPropertyName="SoLieuPhatHanhConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblPhatHanhPayPost_Them" Method="sp_tblPhatHanhPayPost_Them">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="NgayPhatHanh" Parameter="ngayPhatHanh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MAC" Parameter="mAC" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TranTime" Parameter="tranTime" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="TranCat" Parameter="tranCat" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="InvokedFrom" Parameter="invokedFrom" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TranID" Parameter="tranID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PAC" Parameter="pAC" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TranAmount" Parameter="tranAmount" Type="System.Double" DbType="Float" />
+    <Parameter Name="SenderName" Parameter="senderName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo1" Parameter="addInfo1" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo2" Parameter="addInfo2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo3" Parameter="addInfo3" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo4" Parameter="addInfo4" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo5" Parameter="addInfo5" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo6" Parameter="addInfo6" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo7" Parameter="addInfo7" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AddInfo8" Parameter="addInfo8" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fee" Parameter="fee" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Add_Info_Fee_01" Parameter="add_Info_Fee_01" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Add_Info_Fee_02" Parameter="add_Info_Fee_02" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Add_Info_Fee_03" Parameter="add_Info_Fee_03" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Add_Info_Fee_04" Parameter="add_Info_Fee_04" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Add_Info_Fee_05" Parameter="add_Info_Fee_05" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblPhatHanhPayPost_ThongTin" Method="sp_tblPhatHanhPayPost_ThongTin">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblPhatHanhPayPost_ThongTinResult">
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NgayPhatHanh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MAC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TranTime" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TranCat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="InvokedFrom" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TranID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAC" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AccountID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TranAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SenderName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddInfo8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Add_Info_Fee_01" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Add_Info_Fee_02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Add_Info_Fee_03" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Add_Info_Fee_04" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Add_Info_Fee_05" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

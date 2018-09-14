@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqDuLieuChiTietSTK1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblDuLieuBaoCaoNhanh_TinhDanSuat_Nhap" Method="sp_tblDuLieuBaoCaoNhanh_TinhDanSuat_Nhap">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBieuBaoCao" Parameter="maBieuBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="IDChiTieuNhap" Parameter="iDChiTieuNhap" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ChenhLech" Parameter="chenhLech" Type="System.Decimal" DbType="Decimal(25,3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDuLieuBaoCaoNhanh_ChiTiet_STK1" Method="sp_tblDuLieuBaoCaoNhanh_ChiTiet_STK1">
+    <Parameter Name="MaBieuBaoCao" Parameter="maBieuBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDuLieuBaoCaoNhanh_ChiTiet_STK1_ThoiGian" Method="sp_tblDuLieuBaoCaoNhanh_ChiTiet_STK1_ThoiGian">
+    <Parameter Name="MaBieuBaoCao" Parameter="maBieuBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDuLieuBaoCaoNhanh_ChiTiet_STK1_DonVi" Method="sp_tblDuLieuBaoCaoNhanh_ChiTiet_STK1_DonVi">
+    <Parameter Name="MaBieuBaoCao" Parameter="maBieuBaoCao" Type="System.String" DbType="NVarChar(16)" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

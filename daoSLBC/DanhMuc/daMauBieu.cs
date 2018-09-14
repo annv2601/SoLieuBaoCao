@@ -28,6 +28,12 @@ namespace daoSLBC.DanhMuc
             }
         }
 
+        public void ThemSua()
+        {
+            lMB.sp_tblMauBieuBaoCaoDinhNghia_ThemSua(MB.ID, MB.Ma, MB.Ten, MB.TenTat, MB.TieuDe1, MB.TieuDe2, MB.TieuDe3, MB.Muc, MB.Cap,
+                MB.GhiChu, MB.NgayApDung, MB.NgayKetThuc, MB.NguoiTao,MB.Nhom);
+        }
+
         public DataTable DanhSach()
         {
             List<sp_tblMauBieuBaoCaoDinhNghia_DanhSachResult> lst;

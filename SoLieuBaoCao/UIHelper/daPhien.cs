@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using daoSLBC.Database.HeThong;
 
 namespace SoLieuBaoCao.UIHelper
 {
@@ -23,6 +24,18 @@ namespace SoLieuBaoCao.UIHelper
         {
             get { return HttpContext.Current.Session["slbcIsMaDonVi"] == null ? "" : (string)HttpContext.Current.Session["slbcIsMaDonVi"]; }
             set { HttpContext.Current.Session["slbcIsMaDonVi"] = value; }
+        }
+
+        public static sp_KiemTraDangNhapResult ThongTinDN
+        {
+            get { return HttpContext.Current.Session["slbcIsTTDangNhap"] == null ? new sp_KiemTraDangNhapResult() : (sp_KiemTraDangNhapResult)HttpContext.Current.Session["slbcIsTTDangNhap"]; }
+            set { HttpContext.Current.Session["slbcIsTTDangNhap"] = value; }
+        }
+
+        public static string TenNguoiSuDung
+        {
+            get { return HttpContext.Current.Session["slbcIsTenNSD"] == null ? "" : (string)HttpContext.Current.Session["slbcIsTenNSD"]; }
+            set { HttpContext.Current.Session["slbcIsTenNSD"] = value; }
         }
 
         public static string LayDiaChiURL(string rDuongDan)
@@ -58,5 +71,13 @@ namespace SoLieuBaoCao.UIHelper
                 HttpContext.Current.Response.Redirect("frmChuaLogin.aspx");
             }
         }
+
+        public static string TenFileInBaoCao(string rTenDau)
+        {
+            string _tenfile;
+            _tenfile = "//" + "DataPDF" + "//" + rTenDau + DateTime.Now.ToString("yyyyMMddHHmmss") + ".pdf";
+            return _tenfile;
+        }
+
     }
 }

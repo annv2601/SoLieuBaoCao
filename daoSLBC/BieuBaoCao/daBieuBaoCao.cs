@@ -18,7 +18,7 @@ namespace daoSLBC.BieuBaoCao
 
         public string SinhMaBaoCao()
         {
-            BieuBC.MaBaoCao = daTienIch.LayBenPhai("0"+BieuBC.Thang.ToString(),2) + BieuBC.Nam.ToString() + BieuBC.DonVi;
+            BieuBC.MaBaoCao = BieuBC.IDBieuDinhNghia.ToString()+daTienIch.LayBenPhai("0"+BieuBC.Thang.ToString(),2) + BieuBC.Nam.ToString() + BieuBC.DonVi;
             return BieuBC.MaBaoCao;
         }
 
@@ -45,6 +45,11 @@ namespace daoSLBC.BieuBaoCao
             lBBC.sp_tblBieuBaoCao_DoiTrangThai(BieuBC.MaBaoCao, BieuBC.TrangThai);
         }
 
+        public void CapNhatDoanhThuChiPhi(bool LaBCN)
+        {
+            lBBC.sp_tblBieuBaoCao_CapNhat_DT_CP(BieuBC.MaBaoCao, LaBCN);
+        }
+
         public DataTable DanhSach()
         {
             List<sp_tblBieuBaoCao_DanhSachResult> lst;
@@ -57,7 +62,7 @@ namespace daoSLBC.BieuBaoCao
             pt.urlAnh = "../Resource/Images/TaoBaoCao.png";
             lst.Add(pt);
 
-            return daTienIch.ToDataTable(lst);
+            return daTienIch.ToDataTable(lst.OrderBy(x=>x.STT).ToList());
         }
 
         public DataTable DanhSach_ThoiGian()

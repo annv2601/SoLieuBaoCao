@@ -100,6 +100,14 @@
                 }
 
                 tabPanel.setActiveTab(tab);
+
+
+                var tl = App.ChucNangTree,
+                    ct = tl.ownerCt;
+                App.ChucNangTree.setMicro(true);
+                App.MicroToggleBtn.pressed = true;
+                    tl.macroWidth = ct.getWidth();
+                    ct.setWidth(tl.toolsElement.getWidth());                
             }
             
         }
@@ -225,6 +233,18 @@
                 </ext:Button>
             </Buttons>
         </ext:Window>
+
+         <%--Bấm phím Enter để đăng nhập--%>
+    <ext:KeyMap ID="KeyMap1" runat="server" Target="={#{wDangNhap}.getBody()}">    
+        <Binding>
+        <ext:KeyBinding Handler="#{btnKiemTraDangNhap}.fireEvent('click');">
+            <Keys>
+                <ext:Key Code="ENTER" />                
+            </Keys>
+        </ext:KeyBinding>
+        </Binding>
+    </ext:KeyMap>
+    <%--------------------------%>
     </form>
 </body>
 </html>

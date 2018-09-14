@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuKeToan" Class="linqSoNhatKyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuKeToan;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLKT.Properties.Settings" SettingsPropertyName="SoLieuKeToanConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblSoNhatKy_TongHop1" Method="sp_tblSoNhatKy_TongHop1">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblSoNhatKy_TongHop1Result">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NGAY_HT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NGAY_CT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ND" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TK_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TK_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TIEN_NO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIEN_CO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSoNhatKy_ChiTiet" Method="sp_tblSoNhatKy_ChiTiet">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="ND" Parameter="nD" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NGAY_HT" Parameter="nGAY_HT" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblSoNhatKy_ChiTietResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NGAY_HT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SO_CT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NGAY_CT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ND" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TK_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TKE_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DTU_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SP_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TK_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TKE_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DTU_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SP_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TIEN_NO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIEN_CO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MA_DVI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NOTE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaNSD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSoNhatKy_TongHop2" Method="sp_tblSoNhatKy_TongHop2">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NoCo" Parameter="noCo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_tblSoNhatKy_TongHop2Result">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NGAY_HT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NGAY_CT" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ND" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TK_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TK_CO" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TIEN_NO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIEN_CO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSoNhatKy_ChiTiet2" Method="sp_tblSoNhatKy_ChiTiet2">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NgayHT" Parameter="ngayHT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TaiKhoan" Parameter="taiKhoan" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NoCo" Parameter="noCo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_tblSoNhatKy_ChiTiet2Result">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="NGAY_HT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SO_CT" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NGAY_CT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ND" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TK_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TKE_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DTU_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SP_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TK_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TKE_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DTU_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SP_CO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TIEN_NO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIEN_CO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MA_DVI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NOTE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaNSD" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

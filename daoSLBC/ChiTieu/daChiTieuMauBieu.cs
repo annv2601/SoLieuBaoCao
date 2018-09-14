@@ -35,6 +35,16 @@ namespace daoSLBC.ChiTieu
                 CTMB.NhapTay, CTMB.LayTuDong, CTMB.NguoiTao);
         }
 
+        public void Xoa()
+        {
+            lCTMB.sp_tblChiTieuTheoMauBieu_Xoa(CTMB.IDMauBieu, CTMB.IDChiTieu);
+        }
+
+        public void KhoiTao()
+        {
+            lCTMB.sp_tblChiTieuTheoMauBieu_KhoiTao(CTMB.IDMauBieu, CTMB.IDChiTieu,CTMB.NguoiTao);
+        }
+
         public DataTable DanhSach()
         {
             List<sp_tblChiTieuTheoMauBieu_DanhSachResult> lst;

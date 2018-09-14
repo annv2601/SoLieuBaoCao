@@ -1,26 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqChiTieuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.sp_tblChiTieuBaoCao_DanhSach" Method="sp_tblChiTieuBaoCao_DanhSach">
-    <Parameter Name="IDNhom" Parameter="iDNhom" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_tblChiTieuBaoCao_DanhSachResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IDBieuBaoCao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Ma" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="IDDonViTinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThuTu" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="InNghieng" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
-      <Column Name="IDChiTieuTren" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TuDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="IDNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LaChiTieuDoanhThu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="LaChiTieuChiPhi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+  <Function Name="dbo.sp_tblMSCT_Tim" Method="sp_tblMSCT_Tim">
+    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblMSCT_TimResult">
+      <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_tblChiTieuBaoCao_ThongTin" Method="sp_tblChiTieuBaoCao_ThongTin">
@@ -44,10 +29,36 @@
       <Column Name="IDNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LaChiTieuDoanhThu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="LaChiTieuChiPhi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuBaoCao_DanhSach" Method="sp_tblChiTieuBaoCao_DanhSach">
+    <Parameter Name="IDNhom" Parameter="iDNhom" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblChiTieuBaoCao_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDBieuBaoCao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDDonViTinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThuTu" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InNghieng" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="IDChiTieuTren" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TuDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IDNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LaChiTieuDoanhThu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LaChiTieuChiPhi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_tblChiTieuBaoCao_Tim" Method="sp_tblChiTieuBaoCao_Tim">
     <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Nhom" Parameter="nhom" Type="System.Int32" DbType="Int" />
     <ElementType Name="sp_tblChiTieuBaoCao_TimResult">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IDBieuBaoCao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -67,14 +78,7 @@
       <Column Name="IDNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LaChiTieuDoanhThu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="LaChiTieuChiPhi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_tblMSCT_Tim" Method="sp_tblMSCT_Tim">
-    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
-    <ElementType Name="sp_tblMSCT_TimResult">
-      <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
-      <Column Name="Nhom" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

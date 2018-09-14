@@ -6,6 +6,12 @@
 <head runat="server">
     <title></title>
     <link href="../Resource/CSS/DataView.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var DinhDangSo = function (value) {
+            
+            return "<b>"+value+"</b>";
+        };
+    </script>
 </head>
 <body>
     <ext:ResourceManager runat="server" Locale="vi-VN" />
@@ -46,7 +52,10 @@
                                 <div class="thumb-wrap" id="{STT}">
                                     <div class="thumb"><img src="{urlAnh}" title="{TenBieuBaoCao}"></div>
                                     <strong>{TenBieuBaoCao}</strong>
+                                    <strong>Tháng: {Thang}  Năm: {Nam}</strong>
                                     <span>Mã: {MaBaoCao}</span>
+                                    <strong>DT: {TongDoanhThu}</strong>
+                                    <strong>CP: {TongChiPhi}</strong>
                                 </div>
                             </tpl>
                         </html>                   

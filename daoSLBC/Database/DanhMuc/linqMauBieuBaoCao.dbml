@@ -16,6 +16,7 @@
       <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_tblMauBieuBaoCaoDinhNghia_ThongTin" Method="sp_tblMauBieuBaoCaoDinhNghia_ThongTin">
@@ -35,6 +36,24 @@
       <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblMauBieuBaoCaoDinhNghia_ThemSua" Method="sp_tblMauBieuBaoCaoDinhNghia_ThemSua">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TenTat" Parameter="tenTat" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TieuDe1" Parameter="tieuDe1" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TieuDe2" Parameter="tieuDe2" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TieuDe3" Parameter="tieuDe3" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Muc" Parameter="muc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cap" Parameter="cap" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GhiChu" Parameter="ghiChu" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="NgayApDung" Parameter="ngayApDung" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NgayKetThuc" Parameter="ngayKetThuc" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NguoiTao" Parameter="nguoiTao" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Nhom" Parameter="nhom" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

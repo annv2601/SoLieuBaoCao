@@ -75,6 +75,14 @@ namespace daoSLBC.Database.HeThong
 		
 		private string _KetQuaKiemTra;
 		
+		private string _TenDonVi;
+		
+		private string _TenTatDonVi;
+		
+		private string _TenRutGonDonVi;
+		
+		private string _MaSTK1;
+		
 		public sp_KiemTraDangNhapResult()
 		{
 		}
@@ -91,6 +99,70 @@ namespace daoSLBC.Database.HeThong
 				if ((this._KetQuaKiemTra != value))
 				{
 					this._KetQuaKiemTra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDonVi", DbType="NVarChar(80)")]
+		public string TenDonVi
+		{
+			get
+			{
+				return this._TenDonVi;
+			}
+			set
+			{
+				if ((this._TenDonVi != value))
+				{
+					this._TenDonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTatDonVi", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string TenTatDonVi
+		{
+			get
+			{
+				return this._TenTatDonVi;
+			}
+			set
+			{
+				if ((this._TenTatDonVi != value))
+				{
+					this._TenTatDonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenRutGonDonVi", DbType="NVarChar(40) NOT NULL", CanBeNull=false)]
+		public string TenRutGonDonVi
+		{
+			get
+			{
+				return this._TenRutGonDonVi;
+			}
+			set
+			{
+				if ((this._TenRutGonDonVi != value))
+				{
+					this._TenRutGonDonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSTK1", DbType="NVarChar(10)")]
+		public string MaSTK1
+		{
+			get
+			{
+				return this._MaSTK1;
+			}
+			set
+			{
+				if ((this._MaSTK1 != value))
+				{
+					this._MaSTK1 = value;
 				}
 			}
 		}

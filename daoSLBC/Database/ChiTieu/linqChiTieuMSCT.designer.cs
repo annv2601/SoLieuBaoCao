@@ -63,31 +63,45 @@ namespace daoSLBC.Database.ChiTieu
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTCong_DanhSach")]
-		public ISingleResult<sp_tblChiTieuGhepMSCTCong_DanhSachResult> sp_tblChiTieuGhepMSCTCong_DanhSach([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu)
+		public ISingleResult<sp_tblChiTieuGhepMSCTCong_DanhSachResult> sp_tblChiTieuGhepMSCTCong_DanhSach([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiSoLieu", DbType="NVarChar(20)")] string loaiSoLieu)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, loaiSoLieu);
 			return ((ISingleResult<sp_tblChiTieuGhepMSCTCong_DanhSachResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTTru_Them")]
-		public int sp_tblChiTieuGhepMSCTTru_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MSCT", DbType="NVarChar(20)")] string mSCT)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTTru_Xoa")]
+		public int sp_tblChiTieuGhepMSCTTru_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MSCT", DbType="NVarChar(20)")] string mSCT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiSoLieu", DbType="NVarChar(20)")] string loaiSoLieu)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, mSCT);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, mSCT, loaiSoLieu);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTCong_Them")]
-		public int sp_tblChiTieuGhepMSCTCong_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MSCT", DbType="NVarChar(20)")] string mSCT)
+		public int sp_tblChiTieuGhepMSCTCong_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MSCT", DbType="NVarChar(20)")] string mSCT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiSoLieu", DbType="NVarChar(20)")] string loaiSoLieu)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, mSCT);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, mSCT, loaiSoLieu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTCong_Xoa")]
+		public int sp_tblChiTieuGhepMSCTCong_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MSCT", DbType="NVarChar(20)")] string mSCT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiSoLieu", DbType="NVarChar(20)")] string loaiSoLieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, mSCT, loaiSoLieu);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTTru_DanhSach")]
-		public ISingleResult<sp_tblChiTieuGhepMSCTTru_DanhSachResult> sp_tblChiTieuGhepMSCTTru_DanhSach([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu)
+		public ISingleResult<sp_tblChiTieuGhepMSCTTru_DanhSachResult> sp_tblChiTieuGhepMSCTTru_DanhSach([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiSoLieu", DbType="NVarChar(20)")] string loaiSoLieu)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, loaiSoLieu);
 			return ((ISingleResult<sp_tblChiTieuGhepMSCTTru_DanhSachResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuGhepMSCTTru_Them")]
+		public int sp_tblChiTieuGhepMSCTTru_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDMauBieu", DbType="Int")] System.Nullable<int> iDMauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MSCT", DbType="NVarChar(20)")] string mSCT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiSoLieu", DbType="NVarChar(20)")] string loaiSoLieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDMauBieu, iDChiTieu, mSCT, loaiSoLieu);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -103,6 +117,8 @@ namespace daoSLBC.Database.ChiTieu
 		private string _MSCT;
 		
 		private string _TenMSCT;
+		
+		private string _LoaiSoLieu;
 		
 		private System.Nullable<System.DateTime> _NgayHeThong;
 		
@@ -190,6 +206,22 @@ namespace daoSLBC.Database.ChiTieu
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiSoLieu", DbType="NVarChar(20)")]
+		public string LoaiSoLieu
+		{
+			get
+			{
+				return this._LoaiSoLieu;
+			}
+			set
+			{
+				if ((this._LoaiSoLieu != value))
+				{
+					this._LoaiSoLieu = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHeThong", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NgayHeThong
 		{
@@ -219,6 +251,8 @@ namespace daoSLBC.Database.ChiTieu
 		private string _MSCT;
 		
 		private string _TenMSCT;
+		
+		private string _LoaiSoLieu;
 		
 		private System.Nullable<System.DateTime> _NgayHeThong;
 		
@@ -302,6 +336,22 @@ namespace daoSLBC.Database.ChiTieu
 				if ((this._TenMSCT != value))
 				{
 					this._TenMSCT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiSoLieu", DbType="NVarChar(20)")]
+		public string LoaiSoLieu
+		{
+			get
+			{
+				return this._LoaiSoLieu;
+			}
+			set
+			{
+				if ((this._LoaiSoLieu != value))
+				{
+					this._LoaiSoLieu = value;
 				}
 			}
 		}

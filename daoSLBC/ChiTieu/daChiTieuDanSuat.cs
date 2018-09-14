@@ -31,6 +31,21 @@ namespace daoSLBC.ChiTieu
             lDS.sp_tblChiTieuDanSuatNhan_Them(PT.IDMauBieu, PT.IDChiTieu, PT.IDChiTieuDanSuat, PT.MaChiTieuDanSuat, PT.HeSo);
         }
 
+        public void XoaDanSuatCong()
+        {
+            lDS.sp_tblChiTieuDanSuatCong_Xoa(PT.IDMauBieu, PT.IDChiTieu, PT.MaChiTieuDanSuat);
+        }
+
+        public void XoaDanSuatTru()
+        {
+            lDS.sp_tblChiTieuDanSuatTru_Xoa(PT.IDMauBieu, PT.IDChiTieu, PT.MaChiTieuDanSuat);
+        }
+
+        public void XoaDanSuatNhan()
+        {
+            lDS.sp_tblChiTieuDanSuatNhan_Xoa(PT.IDMauBieu, PT.IDChiTieu, PT.MaChiTieuDanSuat);
+        }
+
         public DataTable DanhSachDanSuatCong()
         {
             List<sp_tblChiTieuDanSuatCong_DanhSachResult> lst;

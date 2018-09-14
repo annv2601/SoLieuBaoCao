@@ -92,6 +92,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>linqMauBieuBaoCao.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\DuLieuBaoCao\clsTinhDanSuat.cs" />
+    <Compile Include="Database\DuLieuBaoCao\linqDuLieuBaoCaoB0205.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDuLieuBaoCaoB0205.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DuLieuBaoCao\linqDuLieuBaocaoTapHop.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDuLieuBaocaoTapHop.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DuLieuBaoCao\linqDuLieuBCN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDuLieuBCN.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DuLieuBaoCao\linqDuLieuChiTietSTK1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDuLieuChiTietSTK1.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\HeThong\linqChucNang.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +128,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>linqSoLieuSTK1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DuLieuBaoCao\daDuLieuBaoCaoB0205.cs" />
+    <Compile Include="DuLieuBaoCao\daDuLieuBaoCaoTapHop.cs" />
+    <Compile Include="DuLieuBaoCao\daDuLieuBCN.cs" />
+    <Compile Include="DuLieuBaoCao\daDuLieuChiTietSTK.cs" />
     <Compile Include="HeThong\daChucNang.cs" />
     <Compile Include="HeThong\daDangNhap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +140,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SoLieuNgoai\daSoLieuSTK1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -181,6 +207,38 @@
     </None>
     <None Include="Database\DanhMuc\linqMauBieuBaoCao.dbml.layout">
       <DependentUpon>linqMauBieuBaoCao.dbml</DependentUpon>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuBaoCaoB0205.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDuLieuBaoCaoB0205.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuBaoCaoB0205.dbml.layout">
+      <DependentUpon>linqDuLieuBaoCaoB0205.dbml</DependentUpon>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuBaocaoTapHop.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDuLieuBaocaoTapHop.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuBaocaoTapHop.dbml.layout">
+      <DependentUpon>linqDuLieuBaocaoTapHop.dbml</DependentUpon>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuBCN.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDuLieuBCN.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuBCN.dbml.layout">
+      <DependentUpon>linqDuLieuBCN.dbml</DependentUpon>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuChiTietSTK1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDuLieuChiTietSTK1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\DuLieuBaoCao\linqDuLieuChiTietSTK1.dbml.layout">
+      <DependentUpon>linqDuLieuChiTietSTK1.dbml</DependentUpon>
     </None>
     <None Include="Database\HeThong\linqChucNang.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

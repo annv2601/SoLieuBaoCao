@@ -96,6 +96,13 @@ namespace daoSLBC.Database.BieuBaoCao
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), thang, nam);
 			return ((ISingleResult<sp_tblBieuBaoCao_DanhSach_ThoiGianResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblBieuBaoCao_CapNhat_DT_CP")]
+		public int sp_tblBieuBaoCao_CapNhat_DT_CP([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBieuBaoCao", DbType="NVarChar(16)")] string maBieuBaoCao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BCN_ThucHien", DbType="Bit")] System.Nullable<bool> bCN_ThucHien)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBieuBaoCao, bCN_ThucHien);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_tblBieuBaoCao_ThongTinResult

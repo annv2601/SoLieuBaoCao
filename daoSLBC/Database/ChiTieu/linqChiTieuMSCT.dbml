@@ -3,12 +3,49 @@
   <Function Name="dbo.sp_tblChiTieuGhepMSCTCong_DanhSach" Method="sp_tblChiTieuGhepMSCTCong_DanhSach">
     <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LoaiSoLieu" Parameter="loaiSoLieu" Type="System.String" DbType="NVarChar(20)" />
     <ElementType Name="sp_tblChiTieuGhepMSCTCong_DanhSachResult">
       <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="IDMauBieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IDChiTieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="LoaiSoLieu" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTTru_Xoa" Method="sp_tblChiTieuGhepMSCTTru_Xoa">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LoaiSoLieu" Parameter="loaiSoLieu" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTCong_Them" Method="sp_tblChiTieuGhepMSCTCong_Them">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LoaiSoLieu" Parameter="loaiSoLieu" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTCong_Xoa" Method="sp_tblChiTieuGhepMSCTCong_Xoa">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LoaiSoLieu" Parameter="loaiSoLieu" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuGhepMSCTTru_DanhSach" Method="sp_tblChiTieuGhepMSCTTru_DanhSach">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LoaiSoLieu" Parameter="loaiSoLieu" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblChiTieuGhepMSCTTru_DanhSachResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IDMauBieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDChiTieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="LoaiSoLieu" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
@@ -16,24 +53,7 @@
     <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
     <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
     <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LoaiSoLieu" Parameter="loaiSoLieu" Type="System.String" DbType="NVarChar(20)" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_tblChiTieuGhepMSCTCong_Them" Method="sp_tblChiTieuGhepMSCTCong_Them">
-    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
-    <Parameter Name="MSCT" Parameter="mSCT" Type="System.String" DbType="NVarChar(20)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_tblChiTieuGhepMSCTTru_DanhSach" Method="sp_tblChiTieuGhepMSCTTru_DanhSach">
-    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_tblChiTieuGhepMSCTTru_DanhSachResult">
-      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="IDMauBieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDChiTieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MSCT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="TenMSCT" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
-      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
   </Function>
 </Database>

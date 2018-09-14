@@ -75,6 +75,13 @@ namespace daoSLBC.Database.DanhMuc
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
 			return ((ISingleResult<sp_tblMauBieuBaoCaoDinhNghia_ThongTinResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblMauBieuBaoCaoDinhNghia_ThemSua")]
+		public int sp_tblMauBieuBaoCaoDinhNghia_ThemSua([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="Int")] System.Nullable<int> iD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ma", DbType="NVarChar(20)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ten", DbType="NVarChar(250)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenTat", DbType="NVarChar(50)")] string tenTat, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TieuDe1", DbType="NVarChar(250)")] string tieuDe1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TieuDe2", DbType="NVarChar(250)")] string tieuDe2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TieuDe3", DbType="NVarChar(250)")] string tieuDe3, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Muc", DbType="Int")] System.Nullable<int> muc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cap", DbType="Int")] System.Nullable<int> cap, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GhiChu", DbType="NVarChar(500)")] string ghiChu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayApDung", DbType="Date")] System.Nullable<System.DateTime> ngayApDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayKetThuc", DbType="Date")] System.Nullable<System.DateTime> ngayKetThuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NguoiTao", DbType="NVarChar(50)")] string nguoiTao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nhom", DbType="Int")] System.Nullable<int> nhom)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, ma, ten, tenTat, tieuDe1, tieuDe2, tieuDe3, muc, cap, ghiChu, ngayApDung, ngayKetThuc, nguoiTao, nhom);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_tblMauBieuBaoCaoDinhNghia_DanhSachResult
@@ -107,6 +114,8 @@ namespace daoSLBC.Database.DanhMuc
 		private System.Nullable<System.DateTime> _NgayTao;
 		
 		private string _NguoiTao;
+		
+		private System.Nullable<int> _Nhom;
 		
 		public sp_tblMauBieuBaoCaoDinhNghia_DanhSachResult()
 		{
@@ -335,6 +344,22 @@ namespace daoSLBC.Database.DanhMuc
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhom", DbType="Int")]
+		public System.Nullable<int> Nhom
+		{
+			get
+			{
+				return this._Nhom;
+			}
+			set
+			{
+				if ((this._Nhom != value))
+				{
+					this._Nhom = value;
+				}
+			}
+		}
 	}
 	
 	public partial class sp_tblMauBieuBaoCaoDinhNghia_ThongTinResult
@@ -367,6 +392,8 @@ namespace daoSLBC.Database.DanhMuc
 		private System.Nullable<System.DateTime> _NgayTao;
 		
 		private string _NguoiTao;
+		
+		private System.Nullable<int> _Nhom;
 		
 		public sp_tblMauBieuBaoCaoDinhNghia_ThongTinResult()
 		{
@@ -592,6 +619,22 @@ namespace daoSLBC.Database.DanhMuc
 				if ((this._NguoiTao != value))
 				{
 					this._NguoiTao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nhom", DbType="Int")]
+		public System.Nullable<int> Nhom
+		{
+			get
+			{
+				return this._Nhom;
+			}
+			set
+			{
+				if ((this._Nhom != value))
+				{
+					this._Nhom = value;
 				}
 			}
 		}

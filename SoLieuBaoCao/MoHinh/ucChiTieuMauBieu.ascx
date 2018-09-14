@@ -204,7 +204,7 @@
                     <ColumnModel runat="server">
                         <Columns>
                             <ext:Column runat="server" Text="STT" DataIndex="STT" Width="50" Align="Center"/>
-                            <ext:NumberColumn runat="server" Text="Hệ số" DataIndex="HeSo" Align="Center" Width="100">
+                            <ext:NumberColumn runat="server" Text="Hệ số" DataIndex="HeSo" Align="Center" Width="100" Format="###.###">
                                 <Editor>
                                     <ext:NumberField runat="server" AllowDecimals="true" DecimalPrecision="3" />
                                 </Editor>

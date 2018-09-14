@@ -103,6 +103,27 @@ namespace daoSLBC.Database.ChiTieu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDmauBieu, iDChiTieu);
 			return ((ISingleResult<sp_tblChiTieuDanSuatTru_DanhSachResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuDanSuatNhan_Xoa")]
+		public int sp_tblChiTieuDanSuatNhan_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDmauBieu", DbType="Int")] System.Nullable<int> iDmauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaChiTieuDanSuat", DbType="NVarChar(20)")] string maChiTieuDanSuat)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDmauBieu, iDChiTieu, maChiTieuDanSuat);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuDanSuatTru_Xoa")]
+		public int sp_tblChiTieuDanSuatTru_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDmauBieu", DbType="Int")] System.Nullable<int> iDmauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaChiTieuDanSuat", DbType="NVarChar(20)")] string maChiTieuDanSuat)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDmauBieu, iDChiTieu, maChiTieuDanSuat);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChiTieuDanSuatCong_Xoa")]
+		public int sp_tblChiTieuDanSuatCong_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDmauBieu", DbType="Int")] System.Nullable<int> iDmauBieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDChiTieu", DbType="Int")] System.Nullable<int> iDChiTieu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaChiTieuDanSuat", DbType="NVarChar(20)")] string maChiTieuDanSuat)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDmauBieu, iDChiTieu, maChiTieuDanSuat);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_tblChiTieuDanSuatCong_DanhSachResult

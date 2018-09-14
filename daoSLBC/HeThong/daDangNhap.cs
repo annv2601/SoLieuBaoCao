@@ -10,7 +10,7 @@ namespace daoSLBC.HeThong
     public class daDangNhap
     {
         private linqDangNhapDataContext lDN = new linqDangNhapDataContext();
-
+        
         #region Thuoc tinh
         private string _MaNSD;
 
@@ -18,9 +18,12 @@ namespace daoSLBC.HeThong
 
         private string _TenNguoiSuDung;
 
+        private sp_KiemTraDangNhapResult _TTDN = new sp_KiemTraDangNhapResult();
+
         public string MaNSD { get => _MaNSD; set => _MaNSD = value; }
         public string MaDonVi { get => _MaDonVi; set => _MaDonVi = value; }
         public string TenNguoiSuDung { get => _TenNguoiSuDung; set => _TenNguoiSuDung = value; }
+        public sp_KiemTraDangNhapResult TTDN { get => _TTDN; set => _TTDN = value; }
 
         #endregion
 
@@ -28,7 +31,11 @@ namespace daoSLBC.HeThong
         {
             try
             {
-                TenNguoiSuDung = lDN.sp_KiemTraDangNhap(MaNSD, MaDonVi).Single().KetQuaKiemTra;
+                //TenNguoiSuDung = lDN.sp_KiemTraDangNhap(MaNSD, MaDonVi).Single().KetQuaKiemTra;
+                
+                TTDN = lDN.sp_KiemTraDangNhap(MaNSD, MaDonVi).Single();
+                TenNguoiSuDung = TTDN.KetQuaKiemTra;
+
                 if (TenNguoiSuDung!="")
                 {
                     return true;

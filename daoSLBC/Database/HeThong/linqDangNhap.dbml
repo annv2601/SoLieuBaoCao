@@ -5,6 +5,10 @@
     <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
     <ElementType Name="sp_KiemTraDangNhapResult">
       <Column Name="KetQuaKiemTra" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="TenTatDonVi" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenRutGonDonVi" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSTK1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

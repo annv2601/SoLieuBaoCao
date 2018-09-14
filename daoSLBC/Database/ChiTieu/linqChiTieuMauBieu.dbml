@@ -45,4 +45,15 @@
       <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_tblChiTieuTheoMauBieu_KhoiTao" Method="sp_tblChiTieuTheoMauBieu_KhoiTao">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NguoiTao" Parameter="nguoiTao" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiTieuTheoMauBieu_Xoa" Method="sp_tblChiTieuTheoMauBieu_Xoa">
+    <Parameter Name="IDMauBieu" Parameter="iDMauBieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDChiTieu" Parameter="iDChiTieu" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

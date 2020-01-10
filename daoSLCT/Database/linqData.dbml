@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuChiTiet" Class="linqDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuChiTiet;Persist Security Info=True;User ID=LayDuLieu" SettingsObjectName="daoSLCT.Properties.Settings" SettingsPropertyName="SoLieuChiTietConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_LayDuLieu_BuuCuc" Method="sp_LayDuLieu_BuuCuc">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="NgayPhatHanh" Parameter="ngayPhatHanh" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_TongHop_DuLieu" Method="sp_TongHop_DuLieu">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblTien_BaoCao" Method="sp_tblTien_BaoCao">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblTien_BaoCaoResult">
+      <Column Name="Ngay" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="KinhDoanhTienMat" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TaiChinhThu" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TaiChinhChi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="KinhDoanhGhiNo" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TongTienMat" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblTaiChinhTapChung_BaoCao" Method="sp_tblTaiChinhTapChung_BaoCao">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblTaiChinhTapChung_BaoCaoResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDichVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TienThu" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TienChi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TienKinhDoanhGhiNo" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TienKinhDoanhTienMat" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKinhDoanhTiemMat_BaoCao" Method="sp_tblKinhDoanhTiemMat_BaoCao">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKinhDoanhTiemMat_BaoCaoResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDichVu" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="NTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="LTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="QTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKinhDoanhGhiNoKhachHang_BaoCao" Method="sp_tblKinhDoanhGhiNoKhachHang_BaoCao">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKinhDoanhGhiNoKhachHang_BaoCaoResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaKhachHangCRM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenKhachHangCRM" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDichVu" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="NTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="LTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="QTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKinhDoanhGhiNo_BaoCao" Method="sp_tblKinhDoanhGhiNo_BaoCao">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKinhDoanhGhiNo_BaoCaoResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDichVu" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="NTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="NTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="NTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="LTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="LTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTSoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTTrongLuong" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="QTSoTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTCuoc" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTVAT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTThanhTien" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="QTThanhTienCOD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNghiepVuPaypost_Them" Method="sp_tblNghiepVuPaypost_Them">
+    <Parameter Name="MaNhom" Parameter="maNhom" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TenNhom" Parameter="tenNhom" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

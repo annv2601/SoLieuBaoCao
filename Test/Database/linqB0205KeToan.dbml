@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuKeToan" Class="linqB0205KeToanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuKeToan;Persist Security Info=True;User ID=sa" SettingsObjectName="Test.Properties.Settings" SettingsPropertyName="SoLieuKeToanConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblDuLieuB0205KeToan_GanMaTrung" Method="sp_tblDuLieuB0205KeToan_GanMaTrung">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDuLieuB0205KeToan_Xoa" Method="sp_tblDuLieuB0205KeToan_Xoa">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDuLieuB0205KeToan_ThongTin" Method="sp_tblDuLieuB0205KeToan_ThongTin">
+    <ElementType Name="sp_tblDuLieuB0205KeToan_ThongTinResult">
+      <Column Name="NHOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MA_DT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TEN_PHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="S_L" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="D_T" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LK" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="T_SUAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="THUE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LK_THUE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SL_DI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SL_DEN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NHOM1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="IN_KHONG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CAP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TSUAT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblDuLieuB0205KeToan_Them" Method="sp_tblDuLieuB0205KeToan_Them">
+    <Parameter Name="NHOM" Parameter="nHOM" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MA_DT" Parameter="mA_DT" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TEN" Parameter="tEN" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TEN_PHU" Parameter="tEN_PHU" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="DV" Parameter="dV" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="S_L" Parameter="s_L" Type="System.Double" DbType="Float" />
+    <Parameter Name="D_T" Parameter="d_T" Type="System.Double" DbType="Float" />
+    <Parameter Name="LK" Parameter="lK" Type="System.Double" DbType="Float" />
+    <Parameter Name="T_SUAT" Parameter="t_SUAT" Type="System.Double" DbType="Float" />
+    <Parameter Name="THUE" Parameter="tHUE" Type="System.Double" DbType="Float" />
+    <Parameter Name="LK_THUE" Parameter="lK_THUE" Type="System.Double" DbType="Float" />
+    <Parameter Name="SL_DI" Parameter="sL_DI" Type="System.Double" DbType="Float" />
+    <Parameter Name="SL_DEN" Parameter="sL_DEN" Type="System.Double" DbType="Float" />
+    <Parameter Name="NHOM1" Parameter="nHOM1" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="IN_KHONG" Parameter="iN_KHONG" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="CAP" Parameter="cAP" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TT" Parameter="tT" Type="System.Double" DbType="Float" />
+    <Parameter Name="TSUAT" Parameter="tSUAT" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

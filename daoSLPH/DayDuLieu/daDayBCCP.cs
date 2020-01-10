@@ -14,13 +14,31 @@ namespace daoSLPH.DayDuLieu
     {
         public event DayHandler Day;
         public delegate void DayHandler(object sender, EventArgs e);
+        public event DayXongHandler DayXong;
+        public delegate void DayXongHandler(object sender, EventArgs e);
 
         public void Chay()
         {
+            daCauHinh dCH = new daCauHinh();
+            dCH.Lay(dCH.TimMaThamSo((int)daCauHinh.eCauHinh.Lấy_BCCP));
+            bool _LayBCCP = false;
+            if (dCH.CauHinh != null)
+            {
+                try
+                {
+                    _LayBCCP = bool.Parse(dCH.CauHinh.GiaTri);
+                }
+                catch { }
+            }
+            if (!_LayBCCP)
+            {
+                //May nay khong lay BCCP
+                return;
+            }
+
             clsLan ptLog = new clsLan();
             ptLog.ThoiGianBatDau = DateTime.Now;
-
-            daCauHinh dCH = new daCauHinh();
+                        
             dCH.Lay(dCH.TimMaThamSo((int)daCauHinh.eCauHinh.Mã_Bưu_Cục));
             if (dCH.CauHinh != null)
             {
@@ -45,6 +63,7 @@ namespace daoSLPH.DayDuLieu
                 dPHBCCP.PH.MAC = ptBCCP.MAC;
                 dPHBCCP.PH.SoHieu = ptBCCP.SoHieu;
                 dPHBCCP.PH.MaDichVu = ptBCCP.MaDichVu;
+                dPHBCCP.PH.TenDichVu = ptBCCP.TenDichVu;
                 dPHBCCP.PH.LoaiBuuGui = ptBCCP.LoaiBuuGui;
                 dPHBCCP.PH.SoChuyen = ptBCCP.SoChuyen;
                 dPHBCCP.PH.SoTui = ptBCCP.SoTui;
@@ -75,6 +94,8 @@ namespace daoSLPH.DayDuLieu
                 dPHBCCP.PH.TongCuoc = ptBCCP.TongCuoc;
                 dPHBCCP.PH.GhiNo = ptBCCP.GhiNo;
                 dPHBCCP.PH.NoiDungBuuGui = ptBCCP.NoiDungBuuGui;
+                dPHBCCP.PH.GuiLo = ptBCCP.GuiLo;
+                dPHBCCP.PH.SoLo = ptBCCP.SoLo;
 
                 dPHBCCP.ThemPH();
 
@@ -103,8 +124,21 @@ namespace daoSLPH.DayDuLieu
                 dLan.LanLay.TongTien = ptLog.TongTien;
                 dLan.LanLay.ThoiGianBatDau = ptLog.ThoiGianBatDau;
                 dLan.LanLay.ThoiGianKetThuc = ptLog.ThoiGianKetThuc;
+
+                dCH.Lay(dCH.TimMaThamSo((int)daCauHinh.eCauHinh._Chuỗi_Kết_nối_Chạy));
+                if (dCH.CauHinh != null)
+                {
+                    dLan.LanLay.ChuoiKetNoi = dCH.CauHinh.GiaTri;
+                }
+                dLan.LanLay.ChuoiKetNoi = "";
+
                 dLan.Them();
             }
+            try
+            {
+                DayXong(null, null);
+            }
+            catch { }
         }
     }
 }

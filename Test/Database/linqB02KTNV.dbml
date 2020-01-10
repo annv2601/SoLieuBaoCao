@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBCOL" Class="linqB02KTNVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBCOL;User ID=sa" SettingsObjectName="Test.Properties.Settings" SettingsPropertyName="SoLieuBCOLConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblBaoCaoB02KTNV_Them" Method="sp_tblBaoCaoB02KTNV_Them">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaSo" Parameter="maSo" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ChiTieu" Parameter="chiTieu" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="SanLuong" Parameter="sanLuong" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Parameter Name="DoanhThuPS" Parameter="doanhThuPS" Type="System.Decimal" DbType="Decimal(22,0)" />
+    <Parameter Name="DoanhThuLK" Parameter="doanhThuLK" Type="System.Decimal" DbType="Decimal(25,0)" />
+    <Parameter Name="ThueSuat" Parameter="thueSuat" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ThuePS" Parameter="thuePS" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Parameter Name="ThueLK" Parameter="thueLK" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Parameter Name="SanLuongNghiepVuDi" Parameter="sanLuongNghiepVuDi" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Parameter Name="SanLuongDen" Parameter="sanLuongDen" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblBaoCaoB02KTNV_ThongTin" Method="sp_tblBaoCaoB02KTNV_ThongTin">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaSo" Parameter="maSo" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblBaoCaoB02KTNV_ThongTinResult">
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ChiTieu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaSo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SanLuong" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="DoanhThuPS" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DoanhThuLK" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="ThueSuat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ThuePS" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ThueLK" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="SanLuongNghiepVuDi" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="SanLuongDen" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBaoCaoB02KTNV_Xoa" Method="sp_tblBaoCaoB02KTNV_Xoa">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -52,7 +52,7 @@ namespace daoSLBC.DuLieuBaoCao
 
         public void TinhDanSuatSTK1()
         {
-            lBCN.sp_tblDuLieuBaoCaoNhanh_TinhDanSuat_STK1(Thang, Nam, MaDonVi, MaBieuBaoCao);
+            lBCN.sp_tblDuLieuBaoCaoNhanh_TinhDanSuat_STK1(Thang, Nam, MaDonVi, MaBieuBaoCao);            
         }
 
         public void LaySTK1ThucHien()

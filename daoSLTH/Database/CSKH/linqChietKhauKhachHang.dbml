@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuTongHop" Class="linqChietKhauKhachHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuTongHop;User ID=BaoCaoSL" SettingsObjectName="daoSLTH.Properties.Settings" SettingsPropertyName="SoLieuTongHopConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblChietKhauKhachHang_DanhSach" Method="sp_tblChietKhauKhachHang_DanhSach">
+    <Parameter Name="TuThang" Parameter="tuThang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="DenThang" Parameter="denThang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblChietKhauKhachHang_DanhSachResult">
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MaKhachHang" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaChinhSach" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TongDoanhThu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TyLe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="SoTienChietKhau" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblChietKhauKhachHang_TongHop" Method="sp_tblChietKhauKhachHang_TongHop">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

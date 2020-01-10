@@ -41,6 +41,14 @@ namespace SoLieuBaoCao.SoLieuPhatHanh
         protected void btnLayTrongNgay_Click(object sender, DirectEventArgs e)
         {
             daPaypost dPP = new daPaypost();
+            try
+            {
+                dPP.Ngay = txtTuNgay.SelectedDate;
+            }
+            catch
+            {
+                dPP.Ngay = DateTime.Now;
+            }
             dPP.TongHop();
             DanhSach();
             X.Msg.Alert("","Đã lấy số liệu phát sinh ngày hôm nay!").Show();

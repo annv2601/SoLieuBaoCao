@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuTongHop" Class="linqCSKHChinhSachDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuTongHop;User ID=BaoCaoSL" SettingsObjectName="daoSLTH.Properties.Settings" SettingsPropertyName="SoLieuTongHopConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblcskhChinhSach_DanhSach" Method="sp_tblcskhChinhSach_DanhSach">
+    <ElementType Name="sp_tblcskhChinhSach_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="VanBan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblcskhChinhSach_Xoa" Method="sp_tblcskhChinhSach_Xoa">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblcskhChinhSach_KiemTraMa" Method="sp_tblcskhChinhSach_KiemTraMa">
+    <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblcskhChinhSach_KiemTraMaResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="VanBan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblcskhChinhSach_ThemSua" Method="sp_tblcskhChinhSach_ThemSua">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="VanBan" Parameter="vanBan" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="NgayApDung" Parameter="ngayApDung" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NgayKetThuc" Parameter="ngayKetThuc" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblcskhChinhSach_ThemSuaResult">
+      <Column Name="IDChinhSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

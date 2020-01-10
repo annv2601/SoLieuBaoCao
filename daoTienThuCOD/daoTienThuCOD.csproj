@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1ADE291-FE15-4360-AAC6-5B09964376F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>daoTienThuCOD</RootNamespace>
+    <AssemblyName>daoTienThuCOD</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BaoBieu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\BaoBieu.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\..\DLL\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocSo">
+      <HintPath>..\..\DLL\DocSo.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="HienThiTienTrinh">
+      <HintPath>..\..\DLL\HienThiTienTrinh.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB">
+      <HintPath>..\..\DLL\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChuyenHoan\daChuyenHoan.cs" />
+    <Compile Include="ChuyenHoan\daChuyenTiep.cs" />
+    <Compile Include="Client\daDanhMuc.cs" />
+    <Compile Include="daBase.cs" />
+    <Compile Include="Database\linqBuuCucHuy.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqBuuCucHuy.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqBuuCucLuuGiu.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqBuuCucLuuGiu.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqBuuTa.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqBuuTa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqBuuTaGiuLai.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqBuuTaGiuLai.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqChuyenHoan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqChuyenHoan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqChuyenTiep.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqChuyenTiep.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqKeToanBuuCuc.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqKeToanBuuCuc.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqKeToanBuuTa.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqKeToanBuuTa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqKeToanBuuTaNgay.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqKeToanBuuTaNgay.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqKeToanCuoiNgay.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqKeToanCuoiNgay.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqNopTienNganHang.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqNopTienNganHang.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqPhanHuongBuuTa.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqPhanHuongBuuTa.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqSLDen.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqSLDen.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqTrangThaiKeToan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqTrangThaiKeToan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqTraTien.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqTraTien.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="daTienIch.cs" />
+    <Compile Include="DocVaDay\daSoLieuNhanVe.cs" />
+    <Compile Include="GiuLai\daBuuCucHuy.cs" />
+    <Compile Include="GiuLai\daBuuCucLuuGiu.cs" />
+    <Compile Include="GiuLai\daBuuTaGiuLai.cs" />
+    <Compile Include="KeToan\daKeToanBuuCuc.cs" />
+    <Compile Include="KeToan\daKeToanBuuTa.cs" />
+    <Compile Include="KeToan\daKeToanBuuTaNgay.cs" />
+    <Compile Include="KeToan\daKeToanCuoiNgay.cs" />
+    <Compile Include="Khac\daBuuCuc.cs" />
+    <Compile Include="Khac\daBuuTa.cs" />
+    <Compile Include="Khac\daTrangThaiKeToan.cs" />
+    <Compile Include="NopTienNganHang\daMenhGiaTien.cs" />
+    <Compile Include="NopTienNganHang\daNopTienNganHang.cs" />
+    <Compile Include="NopTienNganHang\daNopTienNganHangMenhGia.cs" />
+    <Compile Include="NopTienNganHang\daNopTienNganHangTaiKhoan.cs" />
+    <Compile Include="NopTienNganHang\daTaiKhoanNganHang.cs" />
+    <Compile Include="PhanHuongBuuTa\daPhanBuuTa.cs" />
+    <Compile Include="PhanHuongBuuTa\daPhanBuuTaTHop.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SoLieuDen\daSLDen.cs" />
+    <Compile Include="SoLieuDen\daSLDenBGGTri.cs" />
+    <Compile Include="SoLieuDen\daSLDenTHop.cs" />
+    <Compile Include="ThanhPhanGiaoDien\daXuaBaoCao.cs" />
+    <Compile Include="ThanhPhanGiaoDien\frmBanIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBanIn.Designer.cs">
+      <DependentUpon>frmBanIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBanKeNopTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBanKeNopTien.Designer.cs">
+      <DependentUpon>frmBanKeNopTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBuuCucGiuLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBuuCucGiuLai.Designer.cs">
+      <DependentUpon>frmBuuCucGiuLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBuuGuiGiuLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmBuuGuiGiuLai.Designer.cs">
+      <DependentUpon>frmBuuGuiGiuLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietBuuGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietBuuGui.Designer.cs">
+      <DependentUpon>frmChiTietBuuGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietBuuTa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietBuuTa.Designer.cs">
+      <DependentUpon>frmChiTietBuuTa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietPhanHuongBuuTa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietPhanHuongBuuTa.Designer.cs">
+      <DependentUpon>frmChiTietPhanHuongBuuTa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietSLDen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmChiTietSLDen.Designer.cs">
+      <DependentUpon>frmChiTietSLDen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmDanhSachNgayChot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmDanhSachNgayChot.Designer.cs">
+      <DependentUpon>frmDanhSachNgayChot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmKeToanBuuCuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\frmKeToanBuuCuc.Designer.cs">
+      <DependentUpon>frmKeToanBuuCuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\grdChuyenHoanChuyenTiep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\grdChuyenHoanChuyenTiep.Designer.cs">
+      <DependentUpon>grdChuyenHoanChuyenTiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\grdMenhGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\grdMenhGia.Designer.cs">
+      <DependentUpon>grdMenhGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\grdTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\grdTaiKhoan.Designer.cs">
+      <DependentUpon>grdTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiGiuLai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiGiuLai.Designer.cs">
+      <DependentUpon>ucBuuGuiGiuLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucChuyenHoanChuyenTiep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucChuyenHoanChuyenTiep.Designer.cs">
+      <DependentUpon>ucChuyenHoanChuyenTiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanBuuCuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanBuuCuc.Designer.cs">
+      <DependentUpon>ucKeToanBuuCuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanCuoiNgayBuuTa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanCuoiNgayBuuTa.Designer.cs">
+      <DependentUpon>ucKeToanCuoiNgayBuuTa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanBuuTaNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanBuuTaNgay.Designer.cs">
+      <DependentUpon>ucKeToanBuuTaNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuTaTraLai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuTaTraLai.Designer.cs">
+      <DependentUpon>ucBuuTaTraLai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucLoaiTien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucLoaiTien.Designer.cs">
+      <DependentUpon>ucLoaiTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucPhanHuongBuuTaTHop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucPhanHuongBuuTaTHop.Designer.cs">
+      <DependentUpon>ucPhanHuongBuuTaTHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiDenPhatTHop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiDenPhatTHop.Designer.cs">
+      <DependentUpon>ucBuuGuiDenPhatTHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucTraTienCOD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucTraTienCOD.Designer.cs">
+      <DependentUpon>ucTraTienCOD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiChuyenHoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiChuyenHoan.Designer.cs">
+      <DependentUpon>ucBuuGuiChuyenHoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanBuuTa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucKeToanBuuTa.Designer.cs">
+      <DependentUpon>ucKeToanBuuTa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucPhanHuongBuuTa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucPhanHuongBuuTa.Designer.cs">
+      <DependentUpon>ucPhanHuongBuuTa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiDenPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThanhPhanGiaoDien\ucBuuGuiDenPhat.Designer.cs">
+      <DependentUpon>ucBuuGuiDenPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraTien\daTraTien.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\daoSLPH\daoSLPH.csproj">
+      <Project>{a45fd7bc-8272-4c79-be2c-d3df4e378a34}</Project>
+      <Name>daoSLPH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DuLieuBCCP\DuLieuBCCP.csproj">
+      <Project>{04500a7e-4ccf-40a6-ac88-14aa2cf7a60e}</Project>
+      <Name>DuLieuBCCP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Database\linqBuuCucHuy.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqBuuCucHuy.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqBuuCucHuy.dbml.layout">
+      <DependentUpon>linqBuuCucHuy.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqBuuCucLuuGiu.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqBuuCucLuuGiu.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqBuuCucLuuGiu.dbml.layout">
+      <DependentUpon>linqBuuCucLuuGiu.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqBuuTa.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqBuuTa.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqBuuTa.dbml.layout">
+      <DependentUpon>linqBuuTa.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqBuuTaGiuLai.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqBuuTaGiuLai.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqBuuTaGiuLai.dbml.layout">
+      <DependentUpon>linqBuuTaGiuLai.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqChuyenHoan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqChuyenHoan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqChuyenHoan.dbml.layout">
+      <DependentUpon>linqChuyenHoan.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqChuyenTiep.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqChuyenTiep.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqChuyenTiep.dbml.layout">
+      <DependentUpon>linqChuyenTiep.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqKeToanBuuCuc.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqKeToanBuuCuc.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqKeToanBuuCuc.dbml.layout">
+      <DependentUpon>linqKeToanBuuCuc.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqKeToanBuuTa.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqKeToanBuuTa.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqKeToanBuuTa.dbml.layout">
+      <DependentUpon>linqKeToanBuuTa.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqKeToanBuuTaNgay.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqKeToanBuuTaNgay.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqKeToanBuuTaNgay.dbml.layout">
+      <DependentUpon>linqKeToanBuuTaNgay.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqKeToanCuoiNgay.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqKeToanCuoiNgay.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqKeToanCuoiNgay.dbml.layout">
+      <DependentUpon>linqKeToanCuoiNgay.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqNopTienNganHang.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqNopTienNganHang.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqNopTienNganHang.dbml.layout">
+      <DependentUpon>linqNopTienNganHang.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqPhanHuongBuuTa.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqPhanHuongBuuTa.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqPhanHuongBuuTa.dbml.layout">
+      <DependentUpon>linqPhanHuongBuuTa.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqSLDen.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqSLDen.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqSLDen.dbml.layout">
+      <DependentUpon>linqSLDen.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqTrangThaiKeToan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqTrangThaiKeToan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqTrangThaiKeToan.dbml.layout">
+      <DependentUpon>linqTrangThaiKeToan.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqTraTien.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqTraTien.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqTraTien.dbml.layout">
+      <DependentUpon>linqTraTien.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmBanIn.resx">
+      <DependentUpon>frmBanIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmBanKeNopTien.resx">
+      <DependentUpon>frmBanKeNopTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmBuuCucGiuLai.resx">
+      <DependentUpon>frmBuuCucGiuLai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmBuuGuiGiuLai.resx">
+      <DependentUpon>frmBuuGuiGiuLai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmChiTietBuuGui.resx">
+      <DependentUpon>frmChiTietBuuGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmChiTietBuuTa.resx">
+      <DependentUpon>frmChiTietBuuTa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmChiTietPhanHuongBuuTa.resx">
+      <DependentUpon>frmChiTietPhanHuongBuuTa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmChiTietSLDen.resx">
+      <DependentUpon>frmChiTietSLDen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmDanhSachNgayChot.resx">
+      <DependentUpon>frmDanhSachNgayChot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\frmKeToanBuuCuc.resx">
+      <DependentUpon>frmKeToanBuuCuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\grdChuyenHoanChuyenTiep.resx">
+      <DependentUpon>grdChuyenHoanChuyenTiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\grdMenhGia.resx">
+      <DependentUpon>grdMenhGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\grdTaiKhoan.resx">
+      <DependentUpon>grdTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucBuuGuiGiuLai.resx">
+      <DependentUpon>ucBuuGuiGiuLai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucChuyenHoanChuyenTiep.resx">
+      <DependentUpon>ucChuyenHoanChuyenTiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucKeToanBuuCuc.resx">
+      <DependentUpon>ucKeToanBuuCuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucKeToanCuoiNgayBuuTa.resx">
+      <DependentUpon>ucKeToanCuoiNgayBuuTa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucKeToanBuuTaNgay.resx">
+      <DependentUpon>ucKeToanBuuTaNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucBuuTaTraLai.resx">
+      <DependentUpon>ucBuuTaTraLai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucLoaiTien.resx">
+      <DependentUpon>ucLoaiTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucPhanHuongBuuTaTHop.resx">
+      <DependentUpon>ucPhanHuongBuuTaTHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucBuuGuiDenPhatTHop.resx">
+      <DependentUpon>ucBuuGuiDenPhatTHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucTraTienCOD.resx">
+      <DependentUpon>ucTraTienCOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucBuuGuiChuyenHoan.resx">
+      <DependentUpon>ucBuuGuiChuyenHoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucKeToanBuuTa.resx">
+      <DependentUpon>ucKeToanBuuTa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucPhanHuongBuuTa.resx">
+      <DependentUpon>ucPhanHuongBuuTa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhPhanGiaoDien\ucBuuGuiDenPhat.resx">
+      <DependentUpon>ucBuuGuiDenPhat.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

@@ -12,9 +12,19 @@ namespace daoSLPH.DataClient
         {
             Mã_Bưu_Cục=1,
             Tên_Bưu_Cục=2,
+            Là_Bưu_cục_Phát=22,
             Đường_Dẫn_Paypost=3,
             Tên_Đăng_nhập_Paypost=4,
-            Đường_Dẫn_BCCP=5
+            Đường_Dẫn_BCCP=5,
+            Tên_Đơn_Vị=6,
+
+            Lấy_BCCP=10,
+
+            Giờ_Thu_Gom_Lần1=11,
+            Giờ_Thu_Gom_Lần2 = 12,
+            Giờ_Thu_Gom_Lần3 = 13,
+
+            _Chuỗi_Kết_nối_Chạy=99
         }
 
         public List<bCauHinh> lstBangThamSo=new List<bCauHinh>();
@@ -31,11 +41,23 @@ namespace daoSLPH.DataClient
             pCH.GiaTri = "Mã Bưu cục";
             lstBangThamSo.Add(pCH);
 
-            pCH = new bCauHinh();
+            /*pCH = new bCauHinh();
             pCH.ID = 2;
             pCH.Ma = "TenBuuCuc";
             pCH.GiaTri = "Tên Bưu cục";
+            lstBangThamSo.Add(pCH);*/
+
+            pCH = new bCauHinh();
+            pCH.ID = 22;
+            pCH.Ma = "LaBuuCucPhat";
+            pCH.GiaTri = "Là Bưu cục phát";
             lstBangThamSo.Add(pCH);
+
+            /*pCH = new bCauHinh();
+            pCH.ID = 6;
+            pCH.Ma = "TenDonVi";
+            pCH.GiaTri = "Tên Đơn vị";
+            lstBangThamSo.Add(pCH);*/
 
             pCH = new bCauHinh();
             pCH.ID = 3;
@@ -43,16 +65,46 @@ namespace daoSLPH.DataClient
             pCH.GiaTri = "Đường dẫn Paypost";
             lstBangThamSo.Add(pCH);
 
-            pCH = new bCauHinh();
+            /*pCH = new bCauHinh();
             pCH.ID = 4;
             pCH.Ma = "TenDangNhapPayPost";
             pCH.GiaTri = "Tên đăng nhập Paypost";
-            lstBangThamSo.Add(pCH);
+            lstBangThamSo.Add(pCH);*/
 
             pCH = new bCauHinh();
             pCH.ID = 5;
             pCH.Ma = "DuongDanBCCP";
             pCH.GiaTri = "Đường dẫn BCCP";
+            lstBangThamSo.Add(pCH);
+
+            pCH = new bCauHinh();
+            pCH.ID = 10;
+            pCH.Ma = "LayBCCP";
+            pCH.GiaTri = "Máy lấy BCCP";
+            lstBangThamSo.Add(pCH);
+
+            pCH = new bCauHinh();
+            pCH.ID = 11;
+            pCH.Ma = "GioThuGomLan1";
+            pCH.GiaTri = "Giờ thu gom lần 1";
+            lstBangThamSo.Add(pCH);
+
+            pCH = new bCauHinh();
+            pCH.ID = 12;
+            pCH.Ma = "GioThuGomLan2";
+            pCH.GiaTri = "Giờ thu gom lần 2";
+            lstBangThamSo.Add(pCH);
+
+            pCH = new bCauHinh();
+            pCH.ID = 13;
+            pCH.Ma = "GioThuGomLan3";
+            pCH.GiaTri = "Giờ thu gom lần 3";
+            lstBangThamSo.Add(pCH);
+
+            pCH = new bCauHinh();
+            pCH.ID = 99;
+            pCH.Ma = "ChuoiKetNoiBCCP";
+            pCH.GiaTri = "Kết nối BCCP";
             lstBangThamSo.Add(pCH);
         }
 

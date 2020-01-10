@@ -36,7 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ctin.Css.Configuration">
-      <HintPath>..\..\..\Dll_HoTro\Ctin.Css.Configuration.dll</HintPath>
+      <HintPath>..\..\..\DLL_HoTro\Ctin.Css.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="PAYPOST.LOG">
+      <HintPath>..\..\..\DLL_HoTro\PAYPOST.LOG.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

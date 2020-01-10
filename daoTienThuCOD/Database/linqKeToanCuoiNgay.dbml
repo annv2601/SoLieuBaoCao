@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TienCOD" Class="linqKeToanCuoiNgayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=TienCOD;Persist Security Info=True;User ID=sa" SettingsObjectName="daoTienThuCOD.Properties.Settings" SettingsPropertyName="TienCODConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblKeToanCuoiNgay_KetChuyen" Method="sp_tblKeToanCuoiNgay_KetChuyen">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblKeToanBuuTaCuoiNgay_DanhSach" Method="sp_tblKeToanBuuTaCuoiNgay_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblKeToanBuuTaCuoiNgay_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaBuuTa" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TenBuuTa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NhanMoiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NhanMoiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="ChuyenHoanSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyenHoanSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="ChuyenTiepSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyenTiepSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraLaiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraLaiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKeToanBuuCucCuoiNgay_DanhSach" Method="sp_tblKeToanBuuCucCuoiNgay_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblKeToanBuuCucCuoiNgay_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DuDauSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DuDauSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="NhanMoiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NhanMoiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="PhanBuuTaSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhanBuuTaSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="ChuyenHoanSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyenHoanSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="ChuyenTiepSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyenTiepSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DuCuoiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DuCuoiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBuuCucDuCuoi_DanhSach" Method="sp_tblBuuCucDuCuoi_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblBuuCucDuCuoi_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="FromPoscode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ToPoscode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="PostmanCode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliverRouteName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaBuuTa" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GhiChuGiuLai" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MaLyDo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MaHuongXuLy" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="HuongXuLy" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="GioGhiNhan" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBuuCucDuDau_DanhSach" Method="sp_tblBuuCucDuDau_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblBuuCucDuDau_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="FromPoscode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ToPoscode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="PostmanCode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliverRouteName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaBuuTa" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GhiChuGiuLai" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MaLyDo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MaHuongXuLy" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="HuongXuLy" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="GioGhiNhan" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

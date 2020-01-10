@@ -9,6 +9,7 @@
     <Parameter Name="TongTien" Parameter="tongTien" Type="System.Decimal" DbType="Decimal(22,0)" />
     <Parameter Name="ThoiGianBatDau" Parameter="thoiGianBatDau" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="ThoiGianKetThuc" Parameter="thoiGianKetThuc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ChuoiKetNoi" Parameter="chuoiKetNoi" Type="System.String" DbType="NVarChar(250)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_tblLanLayDuLieu_ThongTin" Method="sp_tblLanLayDuLieu_ThongTin">
@@ -22,6 +23,7 @@
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
       <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChuoiKetNoi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>

@@ -165,6 +165,29 @@ namespace DuLieuBCCP
             }
         }
 
+        public bool TaoKetNoiTuConfig()
+        {
+            ChuoiKetNoi = System.Configuration.ConfigurationManager.ConnectionStrings["SoLieuTongHopConnectionString"].ConnectionString;
+            KetNoi = new SqlConnection();
+            KetNoi.ConnectionString = ChuoiKetNoi;
+            if (KetNoi.State != ConnectionState.Open)
+            {
+                try
+                {
+                    KetNoi.Open();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public DataSet ChayThuTuc(string TenThuTuc)
         {
             DataSet ds = new DataSet();

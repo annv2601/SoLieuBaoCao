@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BaoBieu</RootNamespace>
     <AssemblyName>BaoBieu</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -82,6 +85,78 @@
       <DependentUpon>dsBieuNhapBaoCao.xsd</DependentUpon>
     </Compile>
     <Compile Include="daXuatExcel.cs" />
+    <Compile Include="DoanhThu\BCCP\crTongHopPhatHanh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crTongHopPhatHanh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoanhThu\BCCP\crTongHopPhatHanhMoi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crTongHopPhatHanhMoi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoanhThu\BCCP\dsTongHopPhatHanh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTongHopPhatHanh.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThu\Paypost\crDoanhThuPaypost.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crDoanhThuPaypost.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoanhThu\Paypost\dsDoanhThuPaypost.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDoanhThuPaypost.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KeToanDoanhThu\crBaoCaoKeToan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crBaoCaoKeToan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KeToanDoanhThu\dsKeToanTien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsKeToanTien.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NopTienNganHang\crMenhGia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crMenhGia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NopTienNganHang\crNopTienNganHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crNopTienNganHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NopTienNganHang\crTaiKhoan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crTaiKhoan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NopTienNganHang\dsMenhGia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMenhGia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NopTienNganHang\dsNopTienNganHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNopTienNganHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NopTienNganHang\dsTaiKhoan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTaiKhoan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +182,72 @@
     <None Include="BieuNhap\dsBieuNhapBaoCao.xss">
       <DependentUpon>dsBieuNhapBaoCao.xsd</DependentUpon>
     </None>
+    <None Include="DoanhThu\BCCP\dsTongHopPhatHanh.xsc">
+      <DependentUpon>dsTongHopPhatHanh.xsd</DependentUpon>
+    </None>
+    <None Include="DoanhThu\BCCP\dsTongHopPhatHanh.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTongHopPhatHanh.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoanhThu\BCCP\dsTongHopPhatHanh.xss">
+      <DependentUpon>dsTongHopPhatHanh.xsd</DependentUpon>
+    </None>
+    <None Include="DoanhThu\Paypost\dsDoanhThuPaypost.xsc">
+      <DependentUpon>dsDoanhThuPaypost.xsd</DependentUpon>
+    </None>
+    <None Include="DoanhThu\Paypost\dsDoanhThuPaypost.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDoanhThuPaypost.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DoanhThu\Paypost\dsDoanhThuPaypost.xss">
+      <DependentUpon>dsDoanhThuPaypost.xsd</DependentUpon>
+    </None>
+    <None Include="KeToanDoanhThu\dsKeToanTien.xsc">
+      <DependentUpon>dsKeToanTien.xsd</DependentUpon>
+    </None>
+    <None Include="KeToanDoanhThu\dsKeToanTien.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsKeToanTien.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="KeToanDoanhThu\dsKeToanTien.xss">
+      <DependentUpon>dsKeToanTien.xsd</DependentUpon>
+    </None>
+    <None Include="NopTienNganHang\dsMenhGia.xsc">
+      <DependentUpon>dsMenhGia.xsd</DependentUpon>
+    </None>
+    <None Include="NopTienNganHang\dsMenhGia.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMenhGia.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NopTienNganHang\dsMenhGia.xss">
+      <DependentUpon>dsMenhGia.xsd</DependentUpon>
+    </None>
+    <None Include="NopTienNganHang\dsNopTienNganHang.xsc">
+      <DependentUpon>dsNopTienNganHang.xsd</DependentUpon>
+    </None>
+    <None Include="NopTienNganHang\dsNopTienNganHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNopTienNganHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NopTienNganHang\dsNopTienNganHang.xss">
+      <DependentUpon>dsNopTienNganHang.xsd</DependentUpon>
+    </None>
+    <None Include="NopTienNganHang\dsTaiKhoan.xsc">
+      <DependentUpon>dsTaiKhoan.xsd</DependentUpon>
+    </None>
+    <None Include="NopTienNganHang\dsTaiKhoan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTaiKhoan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NopTienNganHang\dsTaiKhoan.xss">
+      <DependentUpon>dsTaiKhoan.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +258,34 @@
     <EmbeddedResource Include="BieuNhap\crBieuNhapBaoCaoNhanhDonVi.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crBieuNhapBaoCaoNhanhDonVi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThu\BCCP\crTongHopPhatHanh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crTongHopPhatHanh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThu\BCCP\crTongHopPhatHanhMoi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crTongHopPhatHanhMoi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThu\Paypost\crDoanhThuPaypost.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crDoanhThuPaypost.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeToanDoanhThu\crBaoCaoKeToan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crBaoCaoKeToan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NopTienNganHang\crMenhGia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crMenhGia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NopTienNganHang\crNopTienNganHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crNopTienNganHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NopTienNganHang\crTaiKhoan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crTaiKhoan.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

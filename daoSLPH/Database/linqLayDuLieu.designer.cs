@@ -63,9 +63,9 @@ namespace daoSLPH.Database
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblLanLayDuLieu_Them")]
-		public int sp_tblLanLayDuLieu_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAC", DbType="NVarChar(50)")] string mAC, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChiIP", DbType="NVarChar(50)")] string diaChiIP, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DichVu", DbType="NVarChar(20)")] string dichVu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoLuong", DbType="Int")] System.Nullable<int> soLuong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongTien", DbType="Decimal(22,0)")] System.Nullable<decimal> tongTien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianBatDau", DbType="DateTime")] System.Nullable<System.DateTime> thoiGianBatDau, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianKetThuc", DbType="DateTime")] System.Nullable<System.DateTime> thoiGianKetThuc)
+		public int sp_tblLanLayDuLieu_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAC", DbType="NVarChar(50)")] string mAC, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChiIP", DbType="NVarChar(50)")] string diaChiIP, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DichVu", DbType="NVarChar(20)")] string dichVu, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoLuong", DbType="Int")] System.Nullable<int> soLuong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongTien", DbType="Decimal(22,0)")] System.Nullable<decimal> tongTien, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianBatDau", DbType="DateTime")] System.Nullable<System.DateTime> thoiGianBatDau, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThoiGianKetThuc", DbType="DateTime")] System.Nullable<System.DateTime> thoiGianKetThuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ChuoiKetNoi", DbType="NVarChar(250)")] string chuoiKetNoi)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, mAC, diaChiIP, dichVu, soLuong, tongTien, thoiGianBatDau, thoiGianKetThuc);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, mAC, diaChiIP, dichVu, soLuong, tongTien, thoiGianBatDau, thoiGianKetThuc, chuoiKetNoi);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -95,6 +95,8 @@ namespace daoSLPH.Database
 		private System.Nullable<System.DateTime> _ThoiGianBatDau;
 		
 		private System.Nullable<System.DateTime> _ThoiGianKetThuc;
+		
+		private string _ChuoiKetNoi;
 		
 		private System.Nullable<System.DateTime> _NgayHeThong;
 		
@@ -226,6 +228,22 @@ namespace daoSLPH.Database
 				if ((this._ThoiGianKetThuc != value))
 				{
 					this._ThoiGianKetThuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChuoiKetNoi", DbType="NVarChar(250)")]
+		public string ChuoiKetNoi
+		{
+			get
+			{
+				return this._ChuoiKetNoi;
+			}
+			set
+			{
+				if ((this._ChuoiKetNoi != value))
+				{
+					this._ChuoiKetNoi = value;
 				}
 			}
 		}

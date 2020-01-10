@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuTongHop" Class="linqCSKHTyLeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuTongHop;User ID=BaoCaoSL" SettingsObjectName="daoSLTH.Properties.Settings" SettingsPropertyName="SoLieuTongHopConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblcskhTyLe_DanhSach" Method="sp_tblcskhTyLe_DanhSach">
+    <Parameter Name="IDChinhSach" Parameter="iDChinhSach" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblcskhTyLe_DanhSachResult">
+      <Column Name="IDChinhSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDMucDoanhThu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TyLe" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="NgayApDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MucDuoi" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="MucTren" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblcskhTyLe_Xoa" Method="sp_tblcskhTyLe_Xoa">
+    <Parameter Name="IDChinhSach" Parameter="iDChinhSach" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDMucDoanhThu" Parameter="iDMucDoanhThu" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblcskhTyLe_ThemSua" Method="sp_tblcskhTyLe_ThemSua">
+    <Parameter Name="IDChinhSach" Parameter="iDChinhSach" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDMucDoanhThu" Parameter="iDMucDoanhThu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TyLe" Parameter="tyLe" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="NgayApDung" Parameter="ngayApDung" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NgayKetThuc" Parameter="ngayKetThuc" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\Newtonsoft.Json.dll</HintPath>
@@ -39,27 +42,26 @@
     <Reference Include="NPOI">
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
     </Reference>
-    <Reference Include="PAYPOST.COD.LIB">
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PAYPOST.COD.LIB.dll</HintPath>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="PAYPOST.DIC">
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PAYPOST.DIC.dll</HintPath>
+      <HintPath>..\..\DLL\PAYPOST.DIC.dll</HintPath>
     </Reference>
     <Reference Include="PayPOST.Entity">
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PayPOST.Entity.dll</HintPath>
+      <HintPath>..\..\DLL\PayPOST.Entity.dll</HintPath>
     </Reference>
     <Reference Include="PAYPOST.HC">
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PAYPOST.HC.dll</HintPath>
+      <HintPath>..\..\DLL\PAYPOST.HC.dll</HintPath>
     </Reference>
-    <Reference Include="PAYPOST.LOG, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PAYPOST.LOG.dll</HintPath>
-    </Reference>
-    <Reference Include="PAYPOST.MTA">
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PAYPOST.MTA.dll</HintPath>
-    </Reference>
-    <Reference Include="PayPOST.Security">
-      <HintPath>C:\Users\PhongKT\Desktop\Paypost\PayPOST Counter\PayPOST.Security.dll</HintPath>
+    <Reference Include="PAYPOST.LOG">
+      <HintPath>..\..\DLL\PAYPOST.LOG.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -78,7 +80,25 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="Database\daB0205KeToan.cs" />
+    <Compile Include="Database\daB02KTNV.cs" />
+    <Compile Include="Database\daChiPhi.cs" />
     <Compile Include="Database\daSoNhatKy.cs" />
+    <Compile Include="Database\linqB0205KeToan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqB0205KeToan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqB02KTNV.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqB02KTNV.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqChiPhi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqChiPhi.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\linqSoNhatKy.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +133,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Database\linqB0205KeToan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqB0205KeToan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqB0205KeToan.dbml.layout">
+      <DependentUpon>linqB0205KeToan.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqB02KTNV.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqB02KTNV.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqB02KTNV.dbml.layout">
+      <DependentUpon>linqB02KTNV.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqChiPhi.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqChiPhi.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqChiPhi.dbml.layout">
+      <DependentUpon>linqChiPhi.dbml</DependentUpon>
+    </None>
     <None Include="Database\linqSoNhatKy.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>linqSoNhatKy.designer.cs</LastGenOutput>

@@ -22,8 +22,8 @@ namespace daoSLPH.Untities
                     if (nic.GetPhysicalAddress().ToString() != "")
                     {
                         MAC = nic.GetPhysicalAddress().ToString();
-                        UnicastIPAddressInformationCollection n = nic.GetIPProperties().UnicastAddresses;
-                        DiaChiIP = n[0].Address.ToString();
+                        UnicastIPAddressInformationCollection n = nic.GetIPProperties().UnicastAddresses;                        
+                        DiaChiIP = n[n.Count-1].Address.ToString();
                     }
                 }
             }

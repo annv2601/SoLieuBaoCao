@@ -79,5 +79,28 @@ namespace SoLieuBaoCao.UIHelper
             return _tenfile;
         }
 
+        public static DateTime NgayDauTuan(DateTime rNgay)
+        {
+            /*System.Globalization.CultureInfo ci =
+            System.Threading.Thread.CurrentThread.CurrentCulture;
+            ci.DateTimeFormat.FirstDayOfWeek = DayOfWeek.Monday;
+            DayOfWeek firstDay = ci.DateTimeFormat.FirstDayOfWeek;*/
+            DayOfWeek firstDay = DayOfWeek.Monday;
+            DateTime firstDayInWeek = rNgay.Date;
+            while (firstDayInWeek.DayOfWeek != firstDay)
+                firstDayInWeek = firstDayInWeek.AddDays(-1);
+
+            return firstDayInWeek;
+        }
+
+        public static DateTime NgayDauThang(DateTime rNgay)
+        {
+            return DateTime.Parse(rNgay.Month.ToString() + "/01/" + rNgay.Year.ToString());
+        }
+
+        public static DateTime NgayDauNam(DateTime rNgay)
+        {
+            return DateTime.Parse("01/01/" + rNgay.Year.ToString());
+        }
     }
 }

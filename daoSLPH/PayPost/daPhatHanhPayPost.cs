@@ -15,6 +15,11 @@ namespace daoSLPH.PayPost
 
         public sp_tblPhatHanhPayPost_ThongTinResult PaPo { get => _PaPo; set => _PaPo = value; }
 
+        public void Xoa()
+        {
+            lPP.sp_tblPhatHanhPayPost_Xoa(PaPo.MaBuuCuc, PaPo.MAC);
+        }
+
         public void Them()
         {
             lPP.sp_tblPhatHanhPayPost_Them(PaPo.MaBuuCuc,

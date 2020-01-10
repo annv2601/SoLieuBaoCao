@@ -22,7 +22,8 @@ namespace daoSLPH.LanLayDuLieu
                 LanLay.SoLuong,
                 LanLay.TongTien,
                 LanLay.ThoiGianBatDau,
-                LanLay.ThoiGianKetThuc);
+                LanLay.ThoiGianKetThuc,
+                LanLay.ChuoiKetNoi);
         }
     }
 }

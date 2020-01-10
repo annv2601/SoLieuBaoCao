@@ -149,5 +149,81 @@ namespace BaoBieu
             }
             return "/" + DuongDanLuuFile + "/" + TenFileExcel;
         }
+
+        public string XuatExcelCotDong()
+        {
+            HSSFWorkbook wb;
+            HSSFSheet sh;
+            wb = HSSFWorkbook.Create(InternalWorkbook.CreateWorkbook());
+
+            // create sheet
+            sh = (HSSFSheet)wb.CreateSheet(DateTime.Now.ToString("dd_MM_yyyy HH_mm_ss"));
+
+            // Tieu De
+            IFont font1 = wb.CreateFont();
+            font1.Boldweight = 100;
+            font1.IsBold = true;
+
+            ICellStyle style = wb.CreateCellStyle();
+            style.Alignment = NPOI.SS.UserModel.HorizontalAlignment.Center;
+            style.VerticalAlignment = NPOI.SS.UserModel.VerticalAlignment.Center;
+            style.SetFont(font1);
+            style.WrapText = true;
+
+            if (sh.GetRow(0) == null)
+                sh.CreateRow(0);
+            int j;
+            
+            for (j = 0; j < DuLieu.Columns.Count; j++)
+            {
+                if (sh.GetRow(0).GetCell(j) == null)
+                    sh.GetRow(0).CreateCell(j);
+                sh.GetRow(0).GetCell(j).CellStyle = style;
+                sh.GetRow(0).GetCell(j).SetCellValue(DuLieu.Columns[j].ColumnName);                
+            }
+            sh.GetRow(0).Height = 520;
+
+            //Du lieu
+            Double GiaTri;
+            string _gt;
+            for (int i = 0; i < DuLieu.Rows.Count; i++)
+            {
+                sh.CreateRow(i + 1);
+                
+                for (j = 0; j < DuLieu.Columns.Count; j++)
+                {
+                    if (sh.GetRow(i + 1).GetCell(j) == null)
+                        sh.GetRow(i + 1).CreateCell(j);
+
+                    if (DuLieu.Rows[i][j] == null)
+                    {
+                        sh.GetRow(i + 1).GetCell(j).SetCellValue("");
+                    }
+                    else
+                    {
+                        _gt = DuLieu.Rows[i][j].ToString();
+                        _gt = _gt.Replace(".", "");
+                        if (Double.TryParse(_gt, out GiaTri))
+                        {
+                            sh.GetRow(i + 1).GetCell(j).SetCellValue(GiaTri);
+                        }
+                        else
+                        {
+                            sh.GetRow(i + 1).GetCell(j).SetCellValue(_gt);
+                        }
+                    }
+                }
+
+            }
+
+            //Ghi ra file
+            string _TenFileServer;
+            _TenFileServer = KiemTraTonTaiFile();
+            using (var fs = new FileStream(_TenFileServer, FileMode.Create, FileAccess.Write))
+            {
+                wb.Write(fs);
+            }
+            return "/" + DuongDanLuuFile + "/" + TenFileExcel;
+        }
     }
 }

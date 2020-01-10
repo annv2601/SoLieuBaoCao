@@ -11,8 +11,8 @@ using daoSLBC.DanhMuc;
 using daoSLBC.Database.DuLieuBaoCao;
 using daoSLBC.SoLieuNgoai;
 using Ext.Net;
-using BaoBieu.BieuNhap;
-using BaoBieu;
+//using BaoBieu.BieuNhap;
+//using BaoBieu;
 
 namespace SoLieuBaoCao.BieuBaoCao
 {
@@ -164,11 +164,11 @@ namespace SoLieuBaoCao.BieuBaoCao
             dBCN.KhoiTao();
 
             //Lay so lieu ben stk1 sang
-            daSoLieuSTK1 dSLSTK1 = new daSoLieuSTK1();
+            /*daSoLieuSTK1 dSLSTK1 = new daSoLieuSTK1();
             dSLSTK1.Thang = Thang;
             dSLSTK1.Nam = Nam;
             dSLSTK1.MaDonViSTK1= UIHelper.daPhien.ThongTinDN.MaSTK1;
-            dSLSTK1.LaySoLieuSTK1_DonVi();
+            dSLSTK1.LaySoLieuSTK1_DonVi();*/
             //=================
 
             dBCN.LaySTK1();
@@ -257,7 +257,7 @@ namespace SoLieuBaoCao.BieuBaoCao
         #region Bao cao, Xuat Excel
         protected void btnIn_CLick(object sender, DirectEventArgs e)
         {
-            daDuLieuBCN dBCN = new daDuLieuBCN();
+            /*daDuLieuBCN dBCN = new daDuLieuBCN();
             dBCN.MaBieuBaoCao = MaBieuBaoCao;
             dBCN.Nam = Nam;
             dBCN.MaDonVi = UIHelper.daPhien.MaDonVi;
@@ -278,12 +278,12 @@ namespace SoLieuBaoCao.BieuBaoCao
             string _url = UIHelper.daPhien.LayDiaChiURL(_tf);
 
             string script = "window.open('"+_url+"', '')";
-            this.btnIn.AddScript(script);
+            this.btnIn.AddScript(script);*/
         }
 
         protected void btnXuatExcel_Click(object sender, DirectEventArgs e)
         {
-            daXuatExcel dXuatE = new daXuatExcel();
+            /*daXuatExcel dXuatE = new daXuatExcel();
             dXuatE.TenFileExcel = "BaoCaoNhanhDonVi" + DateTime.Now.ToString("ddMMyyyHHmmss") + ".xls";
             dXuatE.DuongDan = Server.MapPath("..");
 
@@ -309,7 +309,7 @@ namespace SoLieuBaoCao.BieuBaoCao
             dXuatE.DuLieu = dt;
 
             string _url = UIHelper.daPhien.LayDiaChiURL(dXuatE.XuatFileExcel_TheoMau());
-            Response.Redirect(_url);
+            Response.Redirect(_url);*/
         }
         #endregion
     }

@@ -54,6 +54,45 @@ namespace daoSLPH.DataClient
                     DocGhi(_rTenFileDL, _NgayPhatHanh);
                 }
             }
+            
+        }
+
+        public void DocVaGhiDuLieu(DateTime rTuNgay, DateTime rDenNgay)
+        {
+            daDuLieuPayPost dDLPP = new daDuLieuPayPost();
+            dDLPP.XoaTatCa();
+
+            string rTenFile = "";
+            daCauHinh dCH = new daCauHinh();
+            dCH.Lay(dCH.TimMaThamSo((int)daCauHinh.eCauHinh.Đường_Dẫn_Paypost));
+            if (dCH.CauHinh != null)
+            {
+                rTenFile = dCH.CauHinh.GiaTri;
+            }
+
+            rTenFile = rTenFile + "\\TRANSACTION";
+
+            List<string> dsThuMuc;
+            daThuMuc dTM = new daThuMuc();
+            dsThuMuc = dTM.TimThuMucCoDuLieu(rTenFile);
+
+            DateTime _NgayPhatHanh;// = DateTime.Now;
+            string _rTenFileDL = "";
+            int i;
+            _NgayPhatHanh = rTuNgay;
+            while(_NgayPhatHanh<=rDenNgay)
+            {
+                for (i = 0; i < dsThuMuc.Count; i++)
+                {
+                    _rTenFileDL = rTenFile + "\\" + dsThuMuc[i] + "\\" + _NgayPhatHanh.ToString("yyyyMMdd") + ".log";
+                    if (KiemTraCoTonTaiFile(_rTenFileDL))
+                    {
+                        DocGhi(_rTenFileDL, _NgayPhatHanh);
+                    }
+                }
+                _NgayPhatHanh = _NgayPhatHanh.AddDays(1);
+            }
+            
         }
 
         public void DocVaGhiDuLieuNgay(DateTime rNgay)
@@ -233,6 +272,22 @@ namespace daoSLPH.DataClient
                     Ghi(ptPP, null);
                 }
             }
+        }
+
+        public void DocGhi(string rTenFile)
+        {
+            Transactions transactions = null;
+            try
+            {
+                transactions = ObjectXMLSerializer<Transactions>.Load(rTenFile, SerializedFormat.Binary);
+            }
+            catch
+            {
+                transactions = new Transactions();
+                transactions.Transaction = new PAYPOST.LOG.Transaction[0];
+            }
+            Transaction[] array = new Transaction[transactions.Transaction.Length];
+            transactions.Transaction.CopyTo(array, 0);
         }
     }
 }

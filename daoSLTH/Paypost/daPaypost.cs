@@ -15,7 +15,7 @@ namespace daoSLTH.Paypost
 
         public void TongHop()
         {
-            lPP.sp_tblPaypostBuuCuc_TongHop(DateTime.Now, true);
+            lPP.sp_tblPaypostBuuCuc_TongHop(Ngay, true);
         }
 
         public DataTable DanhSach()

@@ -27,11 +27,31 @@ namespace Test.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.200.167;Initial Catalog=SoLieuKeToan;Persist Security Info=True" +
-            ";User ID=sa")]
+            ";User ID=BaoCaoSL; Password=SoLieu@2018*")]
         public string SoLieuKeToanConnectionString {
             get {
-                //return ((string)(this["SoLieuKeToanConnectionString"]));
-                return System.Configuration.ConfigurationManager.ConnectionStrings["SoLieuKeToanConnectionString"].ConnectionString;
+                return ((string)(this["SoLieuKeToanConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.200.167;Initial Catalog=SoLieuBCOL;User ID=BaoCaoSL; Password=S" +
+            "oLieu@2018*")]
+        public string SoLieuBCOLConnectionString {
+            get {
+                return ((string)(this["SoLieuBCOLConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.200.167;Initial Catalog=SoLieuBCOL;User ID=sa")]
+        public string SoLieuBCOLConnectionString1 {
+            get {
+                return ((string)(this["SoLieuBCOLConnectionString1"]));
             }
         }
     }

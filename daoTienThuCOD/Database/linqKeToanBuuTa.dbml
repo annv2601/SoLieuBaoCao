@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TienCOD" Class="linqKeToanBuuTaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=TienCOD;Persist Security Info=True;User ID=sa" SettingsObjectName="daoTienThuCOD.Properties.Settings" SettingsPropertyName="TienCODConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblKeToanBuuTa_DanhSach_BuuCuc" Method="sp_tblKeToanBuuTa_DanhSach_BuuCuc">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblKeToanBuuTa_KetChuyen" Method="sp_tblKeToanBuuTa_KetChuyen">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblKeToanBuuTa_DanhSach_BuuTa" Method="sp_tblKeToanBuuTa_DanhSach_BuuTa">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaBuuTa" Parameter="maBuuTa" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

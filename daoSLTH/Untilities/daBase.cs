@@ -18,6 +18,10 @@ namespace daoSLTH.Untilities
 
         private int _Nam;
 
+        private byte _TuThang;
+
+        private byte _DenThang;
+
         private string _MaDonVi;
 
         private string _MaBuuCuc;
@@ -32,5 +36,7 @@ namespace daoSLTH.Untilities
         public string MaDonVi { get => _MaDonVi; set => _MaDonVi = value; }
         public string MaDoiSoat { get => _MaDoiSoat; set => _MaDoiSoat = value; }
         public string MaBuuCuc { get => _MaBuuCuc; set => _MaBuuCuc = value; }
+        public byte TuThang { get => _TuThang; set => _TuThang = value; }
+        public byte DenThang { get => _DenThang; set => _DenThang = value; }
     }
 }

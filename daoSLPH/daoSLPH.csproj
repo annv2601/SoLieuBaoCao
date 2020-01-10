@@ -32,17 +32,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LiteDB">
-      <HintPath>..\..\..\Dll_HoTro\LiteDB.dll</HintPath>
+      <HintPath>..\..\DLL\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Dll_HoTro\Paypost\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PAYPOST.DIC">
+      <HintPath>..\..\DLL\PAYPOST.DIC.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPOST.Entity">
+      <HintPath>..\..\DLL\PayPOST.Entity.dll</HintPath>
+    </Reference>
     <Reference Include="PAYPOST.HC">
-      <HintPath>..\..\..\Dll_HoTro\Paypost\PAYPOST.HC.dll</HintPath>
+      <HintPath>..\..\DLL\PAYPOST.HC.dll</HintPath>
     </Reference>
     <Reference Include="PAYPOST.LOG">
-      <HintPath>..\..\..\Dll_HoTro\Paypost\PAYPOST.LOG.dll</HintPath>
+      <HintPath>..\..\DLL\PAYPOST.LOG.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -72,13 +78,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>linqPhatHanhPayPost.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\linqThoiGianThuGom.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqThoiGianThuGom.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataClient\daCauHinh.cs" />
     <Compile Include="DataClient\daClient.cs" />
+    <Compile Include="DataClient\daDanhMucNVPP.cs" />
+    <Compile Include="DataClient\daDichVu.cs" />
     <Compile Include="DataClient\daDocDuLieuBCCP.cs" />
     <Compile Include="DataClient\daDocDuLieuPayPost.cs" />
+    <Compile Include="DataClient\daDocSLDen.cs" />
     <Compile Include="DataClient\daDuLieuBCCP.cs" />
     <Compile Include="DataClient\daDuLieuPayPost.cs" />
     <Compile Include="DataClient\daLanLayDuLieu.cs" />
+    <Compile Include="DataClient\daSoLieuPhatHanhBCCP.cs" />
     <Compile Include="daTienIch.cs" />
     <Compile Include="DayDuLieu\daDayBCCP.cs" />
     <Compile Include="DayDuLieu\daDayPaypost.cs" />
@@ -90,6 +105,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ThoiGianThuGom\daThoiGianThuGom.cs" />
     <Compile Include="Untities\daMaHoa.cs" />
     <Compile Include="Untities\daThongTinMay.cs" />
     <Compile Include="Untities\daThuMuc.cs" />
@@ -119,6 +135,14 @@
     </None>
     <None Include="Database\linqPhatHanhPayPost.dbml.layout">
       <DependentUpon>linqPhatHanhPayPost.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqThoiGianThuGom.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqThoiGianThuGom.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqThoiGianThuGom.dbml.layout">
+      <DependentUpon>linqThoiGianThuGom.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

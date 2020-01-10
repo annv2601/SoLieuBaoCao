@@ -20,6 +20,9 @@ namespace daoSLPH.DataClient
         private const string FileLanLay = "LogLay.db";
         private const string FileDuLieuPP = "DuLieuPayPost.db";
         private const string FileDuLieuBCCP = "DuLieuBCCP.db";
+        private const string FileDichVu = "DichVu.db";
+        private const string FileDanhMucNVPP = "DanhMucNVPP.db";
+        private const string FileDuLieuBCCPDen = "DuLieuBCCPDen.db";
 
         private string _TenThuMuc;
 
@@ -31,16 +34,33 @@ namespace daoSLPH.DataClient
 
         private string _TenFileDuLieuBCCP;
 
+        private string _TenFileDichVu;
+
+        private string _TenFileNVPP;
+
+        private string _TenFileDuLieuBCCPDen;
+
         public string TenThuMuc { get => _TenThuMuc; set => _TenThuMuc = value; }
         public string TenFileCauHinh { get => _TenFileCauHinh; set => _TenFileCauHinh = value; }
         public string TenFileDuLieuPP { get => _TenFileDuLieuPP; set => _TenFileDuLieuPP = value; }
         public string TenFileLogLay { get => _TenFileLogLay; set => _TenFileLogLay = value; }
         public string TenFileDuLieuBCCP { get => _TenFileDuLieuBCCP; set => _TenFileDuLieuBCCP = value; }
+        public string TenFileDichVu { get => _TenFileDichVu; set => _TenFileDichVu = value; }
+        public string TenFileNVPP { get => _TenFileNVPP; set => _TenFileNVPP = value; }
+        public string TenFileDuLieuBCCPDen { get => _TenFileDuLieuBCCPDen; set => _TenFileDuLieuBCCPDen = value; }
 
         public string BangCauHinh = "CauHinh";
         public string BangLanLay = "LanLay";
         public string BangDuLieuPP = "DuLieuPP";
         public string BangDuLieuBCCP = "DuLieuBCCP";
+        public string BangDichVu = "DichVu";
+        public string BangDanhMuc = "DanhMuc";
+        public string BangDanhMucDVi = "DanhMucDVi";
+        public string BangDanhMucND = "DanhMucND";
+
+        public string BangSLDen = "SoLieuDen";
+        public string BangPhanBuuTa = "PhanBuuTa";
+        public string BangChuyenHoan = "ChuyenHoan";
 
         private void KhoiTaoThuMuc()
         {
@@ -64,6 +84,12 @@ namespace daoSLPH.DataClient
             TenFileDuLieuPP = TaoFile(FileDuLieuPP);
 
             TenFileDuLieuBCCP = TaoFile(FileDuLieuBCCP);
+
+            TenFileDichVu = TaoFile(FileDichVu);
+
+            TenFileNVPP = TaoFile(FileDanhMucNVPP);
+
+            TenFileDuLieuBCCPDen = TaoFile(FileDuLieuBCCPDen);
         }
 
         private string TaoFile(string rTenFile)

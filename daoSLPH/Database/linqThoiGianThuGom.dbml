@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuPhatHanh" Class="linqThoiGianThuGomDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuPhatHanh;User ID=sa" SettingsObjectName="daoSLPH.Properties.Settings" SettingsPropertyName="SoLieuPhatHanhConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblThoiGianThuGom_Lay" Method="sp_tblThoiGianThuGom_Lay">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblThoiGianThuGom_LayResult">
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GioGomQuyLan1" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="GioGomQuyLan2" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="GioGomQuyLan3" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

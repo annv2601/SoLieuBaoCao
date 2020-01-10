@@ -39,6 +39,11 @@ namespace daoSLPH.DataClient
             }
 
             BangDuLieu = dBG.DanhSachBuuGui();
+
+            dCH.CauHinh.GiaTri = dBG.ChuoiKetNoiChay;
+            dCH.CauHinh.ID = (int)daCauHinh.eCauHinh._Chuỗi_Kết_nối_Chạy;
+            dCH.CauHinh.Ma = "ChuoiKetNoiBCCP";
+            dCH.Them();
         }
 
         public void LuuBangDuLieu()
@@ -46,7 +51,9 @@ namespace daoSLPH.DataClient
             if (BangDuLieu.Rows.Count > 0)
             {
                 daDuLieuBCCP dBCCP = new daDuLieuBCCP();
+
                 dBCCP.Xoa(MaBuuCuc);
+
                 for (int i = 0; i < BangDuLieu.Rows.Count; i++)
                 {
                     dBCCP.Them(Chuyen1Dong(BangDuLieu.Rows[i], i + 1));
@@ -66,7 +73,7 @@ namespace daoSLPH.DataClient
             ptBCCP.NgayPhatHanh = NgayPhatHanh;
             ptBCCP.SoHieu = dr["SoHieu"].ToString();
             ptBCCP.MaDichVu = dr["MaDichVu"] == DBNull.Value ? "" : dr["MaDichVu"].ToString();
-
+            ptBCCP.TenDichVu = dr["TenDichVu"] == DBNull.Value ? "" : dr["TenDichVu"].ToString();
             ptBCCP.MaBuuCucChapNhan = dr["MaBCChapNhan"] == DBNull.Value ? "" : dr["MaBCChapNhan"].ToString();
             try
             {
@@ -100,10 +107,17 @@ namespace daoSLPH.DataClient
             ptBCCP.CuocCOD = dr["CuocCOD"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["CuocCOD"]);
             ptBCCP.CuocCODVAT = dr["CuocCODVAT"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["CuocCODVAT"]);
             ptBCCP.GhiNo = dr["No"] == DBNull.Value ? false : Convert.ToBoolean(dr["No"]);
-            ptBCCP.TongCuoc = dr["TongCuoc"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["TongCuoc"]);
+            if(ptBCCP.CuocCongThem<0)
+            {
+                ptBCCP.CuocCongThem = 0;
+            }
+            ptBCCP.TongCuoc = ptBCCP.CuocChinh + ptBCCP.PhuPhiVX + ptBCCP.PhuPhiXD + ptBCCP.CuocCongThem;
+
             ptBCCP.VAT = dr["VAT"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["VAT"]);
             ptBCCP.ThanhTien = dr["ThanhTien"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["ThanhTien"]);
             ptBCCP.NoiDungBuuGui = dr["NoiDungBuuGui"] == DBNull.Value ? "" : Convert.ToString(dr["NoiDungBuuGui"]);
+            ptBCCP.GuiLo = dr["GuiLo"] == DBNull.Value ? false : Convert.ToBoolean(dr["GuiLo"]);
+            ptBCCP.SoLo = dr["SoLo"] == DBNull.Value ? "" : Convert.ToString(dr["SoLo"]);
 
             return ptBCCP;
         }

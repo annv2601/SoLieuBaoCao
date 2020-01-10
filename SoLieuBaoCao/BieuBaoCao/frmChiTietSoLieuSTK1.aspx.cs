@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using daoSLBC.DuLieuBaoCao;
 using Ext.Net;
-using BaoBieu;
+//using BaoBieu;
 
 namespace SoLieuBaoCao.BieuBaoCao
 {
@@ -72,7 +72,7 @@ namespace SoLieuBaoCao.BieuBaoCao
 
         protected void btnXuatExcelDVNgay_Click(object sender, DirectEventArgs e)
         {
-            daXuatExcel dXuatE = new daXuatExcel();
+            /*daXuatExcel dXuatE = new daXuatExcel();
             dXuatE.TenFileExcel = "ChiTietDichVuTheoNgay" + DateTime.Now.ToString("ddMMyyyHHmmss") + ".xls";
             dXuatE.DuongDan = Server.MapPath("..");
 
@@ -85,12 +85,12 @@ namespace SoLieuBaoCao.BieuBaoCao
             dXuatE.DuLieu = dCTSTK.dsChiTietDichVuNgay();
 
             string _url = UIHelper.daPhien.LayDiaChiURL(dXuatE.XuatFileExcel_TheoMau());
-            Response.Redirect(_url);
+            Response.Redirect(_url);*/
         }
 
         protected void btnXuatExcelBCNgay_Click(object sender, DirectEventArgs e)
         {
-            daXuatExcel dXuatE = new daXuatExcel();
+            /*daXuatExcel dXuatE = new daXuatExcel();
             dXuatE.TenFileExcel = "ChiTietbuuCucTheoNgay" + DateTime.Now.ToString("ddMMyyyHHmmss") + ".xls";
             dXuatE.DuongDan = Server.MapPath("..");
 
@@ -103,7 +103,7 @@ namespace SoLieuBaoCao.BieuBaoCao
             dXuatE.DuLieu = dCTSTK.dsChiTietBuuCucNgay();
 
             string _url = UIHelper.daPhien.LayDiaChiURL(dXuatE.XuatFileExcel_TheoMau());
-            Response.Redirect(_url);
+            Response.Redirect(_url);*/
         }
     }
 }

@@ -100,6 +100,13 @@ namespace daoSLPH.Database
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc);
 			return ((ISingleResult<sp_tblPhatHanhPayPost_ThongTinResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblPhatHanhPayPost_Xoa")]
+		public int sp_tblPhatHanhPayPost_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAC", DbType="NVarChar(50)")] string mAC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, mAC);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_tblPhatHanhPayPost_ThongTinResult

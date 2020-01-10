@@ -42,11 +42,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSKH\daChietKhauKhachHang.cs" />
+    <Compile Include="CSKH\daCSKHApDoiTuong.cs" />
+    <Compile Include="CSKH\daCSKHChinhSach.cs" />
+    <Compile Include="CSKH\daCSKHMucDoanhThu.cs" />
+    <Compile Include="CSKH\daCSKHTyLe.cs" />
+    <Compile Include="Database\CSKH\linqChietKhauKhachHang.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqChietKhauKhachHang.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CSKH\linqCSKHApDoiTuong.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqCSKHApDoiTuong.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CSKH\linqCSKHChinhSach.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqCSKHChinhSach.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CSKH\linqCSKHMucDoanhThu.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqCSKHMucDoanhThu.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\CSKH\linqCSKHTyLe.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqCSKHTyLe.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqDoanhThuKhachHang.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDoanhThuKhachHang.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqKetSat.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqKetSat.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqKhachHang.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqKhachHang.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\linqPaypost.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>linqPaypost.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\linqTrangThaiDoiSoat.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqTrangThaiDoiSoat.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhThuKhachHang\daDoanhThuKH.cs" />
+    <Compile Include="DoanhThuKhachHang\daTheoDoiDoanhThu.cs" />
+    <Compile Include="KetSat\daKetSat.cs" />
+    <Compile Include="KhachHang\daKhachHang.cs" />
     <Compile Include="Paypost\daPaypost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -54,11 +108,76 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TrangThaiDoaiSoat\daTrangThaiDoiSoat.cs" />
     <Compile Include="Untilities\daBase.cs" />
     <Compile Include="Untilities\daTienIch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Database\CSKH\linqChietKhauKhachHang.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqChietKhauKhachHang.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\CSKH\linqChietKhauKhachHang.dbml.layout">
+      <DependentUpon>linqChietKhauKhachHang.dbml</DependentUpon>
+    </None>
+    <None Include="Database\CSKH\linqCSKHApDoiTuong.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqCSKHApDoiTuong.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\CSKH\linqCSKHApDoiTuong.dbml.layout">
+      <DependentUpon>linqCSKHApDoiTuong.dbml</DependentUpon>
+    </None>
+    <None Include="Database\CSKH\linqCSKHChinhSach.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqCSKHChinhSach.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\CSKH\linqCSKHChinhSach.dbml.layout">
+      <DependentUpon>linqCSKHChinhSach.dbml</DependentUpon>
+    </None>
+    <None Include="Database\CSKH\linqCSKHMucDoanhThu.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqCSKHMucDoanhThu.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\CSKH\linqCSKHMucDoanhThu.dbml.layout">
+      <DependentUpon>linqCSKHMucDoanhThu.dbml</DependentUpon>
+    </None>
+    <None Include="Database\CSKH\linqCSKHTyLe.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqCSKHTyLe.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\CSKH\linqCSKHTyLe.dbml.layout">
+      <DependentUpon>linqCSKHTyLe.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqDoanhThuKhachHang.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDoanhThuKhachHang.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqDoanhThuKhachHang.dbml.layout">
+      <DependentUpon>linqDoanhThuKhachHang.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqKetSat.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqKetSat.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqKetSat.dbml.layout">
+      <DependentUpon>linqKetSat.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqKhachHang.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqKhachHang.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqKhachHang.dbml.layout">
+      <DependentUpon>linqKhachHang.dbml</DependentUpon>
+    </None>
     <None Include="Database\linqPaypost.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>linqPaypost.designer.cs</LastGenOutput>
@@ -66,6 +185,14 @@
     </None>
     <None Include="Database\linqPaypost.dbml.layout">
       <DependentUpon>linqPaypost.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqTrangThaiDoiSoat.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqTrangThaiDoiSoat.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqTrangThaiDoiSoat.dbml.layout">
+      <DependentUpon>linqTrangThaiDoiSoat.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +202,11 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DuLieuBCCP\DuLieuBCCP.csproj">
+      <Project>{04500a7e-4ccf-40a6-ac88-14aa2cf7a60e}</Project>
+      <Name>DuLieuBCCP</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

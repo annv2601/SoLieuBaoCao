@@ -13,6 +13,8 @@ namespace daoSLPH.DayDuLieu
     {
         public event DayHandler Day;
         public delegate void DayHandler(object sender, EventArgs e);
+        public event DayXongHandler DayXong;
+        public delegate void DayXongHandler(object sender, EventArgs e);
 
         public void Chay()
         {
@@ -38,9 +40,10 @@ namespace daoSLPH.DayDuLieu
             lstTruyen = dPP.LayDanhSachChuaTruyen();
             ptLog.SoLuong = 0;
             ptLog.TongTien = 0;
+            dPHPP.PaPo.MaBuuCuc = ptLog.MaBuuCuc;
+            //dPHPP.Xoa();
             foreach (clsDuLieuPP ptPP in lstTruyen)
-            {
-                dPHPP.PaPo.MaBuuCuc = ptLog.MaBuuCuc;
+            {                
                 dPHPP.PaPo.NgayPhatHanh = ptPP.NgayPhatHanh;
                 dPHPP.PaPo.MAC = dTTM.MAC;
                 dPHPP.PaPo.TranTime = ptPP.TranTime;
@@ -96,6 +99,23 @@ namespace daoSLPH.DayDuLieu
                 dLan.LanLay.ThoiGianKetThuc = ptLog.ThoiGianKetThuc;
                 dLan.Them();
             }
+
+            DayXong(null, null);
+        }
+
+        public void Xoa()
+        {
+            daThongTinMay dTTM = new daThongTinMay();
+            
+            daPhatHanhPayPost dPHPP = new daPhatHanhPayPost();
+            daCauHinh dCH = new daCauHinh();
+            dCH.Lay(dCH.TimMaThamSo((int)daCauHinh.eCauHinh.Mã_Bưu_Cục));
+            if (dCH.CauHinh != null)
+            {
+                dPHPP.PaPo.MaBuuCuc = dCH.CauHinh.GiaTri;
+            }
+            dPHPP.PaPo.MAC = dTTM.MAC;
+            dPHPP.Xoa();
         }
     }
 }

@@ -11,8 +11,8 @@ using daoSLBC.DanhMuc;
 using daoSLBC.Database.DuLieuBaoCao;
 using daoSLBC.SoLieuNgoai;
 using Ext.Net;
-using BaoBieu.BaoCaoB0205;
-using BaoBieu;
+//using BaoBieu.BaoCaoB0205;
+//using BaoBieu;
 
 namespace SoLieuBaoCao.BieuBaoCao
 {
@@ -197,7 +197,7 @@ namespace SoLieuBaoCao.BieuBaoCao
         #region Bao cao, Xuat Excel
         protected void btnIn_CLick(object sender, DirectEventArgs e)
         {
-            daDuLieuBaoCaoB0205 dDLB0205 = new daDuLieuBaoCaoB0205();
+            /*daDuLieuBaoCaoB0205 dDLB0205 = new daDuLieuBaoCaoB0205();
             dDLB0205.MaBieuBaoCao = MaBieuBaoCao;
 
             crB0205 rptB0205 = new crB0205();
@@ -220,12 +220,12 @@ namespace SoLieuBaoCao.BieuBaoCao
             string _url = UIHelper.daPhien.LayDiaChiURL(_tf);
 
             string script = "window.open('"+_url+"', '')";
-            this.btnIn.AddScript(script);
+            this.btnIn.AddScript(script);*/
         }
 
         protected void btnXuatExcel_Click(object sender, DirectEventArgs e)
         {
-            daXuatExcel dXuatE = new daXuatExcel();
+            /*daXuatExcel dXuatE = new daXuatExcel();
             dXuatE.TenFileExcel = "BaoCaoB0205DonVi" + DateTime.Now.ToString("ddMMyyyHHmmss") + ".xls";
             dXuatE.DuongDan = Server.MapPath("..");
 
@@ -248,7 +248,7 @@ namespace SoLieuBaoCao.BieuBaoCao
             dXuatE.DuLieu = dt;
 
             string _url = UIHelper.daPhien.LayDiaChiURL(dXuatE.XuatFileExcel_TheoMau());
-            Response.Redirect(_url);
+            Response.Redirect(_url);*/
         }
         #endregion
     }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TienCOD" Class="linqKeToanBuuTaNgayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=TienCOD;Persist Security Info=True;User ID=sa" SettingsObjectName="daoTienThuCOD.Properties.Settings" SettingsPropertyName="TienCODConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblKeToanBuuTaNgay_DanhSach" Method="sp_tblKeToanBuuTaNgay_DanhSach">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKeToanBuuTaNgay_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaBuuTa" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="TenBuuTa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NhanMoiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NhanMoiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="ChuyenHoanSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyenHoanSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraLaiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraLaiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="GiuLaiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiuLaiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKeToanBuuTaNgay_ThongTin" Method="sp_tblKeToanBuuTaNgay_ThongTin">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaBuuTa" Parameter="maBuuTa" Type="System.String" DbType="NVarChar(30)" />
+    <ElementType Name="sp_tblKeToanBuuTaNgay_ThongTinResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaBuuTa" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NhanMoiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NhanMoiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="ChuyenHoanSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChuyenHoanSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TraLaiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TraLaiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="GiuLaiSanLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiuLaiSoTien" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKeToanBuuTaNgay_ketChuyen" Method="sp_tblKeToanBuuTaNgay_ketChuyen">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

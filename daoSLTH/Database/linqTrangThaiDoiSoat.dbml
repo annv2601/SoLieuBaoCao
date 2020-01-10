@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuTongHop" Class="linqTrangThaiDoiSoatDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuTongHop;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLTH.Properties.Settings" SettingsPropertyName="SoLieuTongHopConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblTrangThaiDoiSoat_KhoiTao" Method="sp_tblTrangThaiDoiSoat_KhoiTao">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblTrangThaiDoiSoat_ThongTin" Method="sp_tblTrangThaiDoiSoat_ThongTin">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblTrangThaiDoiSoat_ThongTinResult">
+      <Column Name="MaDoiSoat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThaiBCCP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrangThaiPaypost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

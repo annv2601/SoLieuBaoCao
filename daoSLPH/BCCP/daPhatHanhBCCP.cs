@@ -34,13 +34,19 @@ namespace daoSLPH.BCCP
             lBCCP.sp_tblTrangThaiLayBCCP_Them(TT.MaBuuCuc, TT.Ngay);
         }
 
+        public void Xoa()
+        {
+            lBCCP.sp_tblPhatHanhBCCP_Xoa(TT.MaBuuCuc, TT.Ngay);
+        }
+
         public void ThemPH()
         {
             lBCCP.sp_tblPhatHanhBCCP_Them(PH.MaBuuCuc,
                 PH.NgayPhatHanh,
                 PH.MAC,
                 PH.SoHieu,
-                PH.MaDichVu,
+                PH.MaDichVu,                
+                PH.TenDichVu,
                 PH.LoaiBuuGui,
                 PH.SoChuyen,
                 PH.SoTui,
@@ -70,7 +76,9 @@ namespace daoSLPH.BCCP
                 PH.ThanhTien,
                 PH.TongCuoc,
                 PH.GhiNo,
-                PH.NoiDungBuuGui);
+                PH.NoiDungBuuGui,
+                PH.GuiLo,
+                PH.SoLo);
         }
     }
 }

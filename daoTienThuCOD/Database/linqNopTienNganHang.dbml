@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TienCOD" Class="linqNopTienNganHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=TienCOD;Persist Security Info=True;User ID=sa" SettingsObjectName="daoTienThuCOD.Properties.Settings" SettingsPropertyName="TienCODConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblNopTienNganHang_ThemSua" Method="sp_tblNopTienNganHang_ThemSua">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gio" Parameter="gio" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="Lan" Parameter="lan" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="NguoiGiao" Parameter="nguoiGiao" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ChucDanh" Parameter="chucDanh" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NgayCap" Parameter="ngayCap" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NoiCap" Parameter="noiCap" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NguoiNhan" Parameter="nguoiNhan" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ChucDanhNguoiNhan" Parameter="chucDanhNguoiNhan" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="CMNDNguoiNhan" Parameter="cMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NgayCapCMNDNguoiNhan" Parameter="ngayCapCMNDNguoiNhan" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="NoiCapCMNDNguoiNhan" Parameter="noiCapCMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TongTienNop" Parameter="tongTienNop" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Parameter Name="BangChu" Parameter="bangChu" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TongTienCo" Parameter="tongTienCo" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Parameter Name="DiaDiemGiaoNhan" Parameter="diaDiemGiaoNhan" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="PhuongThucGiaoNhan" Parameter="phuongThucGiaoNhan" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="ChiNhanhNganHangGiaoNhan" Parameter="chiNhanhNganHangGiaoNhan" Type="System.String" DbType="NVarChar(150)" />
+    <ElementType Name="sp_tblNopTienNganHang_ThemSuaResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHangTaiKhoan_Xoa" Method="sp_tblNopTienNganHangTaiKhoan_Xoa">
+    <Parameter Name="IDNopTien" Parameter="iDNopTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHang_ThongTin" Method="sp_tblNopTienNganHang_ThongTin">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblNopTienNganHang_ThongTinResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Lan" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NguoiGiao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucDanh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoiCap" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NguoiNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucDanhNguoiNhan" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayCapCMNDNguoiNhan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoiCapCMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TongTienNop" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="BangChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TongTienCo" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="DiaDiemGiaoNhan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PhuongThucGiaoNhan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ChiNhanhNganHangGiaoNhan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHangMenhGia_Them" Method="sp_tblNopTienNganHangMenhGia_Them">
+    <Parameter Name="IDNopTien" Parameter="iDNopTien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDMenhGia" Parameter="iDMenhGia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoLuong" Parameter="soLuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTien" Parameter="soTien" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHangMenhGia_Xoa" Method="sp_tblNopTienNganHangMenhGia_Xoa">
+    <Parameter Name="IDNopTien" Parameter="iDNopTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHangTaiKhoan_Them" Method="sp_tblNopTienNganHangTaiKhoan_Them">
+    <Parameter Name="IDNopTien" Parameter="iDNopTien" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDTaiKhoanNganHang" Parameter="iDTaiKhoanNganHang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTaiKhoan" Parameter="soTaiKhoan" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TenTaiKhoan" Parameter="tenTaiKhoan" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SoTien" Parameter="soTien" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblTaiKhoanNopTien_DanhSach" Method="sp_tblTaiKhoanNopTien_DanhSach">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblTaiKhoanNopTien_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenNganHang" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SoTaiKhoan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenTaiKhoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblMenhGia_DanhSach" Method="sp_tblMenhGia_DanhSach">
+    <ElementType Name="sp_tblMenhGia_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHangTaiKhoan_DanhSach" Method="sp_tblNopTienNganHangTaiKhoan_DanhSach">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="IDNopTien" Parameter="iDNopTien" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblNopTienNganHangTaiKhoan_DanhSachResult">
+      <Column Name="SoTaiKhoan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenTaiKhoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenNganHang" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="IDNopTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDTaiKhoanNganHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHang_KiemTra" Method="sp_tblNopTienNganHang_KiemTra">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblNopTienNganHang_KiemTraResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Lan" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NguoiGiao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucDanh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoiCap" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NguoiNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucDanhNguoiNhan" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayCapCMNDNguoiNhan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoiCapCMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TongTienNop" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="BangChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TongTienCo" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="DiaDiemGiaoNhan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PhuongThucGiaoNhan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ChiNhanhNganHangGiaoNhan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHangMenhGia_DanhSach" Method="sp_tblNopTienNganHangMenhGia_DanhSach">
+    <Parameter Name="IDNopTien" Parameter="iDNopTien" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblNopTienNganHangMenhGia_DanhSachResult">
+      <Column Name="IDNopTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDMenhGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MenhGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MenhGia1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHang_DanhSach" Method="sp_tblNopTienNganHang_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblNopTienNganHang_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Lan" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NguoiGiao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucDanh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoiCap" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NguoiNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucDanhNguoiNhan" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayCapCMNDNguoiNhan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoiCapCMNDNguoiNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TongTienNop" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="BangChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TongTienCo" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="DiaDiemGiaoNhan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PhuongThucGiaoNhan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ChiNhanhNganHangGiaoNhan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHang_DanhSach_BuuCuc" Method="sp_tblNopTienNganHang_DanhSach_BuuCuc">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblNopTienNganHang_DanhSach_BuuCucResult">
+      <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DenNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTienNop" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TongTienCo" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblNopTienNganHang_DanhSach_DonVi" Method="sp_tblNopTienNganHang_DanhSach_DonVi">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblNopTienNganHang_DanhSach_DonViResult">
+      <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DenNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTienNop" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TongTienCo" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

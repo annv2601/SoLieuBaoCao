@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TienCOD" Class="linqChuyenHoanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=TienCOD;Persist Security Info=True;User ID=sa" SettingsObjectName="daoTienThuCOD.Properties.Settings" SettingsPropertyName="TienCODConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblChuyenHoan_CapNhatTrangThai" Method="sp_tblChuyenHoan_CapNhatTrangThai">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChuyenHoan_Xoa" Method="sp_tblChuyenHoan_Xoa">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Ca" Parameter="ca" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChuyenHoan_DanhSach" Method="sp_tblChuyenHoan_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblChuyenHoan_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoTienCOD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongCuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgayChuyenHoan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblChuyenHoan_Them" Method="sp_tblChuyenHoan_Them">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Ca" Parameter="ca" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="ReceiverFullname" Parameter="receiverFullname" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="ReceiverAddress" Parameter="receiverAddress" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ReceiverTel" Parameter="receiverTel" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Weight" Parameter="weight" Type="System.Double" DbType="Float" />
+    <Parameter Name="SoTienCOD" Parameter="soTienCOD" Type="System.Double" DbType="Float" />
+    <Parameter Name="TongCuoc" Parameter="tongCuoc" Type="System.Double" DbType="Float" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Double" DbType="Float" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Double" DbType="Float" />
+    <Parameter Name="LyDo" Parameter="lyDo" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="NgayChuyenHoan" Parameter="ngayChuyenHoan" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChuyenHoan_ThongTin" Method="sp_tblChuyenHoan_ThongTin">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblChuyenHoan_ThongTinResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoTienCOD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongCuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgayChuyenHoan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

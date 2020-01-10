@@ -37,7 +37,8 @@ namespace DuLieuBCCP
             get { return _PhuPhiXangDauNT; }
             set { _PhuPhiXangDauNT = value; }
         }
-                
+
+        public string FileConfigBCCP = "";
 
         public string LayMaBuuCuc()
         {
@@ -46,6 +47,15 @@ namespace DuLieuBCCP
             ds = _db.ChayThuTuc("select ConfigValue from Configuration where ConfigCode='POSCode'");
 
             return ds.Tables[0].Rows[0][0].ToString(); 
+        }
+
+        public DataTable LayDSdichVu()
+        {
+            DataSet ds = new DataSet();
+            _db.TaoKetNoi(FileConfigBCCP);
+            ds = _db.ChayThuTuc("select ServiceCode,ServiceName,ServiceTypeCode from [service] where ServiceTypeCode='BCCP' order by ServiceName");
+
+            return ds.Tables[0];
         }
 
         #region "Khac"
@@ -60,7 +70,7 @@ namespace DuLieuBCCP
                     "order by SenderFullname");
             return ds.Tables[0];
         }
-
+        
         public DataTable DanhSachSoLieu_KiemTra(DateTime rNgay)
         {
             DataSet ds;

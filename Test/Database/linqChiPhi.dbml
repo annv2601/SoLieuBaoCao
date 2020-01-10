@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBCOL" Class="linqChiPhiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBCOL;User ID=BaoCaoSL" SettingsObjectName="Test.Properties.Settings" SettingsPropertyName="SoLieuBCOLConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblChiPhi_Them" Method="sp_tblChiPhi_Them">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="DonViTinh" Parameter="donViTinh" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="PhatSinhThuongXuyen" Parameter="phatSinhThuongXuyen" Type="System.Double" DbType="Float" />
+    <Parameter Name="PhatSinhPhanBo" Parameter="phatSinhPhanBo" Type="System.Double" DbType="Float" />
+    <Parameter Name="TongCong" Parameter="tongCong" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiPhi_Xoa" Method="sp_tblChiPhi_Xoa">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblChiPhi_ThongTin" Method="sp_tblChiPhi_ThongTin">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ma" Parameter="ma" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblChiPhi_ThongTinResult">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PhatSinhThuongXuyen" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PhatSinhPhanBo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongCong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

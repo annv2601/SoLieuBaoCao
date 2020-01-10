@@ -62,55 +62,6 @@ namespace daoSLPH.Database
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblPhatHanhBCCP_Them")]
-		public int sp_tblPhatHanhBCCP_Them(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayPhatHanh", DbType="Date")] System.Nullable<System.DateTime> ngayPhatHanh, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAC", DbType="NVarChar(50)")] string mAC, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoHieu", DbType="NVarChar(20)")] string soHieu, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDichVu", DbType="NVarChar(10)")] string maDichVu, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiBuuGui", DbType="NVarChar(10)")] string loaiBuuGui, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoChuyen", DbType="Int")] System.Nullable<int> soChuyen, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTui", DbType="Int")] System.Nullable<int> soTui, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDuongThu", DbType="NVarChar(10)")] string maDuongThu, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCucChapNhan", DbType="NVarChar(10)")] string maBuuCucChapNhan, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioChapNhan", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioChapNhan, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCucDong", DbType="NVarChar(10)")] string maBuuCucDong, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDong", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDong, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrongLuong", DbType="Decimal(18,0)")] System.Nullable<decimal> trongLuong, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrongLuongQuiDoi", DbType="Decimal(18,0)")] System.Nullable<decimal> trongLuongQuiDoi, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhPhat", DbType="NVarChar(10)")] string maTinhPhat, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaNuocPhat", DbType="NVarChar(5)")] string maNuocPhat, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhachHang", DbType="NVarChar(20)")] string maKhachHang, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenKhachHang", DbType="NVarChar(150)")] string tenKhachHang, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChiKhachHang", DbType="NVarChar(150)")] string diaChiKhachHang, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenNguoiNhan", DbType="NVarChar(150)")] string tenNguoiNhan, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChiNguoiNhan", DbType="NVarChar(150)")] string diaChiNguoiNhan, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocChinh", DbType="Decimal(18,0)")] System.Nullable<decimal> cuocChinh, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhuPhiXD", DbType="Decimal(18,0)")] System.Nullable<decimal> phuPhiXD, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhuPhiVX", DbType="Decimal(18,0)")] System.Nullable<decimal> phuPhiVX, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocCongThem", DbType="Decimal(18,0)")] System.Nullable<decimal> cuocCongThem, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DichVuCongThem", DbType="NVarChar(50)")] string dichVuCongThem, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienCOD", DbType="Decimal(18,0)")] System.Nullable<decimal> soTienCOD, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocCOD", DbType="Decimal(18,0)")] System.Nullable<decimal> cuocCOD, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="VAT", DbType="Decimal(18,0)")] System.Nullable<decimal> vAT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocCODVAT", DbType="Decimal(18,0)")] System.Nullable<decimal> cuocCODVAT, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThanhTien", DbType="Decimal(18,0)")] System.Nullable<decimal> thanhTien, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongCuoc", DbType="Decimal(18,0)")] System.Nullable<decimal> tongCuoc, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="GhiNo", DbType="Bit")] System.Nullable<bool> ghiNo, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NoiDungBuuGui", DbType="NVarChar(100)")] string noiDungBuuGui)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, ngayPhatHanh, mAC, soHieu, maDichVu, loaiBuuGui, soChuyen, soTui, maDuongThu, maBuuCucChapNhan, ngayGioChapNhan, maBuuCucDong, ngayGioDong, trongLuong, trongLuongQuiDoi, maTinhPhat, maNuocPhat, maKhachHang, tenKhachHang, diaChiKhachHang, tenNguoiNhan, diaChiNguoiNhan, cuocChinh, phuPhiXD, phuPhiVX, cuocCongThem, dichVuCongThem, soTienCOD, cuocCOD, vAT, cuocCODVAT, thanhTien, tongCuoc, ghiNo, noiDungBuuGui);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblPhatHanhBCCP_ThongTin")]
-		public ISingleResult<sp_tblPhatHanhBCCP_ThongTinResult> sp_tblPhatHanhBCCP_ThongTin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoHieu", DbType="NVarChar(20)")] string soHieu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, soHieu);
-			return ((ISingleResult<sp_tblPhatHanhBCCP_ThongTinResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblTrangThaiLayBCCP_Them")]
 		public int sp_tblTrangThaiLayBCCP_Them([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ngay", DbType="Date")] System.Nullable<System.DateTime> ngay)
 		{
@@ -123,6 +74,145 @@ namespace daoSLPH.Database
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, ngay);
 			return ((ISingleResult<sp_tblTrangThaiLayBCCP_ThongTinResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblPhatHanhBCCP_Them")]
+		public int sp_tblPhatHanhBCCP_Them(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayPhatHanh", DbType="Date")] System.Nullable<System.DateTime> ngayPhatHanh, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAC", DbType="NVarChar(50)")] string mAC, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoHieu", DbType="NVarChar(20)")] string soHieu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDichVu", DbType="NVarChar(10)")] string maDichVu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenDichVu", DbType="NVarChar(10)")] string tenDichVu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoaiBuuGui", DbType="NVarChar(10)")] string loaiBuuGui, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoChuyen", DbType="Int")] System.Nullable<int> soChuyen, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTui", DbType="Int")] System.Nullable<int> soTui, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDuongThu", DbType="NVarChar(10)")] string maDuongThu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCucChapNhan", DbType="NVarChar(10)")] string maBuuCucChapNhan, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioChapNhan", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioChapNhan, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCucDong", DbType="NVarChar(10)")] string maBuuCucDong, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayGioDong", DbType="DateTime")] System.Nullable<System.DateTime> ngayGioDong, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrongLuong", DbType="Decimal(18,3)")] System.Nullable<decimal> trongLuong, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TrongLuongQuiDoi", DbType="Decimal(18,3)")] System.Nullable<decimal> trongLuongQuiDoi, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaTinhPhat", DbType="NVarChar(10)")] string maTinhPhat, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaNuocPhat", DbType="NVarChar(5)")] string maNuocPhat, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKhachHang", DbType="NVarChar(20)")] string maKhachHang, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenKhachHang", DbType="NVarChar(150)")] string tenKhachHang, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChiKhachHang", DbType="NVarChar(150)")] string diaChiKhachHang, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenNguoiNhan", DbType="NVarChar(150)")] string tenNguoiNhan, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChiNguoiNhan", DbType="NVarChar(150)")] string diaChiNguoiNhan, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocChinh", DbType="Decimal(18,2)")] System.Nullable<decimal> cuocChinh, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhuPhiXD", DbType="Decimal(18,2)")] System.Nullable<decimal> phuPhiXD, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhuPhiVX", DbType="Decimal(18,2)")] System.Nullable<decimal> phuPhiVX, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocCongThem", DbType="Decimal(18,2)")] System.Nullable<decimal> cuocCongThem, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DichVuCongThem", DbType="NVarChar(50)")] string dichVuCongThem, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienCOD", DbType="Decimal(18,0)")] System.Nullable<decimal> soTienCOD, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocCOD", DbType="Decimal(18,0)")] System.Nullable<decimal> cuocCOD, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="VAT", DbType="Decimal(18,2)")] System.Nullable<decimal> vAT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocCODVAT", DbType="Decimal(18,2)")] System.Nullable<decimal> cuocCODVAT, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="ThanhTien", DbType="Decimal(18,2)")] System.Nullable<decimal> thanhTien, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongCuoc", DbType="Decimal(18,2)")] System.Nullable<decimal> tongCuoc, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="GhiNo", DbType="Bit")] System.Nullable<bool> ghiNo, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NoiDungBuuGui", DbType="NVarChar(100)")] string noiDungBuuGui, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="GuiLo", DbType="Bit")] System.Nullable<bool> guiLo, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoLo", DbType="NVarChar(20)")] string soLo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, ngayPhatHanh, mAC, soHieu, maDichVu, tenDichVu, loaiBuuGui, soChuyen, soTui, maDuongThu, maBuuCucChapNhan, ngayGioChapNhan, maBuuCucDong, ngayGioDong, trongLuong, trongLuongQuiDoi, maTinhPhat, maNuocPhat, maKhachHang, tenKhachHang, diaChiKhachHang, tenNguoiNhan, diaChiNguoiNhan, cuocChinh, phuPhiXD, phuPhiVX, cuocCongThem, dichVuCongThem, soTienCOD, cuocCOD, vAT, cuocCODVAT, thanhTien, tongCuoc, ghiNo, noiDungBuuGui, guiLo, soLo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblPhatHanhBCCP_ThongTin")]
+		public ISingleResult<sp_tblPhatHanhBCCP_ThongTinResult> sp_tblPhatHanhBCCP_ThongTin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoHieu", DbType="NVarChar(20)")] string soHieu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, soHieu);
+			return ((ISingleResult<sp_tblPhatHanhBCCP_ThongTinResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblPhatHanhBCCP_Xoa")]
+		public int sp_tblPhatHanhBCCP_Xoa([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ngay", DbType="Date")] System.Nullable<System.DateTime> ngay)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc, ngay);
+			return ((int)(result.ReturnValue));
+		}
+	}
+	
+	public partial class sp_tblTrangThaiLayBCCP_ThongTinResult
+	{
+		
+		private string _MaBuuCuc;
+		
+		private System.Nullable<System.DateTime> _Ngay;
+		
+		private System.Nullable<bool> _DaLay;
+		
+		private System.Nullable<System.DateTime> _NgayHeThong;
+		
+		public sp_tblTrangThaiLayBCCP_ThongTinResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBuuCuc", DbType="NVarChar(10)")]
+		public string MaBuuCuc
+		{
+			get
+			{
+				return this._MaBuuCuc;
+			}
+			set
+			{
+				if ((this._MaBuuCuc != value))
+				{
+					this._MaBuuCuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Date")]
+		public System.Nullable<System.DateTime> Ngay
+		{
+			get
+			{
+				return this._Ngay;
+			}
+			set
+			{
+				if ((this._Ngay != value))
+				{
+					this._Ngay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DaLay", DbType="Bit")]
+		public System.Nullable<bool> DaLay
+		{
+			get
+			{
+				return this._DaLay;
+			}
+			set
+			{
+				if ((this._DaLay != value))
+				{
+					this._DaLay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHeThong", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayHeThong
+		{
+			get
+			{
+				return this._NgayHeThong;
+			}
+			set
+			{
+				if ((this._NgayHeThong != value))
+				{
+					this._NgayHeThong = value;
+				}
+			}
 		}
 	}
 	
@@ -138,6 +228,8 @@ namespace daoSLPH.Database
 		private string _SoHieu;
 		
 		private string _MaDichVu;
+		
+		private string _TenDichVu;
 		
 		private string _LoaiBuuGui;
 		
@@ -198,6 +290,10 @@ namespace daoSLPH.Database
 		private System.Nullable<bool> _GhiNo;
 		
 		private string _NoiDungBuuGui;
+		
+		private System.Nullable<bool> _GuiLo;
+		
+		private string _SoLo;
 		
 		private System.Nullable<System.DateTime> _NgayHeThong;
 		
@@ -281,6 +377,22 @@ namespace daoSLPH.Database
 				if ((this._MaDichVu != value))
 				{
 					this._MaDichVu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDichVu", DbType="NVarChar(50)")]
+		public string TenDichVu
+		{
+			get
+			{
+				return this._TenDichVu;
+			}
+			set
+			{
+				if ((this._TenDichVu != value))
+				{
+					this._TenDichVu = value;
 				}
 			}
 		}
@@ -557,7 +669,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CuocChinh", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CuocChinh", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> CuocChinh
 		{
 			get
@@ -573,7 +685,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhuPhiXD", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhuPhiXD", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> PhuPhiXD
 		{
 			get
@@ -589,7 +701,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhuPhiVX", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhuPhiVX", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> PhuPhiVX
 		{
 			get
@@ -605,7 +717,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CuocCongThem", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CuocCongThem", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> CuocCongThem
 		{
 			get
@@ -669,7 +781,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VAT", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VAT", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> VAT
 		{
 			get
@@ -685,7 +797,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CuocCODVAT", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CuocCODVAT", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> CuocCODVAT
 		{
 			get
@@ -701,7 +813,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTien", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTien", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> ThanhTien
 		{
 			get
@@ -717,7 +829,7 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongCuoc", DbType="Decimal(18,0)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongCuoc", DbType="Decimal(18,2)")]
 		public System.Nullable<decimal> TongCuoc
 		{
 			get
@@ -765,82 +877,34 @@ namespace daoSLPH.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHeThong", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayHeThong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GuiLo", DbType="Bit")]
+		public System.Nullable<bool> GuiLo
 		{
 			get
 			{
-				return this._NgayHeThong;
+				return this._GuiLo;
 			}
 			set
 			{
-				if ((this._NgayHeThong != value))
+				if ((this._GuiLo != value))
 				{
-					this._NgayHeThong = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_tblTrangThaiLayBCCP_ThongTinResult
-	{
-		
-		private string _MaBuuCuc;
-		
-		private System.Nullable<System.DateTime> _Ngay;
-		
-		private System.Nullable<bool> _DaLay;
-		
-		private System.Nullable<System.DateTime> _NgayHeThong;
-		
-		public sp_tblTrangThaiLayBCCP_ThongTinResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBuuCuc", DbType="NVarChar(10)")]
-		public string MaBuuCuc
-		{
-			get
-			{
-				return this._MaBuuCuc;
-			}
-			set
-			{
-				if ((this._MaBuuCuc != value))
-				{
-					this._MaBuuCuc = value;
+					this._GuiLo = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngay", DbType="Date")]
-		public System.Nullable<System.DateTime> Ngay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLo", DbType="NVarChar(20)")]
+		public string SoLo
 		{
 			get
 			{
-				return this._Ngay;
+				return this._SoLo;
 			}
 			set
 			{
-				if ((this._Ngay != value))
+				if ((this._SoLo != value))
 				{
-					this._Ngay = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DaLay", DbType="Bit")]
-		public System.Nullable<bool> DaLay
-		{
-			get
-			{
-				return this._DaLay;
-			}
-			set
-			{
-				if ((this._DaLay != value))
-				{
-					this._DaLay = value;
+					this._SoLo = value;
 				}
 			}
 		}

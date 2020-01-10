@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDoanhThuPaypost" targetNamespace="http://tempuri.org/dsDoanhThuPaypost.xsd" xmlns:mstns="http://tempuri.org/dsDoanhThuPaypost.xsd" xmlns="http://tempuri.org/dsDoanhThuPaypost.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDoanhThuPaypost" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDoanhThuPaypost" msprop:Generator_UserDSName="dsDoanhThuPaypost">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BangDTPP" msprop:Generator_TableClassName="BangDTPPDataTable" msprop:Generator_TableVarName="tableBangDTPP" msprop:Generator_TablePropName="BangDTPP" msprop:Generator_RowDeletingName="BangDTPPRowDeleting" msprop:Generator_RowChangingName="BangDTPPRowChanging" msprop:Generator_RowEvHandlerName="BangDTPPRowChangeEventHandler" msprop:Generator_RowDeletedName="BangDTPPRowDeleted" msprop:Generator_UserTableName="BangDTPP" msprop:Generator_RowChangedName="BangDTPPRowChanged" msprop:Generator_RowEvArgName="BangDTPPRowChangeEvent" msprop:Generator_RowClassName="BangDTPPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma" msprop:Generator_ColumnVarNameInTable="columnMa" msprop:Generator_ColumnPropNameInRow="Ma" msprop:Generator_ColumnPropNameInTable="MaColumn" msprop:Generator_UserColumnName="Ma" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten" type="xs:string" minOccurs="0" />
+              <xs:element name="Thu" msprop:Generator_ColumnVarNameInTable="columnThu" msprop:Generator_ColumnPropNameInRow="Thu" msprop:Generator_ColumnPropNameInTable="ThuColumn" msprop:Generator_UserColumnName="Thu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Chi" msprop:Generator_ColumnVarNameInTable="columnChi" msprop:Generator_ColumnPropNameInRow="Chi" msprop:Generator_ColumnPropNameInTable="ChiColumn" msprop:Generator_UserColumnName="Chi" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

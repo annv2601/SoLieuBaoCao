@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TienCOD" Class="linqSLDenDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=TienCOD;Persist Security Info=True;User ID=sa" SettingsObjectName="daoTienThuCOD.Properties.Settings" SettingsPropertyName="TienCODConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblSLDen_DanhSach" Method="sp_tblSLDen_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSLDen_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FromPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptancePOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SenderFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaHuy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayHuy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_Xoa" Method="sp_tblSLDen_Xoa">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Ca" Parameter="ca" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_Huy" Method="sp_tblSLDen_Huy">
+    <Parameter Name="ToPOSCode" Parameter="toPOSCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LyDo" Parameter="lyDo" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_Them" Method="sp_tblSLDen_Them">
+    <Parameter Name="ToPOSCode" Parameter="toPOSCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Ca" Parameter="ca" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="ServiceCode" Parameter="serviceCode" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="FromPOSCode" Parameter="fromPOSCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MailTripNumber" Parameter="mailTripNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PostBagNumber" Parameter="postBagNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PostBagTypeCode" Parameter="postBagTypeCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="IncomingDate" Parameter="incomingDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Year" Parameter="year" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="BatchCode" Parameter="batchCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AcceptancePOSCode" Parameter="acceptancePOSCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CustomerCode" Parameter="customerCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="SenderFullname" Parameter="senderFullname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="SenderAddress" Parameter="senderAddress" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="SenderTel" Parameter="senderTel" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SendingTime" Parameter="sendingTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReceiverFullname" Parameter="receiverFullname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ReceiverAddress" Parameter="receiverAddress" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ReceiverTel" Parameter="receiverTel" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Weight" Parameter="weight" Type="System.Double" DbType="Float" />
+    <Parameter Name="WeightConvert" Parameter="weightConvert" Type="System.Double" DbType="Float" />
+    <Parameter Name="SendingContent" Parameter="sendingContent" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Value" Parameter="value" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_ThongTIn" Method="sp_tblSLDen_ThongTIn">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="SoHieu" Parameter="soHieu" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblSLDen_ThongTInResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FromPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptancePOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SenderFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaHuy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayHuy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_DanhSach_THop" Method="sp_tblSLDen_DanhSach_THop">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSLDen_DanhSach_THopResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FromPoscode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_DanhSach_ChuyenThu" Method="sp_tblSLDen_DanhSach_ChuyenThu">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MailTripNumber" Parameter="mailTripNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PostBagNumber" Parameter="postBagNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromPOSCode" Parameter="fromPOSCode" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ServiceCode" Parameter="serviceCode" Type="System.String" DbType="NVarChar(5)" />
+    <ElementType Name="sp_tblSLDen_DanhSach_ChuyenThuResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FromPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptancePOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SenderFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaHuy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayHuy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_ChuaPhanBuuTa" Method="sp_tblSLDen_ChuaPhanBuuTa">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSLDen_ChuaPhanBuuTaResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FromPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptancePOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SenderFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaHuy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayHuy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_BuuGui_GiaTri_CTiet" Method="sp_tblSLDen_BuuGui_GiaTri_CTiet">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTienNho" Parameter="soTienNho" Type="System.Double" DbType="Float" />
+    <Parameter Name="SoTienLon" Parameter="soTienLon" Type="System.Double" DbType="Float" />
+    <ElementType Name="sp_tblSLDen_BuuGui_GiaTri_CTietResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FromPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptancePOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SenderFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaHuy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayHuy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_TimBuuGui" Method="sp_tblSLDen_TimBuuGui">
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSLDen_TimBuuGuiResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="FromPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="BatchCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptancePOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SenderFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SenderTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReceiverFullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ReceiverTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SendingContent" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DaPhat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaChuyenHoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DaHuy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NgayHuy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDen_BuuGui_GiaTri_THop" Method="sp_tblSLDen_BuuGui_GiaTri_THop">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTien" Parameter="soTien" Type="System.Double" DbType="Float" />
+    <ElementType Name="sp_tblSLDen_BuuGui_GiaTri_THopResult">
+      <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DenNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="GiaTri" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDenTHop_DanhSach" Method="sp_tblSLDenTHop_DanhSach">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSLDenTHop_DanhSachResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Ca" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ToPOSCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="FromPoscode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ServiceCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MailTripNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PostBagTypeCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="IncomingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WeightConvert" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Value" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSLDenTHop_TongHop" Method="sp_tblSLDenTHop_TongHop">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

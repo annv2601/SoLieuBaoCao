@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuTongHop" Class="linqKhachHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuTongHop;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLTH.Properties.Settings" SettingsPropertyName="SoLieuTongHopConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblKhachHang_CapNhat_NgayPhatSinhDoanhThu" Method="sp_tblKhachHang_CapNhat_NgayPhatSinhDoanhThu">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaKhachHang" Parameter="maKhachHang" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDanhMuc_DanhSach" Method="sp_tblDanhMuc_DanhSach">
+    <ElementType Name="sp_tblDanhMuc_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKhachHang_DanhSach" Method="sp_tblKhachHang_DanhSach">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Nhom" Parameter="nhom" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKhachHang_DanhSachResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NhomKH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaKhachHang" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DiaChiKhachHang" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NgayPhatSinhDoanhThu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

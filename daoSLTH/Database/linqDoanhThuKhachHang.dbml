@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuTongHop" Class="linqDoanhThuKhachHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuTongHop;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLTH.Properties.Settings" SettingsPropertyName="SoLieuTongHopConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblDoanhThuKhachHangDichVu_BaoCao_CTiet" Method="sp_tblDoanhThuKhachHangDichVu_BaoCao_CTiet">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblDoanhThuKhachHangDichVu_BaoCao_CTietResult">
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaCRM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenNhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMS_TNuoc_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMS_TNuoc_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_TNuoc_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_QTe_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMS_QTe_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_QTe_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_COD_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMS_COD_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_COD_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_HCC_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMS_HCC_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="EMS_HCC_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BK_TNuoc_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BK_TNuoc_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BK_TNuoc_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BK_QTe_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BK_QTe_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BK_QTe_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BK_COD_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BK_COD_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BK_COD_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BPBD_TNuoc_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BPBD_TNuoc_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BPBD_TNuoc_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BPBD_QTe_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BPBD_QTe_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="BPBD_QTe_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Logis_TNuoc_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Logis_TNuoc_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Logis_TNuoc_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Logis_COD_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Logis_COD_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Logis_COD_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="KT1_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KT1_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="KT1_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="ePacket_SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ePacket_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="ePacket_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Tong_SL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Tong_KL" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Tong_DT" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblDoanhThuKhachHangDichVu_TongHopSoLieu_ThoiGian" Method="sp_tblDoanhThuKhachHangDichVu_TongHopSoLieu_ThoiGian">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblDoanhThuKhachHangDichVu_TongHopSoLieu" Method="sp_tblDoanhThuKhachHangDichVu_TongHopSoLieu">
+    <Parameter Name="MaDoiSoat" Parameter="maDoiSoat" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

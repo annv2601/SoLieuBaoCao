@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using daoSLBC.Database.HeThong;
-
+using daoSLBC.Core;
 namespace daoSLBC.HeThong
 {
     public class daDangNhap
@@ -34,7 +35,7 @@ namespace daoSLBC.HeThong
                 //TenNguoiSuDung = lDN.sp_KiemTraDangNhap(MaNSD, MaDonVi).Single().KetQuaKiemTra;
                 
                 TTDN = lDN.sp_KiemTraDangNhap(MaNSD, MaDonVi).Single();
-                TenNguoiSuDung = TTDN.KetQuaKiemTra;
+                TenNguoiSuDung = TTDN.TenNguoiSuDung;
 
                 if (TenNguoiSuDung!="")
                 {
@@ -49,6 +50,14 @@ namespace daoSLBC.HeThong
             {
                 return false;
             }
+        }
+
+        public DataTable DanhSach()
+        {
+            List<sp_NguoiSuDung_DanhSachResult> lst;
+            lst = lDN.sp_NguoiSuDung_DanhSach().ToList();
+            
+            return daTienIch.ToDataTable(lst);
         }
     }
 }

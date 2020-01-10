@@ -18,6 +18,7 @@ namespace SoLieuBaoCao
             if(!X.IsAjaxRequest)
             {
                 Menu();
+                DanhSachNguoiSuDung();
             }
         }
 
@@ -70,6 +71,13 @@ namespace SoLieuBaoCao
             ChucNangTree.Store.Add(treeStore);
             
         }
+
+        private void DanhSachNguoiSuDung()
+        {
+            daDangNhap dDN = new daDangNhap();
+            stoNSD.DataSource = dDN.DanhSach();
+            stoNSD.DataBind();
+        }
         #endregion
 
         protected void btnDangNhap_click(object sender, DirectEventArgs e)
@@ -77,14 +85,14 @@ namespace SoLieuBaoCao
             txtMaNSD.Text = "";
             txtMaDonVi.Text = "";            
             wDangNhap.Show();
-            txtMaNSD.Focus();
+            txtMaDonVi.Focus();
         }
 
         protected void btnKiemTraDangNhap_click(object sender, DirectEventArgs e)
         {
             daDangNhap dDN = new daDangNhap();
             dDN.MaNSD = txtMaNSD.Text.Trim();
-            dDN.MaDonVi = txtMaDonVi.Text.Trim();
+            dDN.MaDonVi = txtMaDonVi.Text.Trim().Split(':')[0];
             UIHelper.daPhien.DaDangNhap = dDN.KiemTra();
             if(UIHelper.daPhien.DaDangNhap)
             {

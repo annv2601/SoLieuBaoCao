@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KeToanSoDu" Class="linqKeToanSoDuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=KeToanSoDu;Persist Security Info=True;User ID=sa" SettingsObjectName="daoKeToanSoDu.Properties.Settings" SettingsPropertyName="KeToanSoDuConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblKeToanSoDu_BaoCao_DonVi" Method="sp_tblKeToanSoDu_BaoCao_DonVi">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="NhomDonVi" Parameter="nhomDonVi" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_tblKeToanSoDu_BaoCao_DonViResult">
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhTCBCTapTrung" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhTCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhTKBD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhKinhDoanh" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhCong" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKeToanSoDu_KhoiTao" Method="sp_tblKeToanSoDu_KhoiTao">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Nam" Parameter="nam" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblKeToanSoDu_BaoCao_Ngay" Method="sp_tblKeToanSoDu_BaoCao_Ngay">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKeToanSoDu_BaoCao_NgayResult">
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhTCBCTapTrung" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhTCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhTKBD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhKinhDoanh" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="tgnhCong" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

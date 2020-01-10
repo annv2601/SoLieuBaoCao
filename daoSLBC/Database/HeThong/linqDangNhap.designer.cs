@@ -62,6 +62,13 @@ namespace daoSLBC.Database.HeThong
 			OnCreated();
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_NguoiSuDung_DanhSach")]
+		public ISingleResult<sp_NguoiSuDung_DanhSachResult> sp_NguoiSuDung_DanhSach()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_NguoiSuDung_DanhSachResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_KiemTraDangNhap")]
 		public ISingleResult<sp_KiemTraDangNhapResult> sp_KiemTraDangNhap([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaNSD", DbType="NVarChar(20)")] string maNSD, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDonVi", DbType="NVarChar(10)")] string maDonVi)
 		{
@@ -70,40 +77,70 @@ namespace daoSLBC.Database.HeThong
 		}
 	}
 	
-	public partial class sp_KiemTraDangNhapResult
+	public partial class sp_NguoiSuDung_DanhSachResult
 	{
 		
-		private string _KetQuaKiemTra;
+		private string _MaNSD;
+		
+		private string _TenNguoiSuDung;
+		
+		private string _MaDonVi;
 		
 		private string _TenDonVi;
 		
-		private string _TenTatDonVi;
-		
-		private string _TenRutGonDonVi;
-		
-		private string _MaSTK1;
-		
-		public sp_KiemTraDangNhapResult()
+		public sp_NguoiSuDung_DanhSachResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KetQuaKiemTra", DbType="NVarChar(70)")]
-		public string KetQuaKiemTra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNSD", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string MaNSD
 		{
 			get
 			{
-				return this._KetQuaKiemTra;
+				return this._MaNSD;
 			}
 			set
 			{
-				if ((this._KetQuaKiemTra != value))
+				if ((this._MaNSD != value))
 				{
-					this._KetQuaKiemTra = value;
+					this._MaNSD = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDonVi", DbType="NVarChar(80)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNguoiSuDung", DbType="NVarChar(70)")]
+		public string TenNguoiSuDung
+		{
+			get
+			{
+				return this._TenNguoiSuDung;
+			}
+			set
+			{
+				if ((this._TenNguoiSuDung != value))
+				{
+					this._TenNguoiSuDung = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonVi", DbType="NVarChar(10)")]
+		public string MaDonVi
+		{
+			get
+			{
+				return this._MaDonVi;
+			}
+			set
+			{
+				if ((this._MaDonVi != value))
+				{
+					this._MaDonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDonVi", DbType="NVarChar(81)")]
 		public string TenDonVi
 		{
 			get
@@ -118,40 +155,108 @@ namespace daoSLBC.Database.HeThong
 				}
 			}
 		}
+	}
+	
+	public partial class sp_KiemTraDangNhapResult
+	{
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTatDonVi", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string TenTatDonVi
+		private string _TenNguoiSuDung;
+		
+		private string _Ma;
+		
+		private string _Ten;
+		
+		private System.Nullable<int> _Cap;
+		
+		private string _MaNSD;
+		
+		private string _MaSTK1;
+		
+		public sp_KiemTraDangNhapResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNguoiSuDung", DbType="NVarChar(50)")]
+		public string TenNguoiSuDung
 		{
 			get
 			{
-				return this._TenTatDonVi;
+				return this._TenNguoiSuDung;
 			}
 			set
 			{
-				if ((this._TenTatDonVi != value))
+				if ((this._TenNguoiSuDung != value))
 				{
-					this._TenTatDonVi = value;
+					this._TenNguoiSuDung = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenRutGonDonVi", DbType="NVarChar(40) NOT NULL", CanBeNull=false)]
-		public string TenRutGonDonVi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ma", DbType="NVarChar(255)")]
+		public string Ma
 		{
 			get
 			{
-				return this._TenRutGonDonVi;
+				return this._Ma;
 			}
 			set
 			{
-				if ((this._TenRutGonDonVi != value))
+				if ((this._Ma != value))
 				{
-					this._TenRutGonDonVi = value;
+					this._Ma = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSTK1", DbType="NVarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ten", DbType="NVarChar(255)")]
+		public string Ten
+		{
+			get
+			{
+				return this._Ten;
+			}
+			set
+			{
+				if ((this._Ten != value))
+				{
+					this._Ten = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cap", DbType="Int")]
+		public System.Nullable<int> Cap
+		{
+			get
+			{
+				return this._Cap;
+			}
+			set
+			{
+				if ((this._Cap != value))
+				{
+					this._Cap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNSD", DbType="NVarChar(10)")]
+		public string MaNSD
+		{
+			get
+			{
+				return this._MaNSD;
+			}
+			set
+			{
+				if ((this._MaNSD != value))
+				{
+					this._MaNSD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSTK1", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string MaSTK1
 		{
 			get

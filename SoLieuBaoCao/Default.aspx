@@ -210,20 +210,41 @@
             <ext:VBoxLayoutConfig Align="Center" Pack="Center" />
         </LayoutConfig>
             <Items>
-            <ext:TextField
-                        runat="server"
-                        AllowBlank="false"
-                        FieldLabel="Mã NSD" LabelStyle="font-weight:bold"
-                        ID="txtMaNSD"
-                        EmptyText="Mã Người sử dụng" MarginSpec="10 0 0 0" Width="380"/>
+            
 
-                    <ext:TextField
+                    <%--<ext:TextField
                         runat="server"
                         AllowBlank="false"
                         FieldLabel="Mã Đơn vị" LabelStyle="font-weight:bold"
                         ID="txtMaDonVi"
-                        EmptyText="Mã Đơn vị" MarginSpec="10 0 0 0" Width="380"/>
-            
+                        EmptyText="Mã Đơn vị" MarginSpec="10 0 0 0" Width="380"/>--%>
+                    <ext:ComboBox
+                        runat="server" ID="txtMaDonVi"
+                        FieldLabel="Đơn vị" EmptyText="Nhập Mã Đơn vị"
+                        DisplayField="TenDonVi" ValueField="MaNSD"
+                        MarginSpec="10 0 0 0" Width="380"
+                        LabelStyle="font-weight:bold"
+                        QueryMode="Local"
+                        TypeAhead="true">
+                        <Store>
+                            <ext:Store runat="server" ID="stoNSD" >
+                                <Model>
+                                    <ext:Model runat="server">
+                                        <Fields>
+                                            <ext:ModelField Name="MaNSD" />
+                                            <ext:ModelField Name="TenDonVi"/>
+                                        </Fields>
+                                    </ext:Model>
+                                </Model>
+                            </ext:Store>
+                        </Store>
+                    </ext:ComboBox>
+                    <ext:TextField
+                        runat="server"
+                        AllowBlank="false"
+                        FieldLabel="Mật khẩu" LabelStyle="font-weight:bold"
+                        ID="txtMaNSD"
+                        EmptyText="Nhập mật khẩu" InputType="Password" MarginSpec="10 0 0 0" Width="380"/>
             </Items>
             <Buttons>
                 <ext:Button runat="server" Text="Đăng nhập" ID="btnKiemTraDangNhap">

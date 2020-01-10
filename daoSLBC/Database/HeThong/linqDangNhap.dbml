@@ -1,14 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SoLieuBaoCao" Class="linqDangNhapDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=SoLieuBaoCao;Persist Security Info=True;User ID=sa" SettingsObjectName="daoSLBC.Properties.Settings" SettingsPropertyName="SoLieuBaoCaoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_NguoiSuDung_DanhSach" Method="sp_NguoiSuDung_DanhSach">
+    <ElementType Name="sp_NguoiSuDung_DanhSachResult">
+      <Column Name="MaNSD" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNguoiSuDung" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(81)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_KiemTraDangNhap" Method="sp_KiemTraDangNhap">
     <Parameter Name="MaNSD" Parameter="maNSD" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
     <ElementType Name="sp_KiemTraDangNhapResult">
-      <Column Name="KetQuaKiemTra" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
-      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
-      <Column Name="TenTatDonVi" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TenRutGonDonVi" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="MaSTK1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenNguoiSuDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Cap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNSD" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaSTK1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KeToanSoDu" Class="linqSoDuTienMatCuoiNgayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=KeToanSoDu;Persist Security Info=True;User ID=sa" SettingsObjectName="daoKeToanSoDu.Properties.Settings" SettingsPropertyName="KeToanSoDuConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblSoDuTienMatCuoiNgay_DanhSachNhap" Method="sp_tblSoDuTienMatCuoiNgay_DanhSachNhap">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSoDuTienMatCuoiNgay_DanhSachNhapResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaKeToanNgay" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Khoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSoDuTienMatCuoiNgay_ThongTin" Method="sp_tblSoDuTienMatCuoiNgay_ThongTin">
+    <Parameter Name="MaKeToanNgay" Parameter="maKeToanNgay" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_tblSoDuTienMatCuoiNgay_ThongTinResult">
+      <Column Name="MaKeToanNgay" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgaySua" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Khoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NguoiKhoa" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayKhoa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonVi" Method="sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonVi">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonViResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaKeToanNgay" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Khoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblSoDuTienMatCuoiNgay_KhoaMo" Method="sp_tblSoDuTienMatCuoiNgay_KhoaMo">
+    <Parameter Name="MaKeToanNgay" Parameter="maKeToanNgay" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Khoa" Parameter="khoa" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="NguoiKhoa" Parameter="nguoiKhoa" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblSoDuTienMatCuoiNgay_ThemSua" Method="sp_tblSoDuTienMatCuoiNgay_ThemSua">
+    <Parameter Name="MaKeToanNgay" Parameter="maKeToanNgay" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TCBCTapTrung" Parameter="tCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" />
+    <Parameter Name="TCBCThanhToanTaiDonVi" Parameter="tCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" />
+    <Parameter Name="TKBD" Parameter="tKBD" Type="System.Decimal" DbType="Decimal(22,0)" />
+    <Parameter Name="KinhDoanh" Parameter="kinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" />
+    <Parameter Name="Cong" Parameter="cong" Type="System.Decimal" DbType="Decimal(25,0)" />
+    <Parameter Name="GhiChu" Parameter="ghiChu" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

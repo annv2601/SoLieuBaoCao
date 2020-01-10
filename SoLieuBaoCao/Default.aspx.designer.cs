@@ -76,6 +76,24 @@ namespace SoLieuBaoCao {
         protected global::Ext.Net.Window wDangNhap;
         
         /// <summary>
+        /// txtMaDonVi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ComboBox txtMaDonVi;
+        
+        /// <summary>
+        /// stoNSD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store stoNSD;
+        
+        /// <summary>
         /// txtMaNSD control.
         /// </summary>
         /// <remarks>
@@ -83,15 +101,6 @@ namespace SoLieuBaoCao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.TextField txtMaNSD;
-        
-        /// <summary>
-        /// txtMaDonVi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.TextField txtMaDonVi;
         
         /// <summary>
         /// btnKiemTraDangNhap control.

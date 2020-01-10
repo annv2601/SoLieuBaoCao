@@ -92,7 +92,7 @@ namespace SoLieuBaoCao
         {
             daDangNhap dDN = new daDangNhap();
             dDN.MaNSD = txtMaNSD.Text.Trim();
-            dDN.MaDonVi = txtMaDonVi.Text.Trim().Split(':')[0];
+            dDN.MaDonVi = txtMaDonVi.SelectedItem.Text.Trim().Split(':')[0];
             UIHelper.daPhien.DaDangNhap = dDN.KiemTra();
             if(UIHelper.daPhien.DaDangNhap)
             {

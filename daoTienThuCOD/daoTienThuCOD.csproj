@@ -36,10 +36,6 @@
     <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.1.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="BaoBieu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DLL\BaoBieu.dll</HintPath>
-    </Reference>
     <Reference Include="BarcodeLib">
       <HintPath>..\..\DLL\BarcodeLib.dll</HintPath>
     </Reference>
@@ -360,6 +356,10 @@
     <Compile Include="TraTien\daTraTien.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaoBieu\BaoBieu.csproj">
+      <Project>{1a6779a1-3a2a-4956-95eb-230cc68d63a3}</Project>
+      <Name>BaoBieu</Name>
+    </ProjectReference>
     <ProjectReference Include="..\daoSLPH\daoSLPH.csproj">
       <Project>{a45fd7bc-8272-4c79-be2c-d3df4e378a34}</Project>
       <Name>daoSLPH</Name>

@@ -77,7 +77,7 @@
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="PdfViewer">
-      <HintPath>..\..\PdfViewer.dll</HintPath>
+      <HintPath>..\..\DLL\PdfViewer.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -129,6 +129,7 @@
     <Content Include="MoHinh\ucMauBieuBaoCao.ascx" />
     <Content Include="MoHinh\ucChiTieuMauBieu.ascx" />
     <Content Include="QuyKet\frmTheoDoiQuyKet.aspx" />
+    <Content Include="Resource\CSS\DataGrid.css" />
     <Content Include="Resource\CSS\DataView.css" />
     <Content Include="Resource\CSS\examples.css" />
     <Content Include="Resource\CSS\main.css" />
@@ -139,6 +140,8 @@
     <Content Include="Resource\Images\TaoBaoCao.png" />
     <Content Include="Resource\JS\main.js" />
     <Content Include="Resource\JS\perfect-scrollbar.min.js" />
+    <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgayDonVi.aspx" />
+    <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgay.aspx" />
     <Content Include="SoLieuPhatHanh\frmChiTietPaypost.aspx" />
     <Content Include="SoLieuPhatHanh\frmTheoDoiPaypost.aspx" />
     <Content Include="SoNhatKyChung\frmChiTietSoNhatKy.aspx" />
@@ -260,6 +263,20 @@
     <Compile Include="QuyKet\frmTheoDoiQuyKet.aspx.designer.cs">
       <DependentUpon>frmTheoDoiQuyKet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgayDonVi.aspx.cs">
+      <DependentUpon>frmSoDuTienmatCuoiNgayDonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgayDonVi.aspx.designer.cs">
+      <DependentUpon>frmSoDuTienmatCuoiNgayDonVi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgay.aspx.cs">
+      <DependentUpon>frmSoDuTienmatCuoiNgay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgay.aspx.designer.cs">
+      <DependentUpon>frmSoDuTienmatCuoiNgay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SoLieuPhatHanh\frmChiTietPaypost.aspx.cs">
       <DependentUpon>frmChiTietPaypost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -354,6 +371,10 @@
     <ProjectReference Include="..\BaoBieu\BaoBieu.csproj">
       <Project>{1a6779a1-3a2a-4956-95eb-230cc68d63a3}</Project>
       <Name>BaoBieu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\daoKeToanSoDu\daoKeToanSoDu.csproj">
+      <Project>{cf9a27ac-aba5-4008-aaab-40a003aac7d3}</Project>
+      <Name>daoKeToanSoDu</Name>
     </ProjectReference>
     <ProjectReference Include="..\daoSLBC\daoSLBC.csproj">
       <Project>{ec5a70b3-e3b7-477d-99e2-3aef70426f70}</Project>

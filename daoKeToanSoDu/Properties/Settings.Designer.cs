@@ -30,7 +30,8 @@ namespace daoKeToanSoDu.Properties {
             "ser ID=sa")]
         public string KeToanSoDuConnectionString {
             get {
-                return ((string)(this["KeToanSoDuConnectionString"]));
+                //return ((string)(this["KeToanSoDuConnectionString"]));
+                return System.Configuration.ConfigurationManager.ConnectionStrings["KeToanSoDuConnectionString"].ConnectionString;
             }
         }
     }

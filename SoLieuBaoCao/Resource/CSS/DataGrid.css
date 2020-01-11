@@ -1,0 +1,44 @@
+﻿.x-column-header-inner {
+    white-space: normal !important;
+    overflow: hidden;
+    text-align: center;
+    line-height: normal;
+}
+
+    .x-column-header-inner span {
+        white-space: normal !important;
+    }
+
+.x-grid-row-summary .x-grid-cell-Cost .x-grid-cell-inner {
+    background-color: #e1e2e4;
+}
+
+.task .x-grid-cell-inner {
+    padding-left: 15px;
+}
+
+.x-grid-row-summary .x-grid-cell-inner {
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #f1f2f4;
+}
+
+.GridPanelUsersRowQuaHan {
+    background: #FF0000;
+}
+
+.GridPanelUsersRowKhan {
+    background: #FFD700;
+}
+
+.GridPanelUsersRowYellow {
+    background: #ADFF2F;
+}
+
+.GridPanelUsersRowWhite {
+    background: white;
+}
+
+.GridPanelUsersXacNhan {
+    background: Turquoise;
+}

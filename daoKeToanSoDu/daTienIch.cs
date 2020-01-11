@@ -26,5 +26,38 @@ namespace daoKeToanSoDu
             }
             return dt;
         }
+
+        public static DateTime CuoiNgay(DateTime Ngay)
+        {
+            string _ngay;
+            _ngay = Ngay.ToString("MM/dd/yyyy") + " 23:59:00";
+            return DateTime.Parse(_ngay);
+        }
+
+        public static DateTime DauNgay(DateTime Ngay)
+        {
+            string _ngay;
+            _ngay = Ngay.ToString("MM/dd/yyyy") + " 00:00:00";
+            return DateTime.Parse(_ngay);
+        }
+
+        public static DateTime NgayDauThang(DateTime rNgay)
+        {
+            int Thang, Nam;
+            Thang = rNgay.Month;
+            Nam = rNgay.Year;
+            return DateTime.Parse(Thang.ToString() + "/01/" + Nam.ToString());
+        }
+
+        public static DateTime NgayCuoiThang(DateTime rNgay)
+        {
+            int Thang, Nam;
+            Thang = rNgay.Month;
+            Nam = rNgay.Year;
+            DateTime _ngay;
+            _ngay = DateTime.Parse(Thang.ToString() + "/01/" + Nam.ToString());
+            _ngay = _ngay.AddMonths(1);
+            return _ngay.AddDays(-1);
+        }
     }
 }

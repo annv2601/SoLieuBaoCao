@@ -45,4 +45,58 @@
       <Column Name="tgnhCong" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_tblKeToanSoDu_DanhSachNhap" Method="sp_tblKeToanSoDu_DanhSachNhap">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblKeToanSoDu_DanhSachNhapResult">
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaKeToanNgay" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="dkTCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkTCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkTKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkKinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkCong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Khoa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblKeToanSoDu_DanhSachTheoDonVi" Method="sp_tblKeToanSoDu_DanhSachTheoDonVi">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblKeToanSoDu_DanhSachTheoDonViResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaKeToanNgay" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="dkTCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkTCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkTKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkKinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="dkCong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Khoa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

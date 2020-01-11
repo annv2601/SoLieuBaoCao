@@ -197,7 +197,7 @@
                              <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                      </ext:Column>
 
-                     <ext:Column runat="server" Text="Dự kiến chi trả">
+                     <ext:Column runat="server" Text="Dự kiến chi trả cho Ngày hôm sau">
                         <Columns>
                             <ext:Column runat="server" Text="Tập trung" DataIndex="dkTCBCTapTrung" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="mauDuKienChi" />

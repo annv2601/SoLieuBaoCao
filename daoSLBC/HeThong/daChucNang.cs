@@ -21,9 +21,9 @@ namespace daoSLBC.HeThong
             return lCN.sp_tblChucNang_DanhSach(CN.Nhom).ToList();
         }
 
-        public List<sp_tblChucNang_DanhSach_TheoCapTrenResult> lstDanhSachTheoCapTren(int IDTren)
+        public List<sp_tblChucNang_DanhSach_TheoCapTrenResult> lstDanhSachTheoCapTren(int IDTren, int CapHienThi)
         {
-            return lCN.sp_tblChucNang_DanhSach_TheoCapTren(IDTren).ToList();
+            return lCN.sp_tblChucNang_DanhSach_TheoCapTren(IDTren, CapHienThi).ToList();
         }
     }
 }

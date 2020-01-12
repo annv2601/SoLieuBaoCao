@@ -72,6 +72,13 @@ namespace daoKeToanSoDu.GiayDeNghi
             lGDN.sp_tblGiayDeNghiTiepQuy_TongHopSoLieu(GDN.MaDonVi, GDN.Ngay, GDN.IDNganHang, GDN.NoiDung, GDN.TrinhDonVi, GDN.NoiLuuVB);
         }
 
+        public DataTable InPhieu()
+        {
+            List<sp_tblGiayDeNghiTiepQuy_ThongTinResult> lst;
+            lst = lGDN.sp_tblGiayDeNghiTiepQuy_ThongTin(GDN.MaKeToanNgay).ToList();
+            return daTienIch.ToDataTable(lst);
+        }
+
         public DataTable DanhSach(string rMaDVi, DateTime rTNgay, DateTime rDNgay)
         {
             List<sp_tblGiayDeNghiTiepQuy_DanhSachResult> lst;

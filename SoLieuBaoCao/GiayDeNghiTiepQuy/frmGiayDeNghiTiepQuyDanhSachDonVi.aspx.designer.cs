@@ -10,7 +10,7 @@
 namespace SoLieuBaoCao.GiayDeNghiTiepQuy {
     
     
-    public partial class frmGiayDeNghiTiepQuyDanhSach {
+    public partial class frmGiayDeNghiTiepQuyDanhSachDonVi {
         
         /// <summary>
         /// form1 control.
@@ -31,24 +31,6 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy {
         protected global::Ext.Net.Hidden txtNgayThang;
         
         /// <summary>
-        /// mnuGDN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Menu mnuGDN;
-        
-        /// <summary>
-        /// mnuitemAnhBK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.MenuItem mnuitemAnhBK;
-        
-        /// <summary>
         /// grdGDNTQuy control.
         /// </summary>
         /// <remarks>
@@ -56,33 +38,6 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.GridPanel grdGDNTQuy;
-        
-        /// <summary>
-        /// txtNgayTongHop control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.DateField txtNgayTongHop;
-        
-        /// <summary>
-        /// btnTongHop control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnTongHop;
-        
-        /// <summary>
-        /// btnNganHang control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnNganHang;
         
         /// <summary>
         /// btnThangTruoc control.
@@ -119,33 +74,6 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.GridView GridView1;
-        
-        /// <summary>
-        /// wNganHang control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Window wNganHang;
-        
-        /// <summary>
-        /// ucNganHang1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SoLieuBaoCao.GiayDeNghiTiepQuy.ucNganHang ucNganHang1;
-        
-        /// <summary>
-        /// btnCapNhatNH control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnCapNhatNH;
         
         /// <summary>
         /// wAnhBanKy control.

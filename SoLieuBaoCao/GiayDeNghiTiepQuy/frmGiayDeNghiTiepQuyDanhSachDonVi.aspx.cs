@@ -13,7 +13,7 @@ using Ext.Net;
 
 namespace SoLieuBaoCao.GiayDeNghiTiepQuy
 {
-    public partial class frmGiayDeNghiTiepQuyDanhSach : System.Web.UI.Page
+    public partial class frmGiayDeNghiTiepQuyDanhSachDonVi : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,8 +21,7 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy
             {
                 if (UIHelper.daPhien.DaDangNhap)
                 {
-                    NgayThang = DateTime.Now;
-                    txtNgayTongHop.Value = DateTime.Now;
+                    NgayThang = DateTime.Now;                    
                     HienThiNhap();
                     
                 }
@@ -51,41 +50,29 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy
         private void HienThiNhap()
         {
             daGiayDeNghi dGDN = new daGiayDeNghi();
-            DateTime _tungay, _denngay, _ngayhtai;
-            _ngayhtai = DateTime.Now;
-            _tungay = daTienIch.NgayDauThang(NgayThang);
-            _denngay = daTienIch.NgayCuoiThang(NgayThang);
-            if (_ngayhtai < _tungay)
-            {
-                return;
-            }
-            if (_denngay > _ngayhtai)
-            {
-                _denngay = _ngayhtai;
-            }
-
-            stoGDNTQuy.DataSource = dGDN.DanhSach(UIHelper.daPhien.MaDonVi, _tungay, _denngay);
+            
+            stoGDNTQuy.DataSource = dGDN.DanhSach(NgayThang, NgayThang);
             stoGDNTQuy.DataBind();
-            grdGDNTQuy.Title = "DANH SÁCH GIẤY ĐỀ NGHỊ TRONG THÁNG " + _tungay.Month.ToString() + " NĂM " + _tungay.Year.ToString();
+            grdGDNTQuy.Title = "DANH SÁCH GIẤY ĐỀ NGHỊ TIẾP QUỸ CỦA CÁC ĐƠN VỊ TRONG NGÀY " + NgayThang.ToString("dd/MM/yyyy");
         }
         #endregion
 
         #region Su kien
         protected void btnThangTruoc_Click(object sender, DirectEventArgs e)
         {
-            NgayThang = NgayThang.AddMonths(-1);
+            NgayThang = NgayThang.AddDays(-1);
             HienThiNhap();
         }
 
         protected void btnThangSau_Click(object sender, DirectEventArgs e)
         {
-            NgayThang = NgayThang.AddMonths(1);
+            NgayThang = NgayThang.AddDays(1);
             HienThiNhap();
         }
 
         protected void btnTongHop_Click(object sender, DirectEventArgs e)
         {
-            daGiayDeNghi dGiay = new daGiayDeNghi();
+            /*daGiayDeNghi dGiay = new daGiayDeNghi();
             daNganHang dNH = new daNganHang();
             dNH.NHang.MaDonVi = UIHelper.daPhien.MaDonVi;
             dNH.NHang.IDNhom = (int)daNganHang.eNhomNganHang.NH_Đề_Nghị_Tiếp_Quỹ;
@@ -124,40 +111,9 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy
 
             X.Msg.Alert("Hoàn thành", "Anh/Chị đã lập Giấy đề nghị Tiếp quỹ xong cho ngày "+dGiay.GDN.Ngay.Value.ToString("dd/MM/yyyy")).Show();
 
-            HienThiNhap();
+            HienThiNhap();*/
         }
-
-        protected void btnNganHang_Click(object sender, DirectEventArgs e)
-        {
-            daNganHang dNH = new daNganHang();
-            dNH.NHang.MaDonVi = UIHelper.daPhien.MaDonVi;
-            dNH.NHang.IDNhom = (int)daNganHang.eNhomNganHang.NH_Đề_Nghị_Tiếp_Quỹ;
-            if(dNH.ThongTin()!=null)
-            {
-                ucNganHang1.TenNganHang = dNH.NHang.NganHang;
-                ucNganHang1.TenPhongGD = dNH.NHang.PhongGiaoDich;
-                ucNganHang1.SoTaikhoan = dNH.NHang.SoTaiKhoan;
-                ucNganHang1.TenDonViHuong = dNH.NHang.TenDonViHuong;
-            }
-
-            wNganHang.Show();
-        }
-
-        protected void btnCapNhatNH_Click(object sender, DirectEventArgs e)
-        {
-            daNganHang dNH = new daNganHang();
-            dNH.NHang.ID = ucNganHang1.IDNganHang;
-            dNH.NHang.MaDonVi = UIHelper.daPhien.MaDonVi;
-            dNH.NHang.IDNhom = (int)daNganHang.eNhomNganHang.NH_Đề_Nghị_Tiếp_Quỹ;
-            dNH.NHang.NganHang = ucNganHang1.TenNganHang;
-            dNH.NHang.PhongGiaoDich = ucNganHang1.TenPhongGD;
-            dNH.NHang.SoTaiKhoan = ucNganHang1.SoTaikhoan;
-            dNH.NHang.TenDonViHuong = ucNganHang1.TenDonViHuong;
-
-            dNH.ThemSua();
-            X.Msg.Alert("","Đã cập nhật thông tin Ngân hàng!").Show();
-        }
-
+               
         protected void InAn_Click(object sender, DirectEventArgs e)
         {
             string json = e.ExtraParams["ValuesGDN"];
@@ -187,33 +143,30 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy
 
         }
 
-        protected void mnuitemAnhBK_Click(object sender, DirectEventArgs e)
+        protected void grdGDNTQuy_ClickDup(object sender, DirectEventArgs e)
         {
-            string json = e.ExtraParams["ValuesGDN"];
+            string json = e.ExtraParams["ValuesCTSTK"];
             if (json == "")
             {
                 return;
             }
             Dictionary<string, string>[] companies = JSON.Deserialize<Dictionary<string, string>[]>(json);
-            string _url="";
+            string _url = "";
             foreach (Dictionary<string, string> row in companies)
             {
                 try
                 {
-                    ucAnhBKy1.MaKeToan = row["MaKeToanNgay"];
-                    _url= row["urlAnhBanIn"];
+                    _url = row["urlAnhBanIn"];
                 }
                 catch
                 {
-                    ucAnhBKy1.MaKeToan = "";
+                    _url = "";
                 }
             }
-            if(ucAnhBKy1.MaKeToan !="" )
+            if (_url != "")
             {
-                if(_url!="")
-                {
-                    ucAnhBKy1.HienThiAnh(_url);
-                }
+                ucAnhBKy1.MaKeToan = "";
+                ucAnhBKy1.HienThiAnh(_url);
                 wAnhBanKy.Show();
             }
         }

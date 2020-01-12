@@ -26,7 +26,7 @@ namespace SoLieuBaoCao
         private void Menu()
         {
             Ext.Net.Node root = new Ext.Net.Node();
-            TreeStore treeStore = new TreeStore();
+            //TreeStore treeStore = new TreeStore();
 
             daChucNang dCN = new daChucNang();
             List<sp_tblChucNang_DanhSachResult> lstChucNang;
@@ -45,7 +45,14 @@ namespace SoLieuBaoCao
                 composerNode.CustomAttributes.Add(new ConfigItem("DiaChiURL", "0"));
                 root.Children.Add(composerNode);
 
-                lstCNCon = dCN.lstDanhSachTheoCapTren(composer.ID);
+                if (daPhien.ThongTinDN.Cap == null)
+                {
+                    lstCNCon = dCN.lstDanhSachTheoCapTren(composer.ID, 2);
+                }
+                else
+                {
+                    lstCNCon = dCN.lstDanhSachTheoCapTren(composer.ID, daPhien.ThongTinDN.Cap.Value);
+                }
                 if(lstCNCon.Count>0)
                 {
                     foreach(sp_tblChucNang_DanhSach_TheoCapTrenResult ptCon in lstCNCon)
@@ -66,10 +73,16 @@ namespace SoLieuBaoCao
             }
 
             root.Expanded = true;
-            treeStore.Root.Add(root);
-            treeStore.GetRootNode().ExpandChildren(true);
-            ChucNangTree.Store.Add(treeStore);
             
+            treesto.Root.Add(root);            
+            treesto.GetRootNode().ExpandChildren(true);
+            /*treeStore.Root.Add(root);
+            treeStore.Render();
+            treeStore.GetRootNode().ExpandChildren(true);
+                       
+            ChucNangTree.Store.Add(treeStore);*/
+            //ChucNangTree.Render();
+
         }
 
         private void DanhSachNguoiSuDung()
@@ -104,6 +117,11 @@ namespace SoLieuBaoCao
 
                 UIHelper.daPhien.ThongTinDN = dDN.TTDN;
 
+
+                //Menu();
+                //treesto.Render();
+                //ChucNangTree.Render(true);
+                
                 Notification.Show(new NotificationConfig
                 {
                     Title = "Hoàn thành",
@@ -117,6 +135,8 @@ namespace SoLieuBaoCao
                     },
                     Html = "Đăng nhập Thành công vào hệ thống"
                 });
+
+                Response.Redirect("Default.aspx");
             }
             else
             {

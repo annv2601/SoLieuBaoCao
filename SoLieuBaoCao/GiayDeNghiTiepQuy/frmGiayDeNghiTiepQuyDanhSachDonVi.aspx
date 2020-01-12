@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmGiayDeNghiTiepQuyDanhSach.aspx.cs" Inherits="SoLieuBaoCao.GiayDeNghiTiepQuy.frmGiayDeNghiTiepQuyDanhSach" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmGiayDeNghiTiepQuyDanhSachDonVi.aspx.cs" Inherits="SoLieuBaoCao.GiayDeNghiTiepQuy.frmGiayDeNghiTiepQuyDanhSachDonVi" %>
 <%@ Register src="~/GiayDeNghiTiepQuy/ucNganHang.ascx" tagname="NganHang" tagprefix="uc" %>
 <%@ Register src="~/GiayDeNghiTiepQuy/ucAnhBanKy.ascx" tagname="AnhBKy" tagprefix="uc" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -61,8 +62,13 @@
                 return "GridPanelUsersRowYellow";
             }
             else
-            {
-                return "GridPanelUsersRowWhite";
+             {
+                 if (record.data.urlAnhBanIn == "") {
+                     return "GridPanelUsersRowWhite";
+                 }
+                 else {
+                     return "GridPanelUsersXacNhan";
+                 }
             }
          }
 
@@ -89,44 +95,16 @@
     <ext:ResourceManager runat="server" Locale="vi-VN" Theme="NeptuneTouch" />
     <form id="form1" runat="server">
         <ext:Hidden runat="server" ID="txtNgayThang" />
-        <ext:Menu runat="server" ID="mnuGDN">
-            <Items>
-                <ext:MenuItem runat="server" ID="mnuitemAnhBK" Text="Chụp ảnh bản ký" Icon="ImageAdd">
-                    <DirectEvents>
-                        <Click OnEvent="mnuitemAnhBK_Click">
-                            <ExtraParams>
-                                <ext:Parameter Name="ValuesGDN" Value="Ext.encode(#{grdGDNTQuy}.getRowsValues({selectedOnly:true}))" Mode="Raw" />
-                            </ExtraParams>
-                        </Click>
-                    </DirectEvents>
-                </ext:MenuItem>
-            </Items>
-        </ext:Menu>
-        <ext:GridPanel runat="server" ID="grdGDNTQuy" TitleAlign="Center" MinHeight="300" Height="800" MarginSpec="0 0 0 0" ContextMenuID="mnuGDN">   
+        <ext:GridPanel runat="server" ID="grdGDNTQuy" TitleAlign="Center" MinHeight="300" Height="800" MarginSpec="0 0 0 0">   
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>
-                       <ext:DateField runat="server" ID="txtNgayTongHop" FieldLabel="Ngày" LabelWidth="60" />
-                       <ext:Button runat="server" ID="btnTongHop" Text="Lập Đề nghị" MarginSpec="0 0 0 20" >
-                           <DirectEvents>
-                               <Click OnEvent="btnTongHop_Click">
-                                   <EventMask ShowMask="true" Msg="Đang thực hiện ....." />
-                               </Click>
-                           </DirectEvents>
-                       </ext:Button>
-
-                       <ext:Button runat="server" ID="btnNganHang" Text="TT Ngân hàng" MarginSpec="0 0 0 20" >
-                           <DirectEvents>
-                               <Click OnEvent="btnNganHang_Click" />
-                           </DirectEvents>
-                       </ext:Button>
-
-                       <ext:Button runat="server" ID="btnThangTruoc" Text="Tháng trước" MarginSpec="0 0 0 20" >
+                       <ext:Button runat="server" ID="btnThangTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" >
                            <DirectEvents>
                                <Click OnEvent="btnThangTruoc_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnThangSau" Text="Tháng sau" MarginSpec="0 0 0 20" >
+                       <ext:Button runat="server" ID="btnThangSau" Text="Ngày sau" MarginSpec="0 0 0 20" >
                            <DirectEvents>
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>
@@ -143,6 +121,7 @@
                                 <ext:ModelField Name="STT" />
                                 <ext:ModelField Name="MaKeToanNgay" />
                                 <ext:ModelField Name="MaDonVi" />
+                                <ext:ModelField Name="TenDonVi" />
                                 <ext:ModelField Name="Ngay" />
                                 <ext:ModelField Name="SoTienDeNghi" />
                                 <ext:ModelField Name="DuKienChiTra" />
@@ -167,21 +146,7 @@
             <ColumnModel>
                 <Columns>
                     <ext:RowNumbererColumn runat="server" Text="STT" Align="Center" Width="60" StyleSpec="font-weight:bold;" />         
-                    <ext:DateColumn runat="server" Text="Ngày" DataIndex="Ngay" Align="Center" Width="130" StyleSpec="font-weight:bold;" Format="dd/MM/yyyy">
-                        <Commands>
-                            <ext:ImageCommand CommandName="InAn" Icon="Printer" >
-                                <ToolTip Text="In giấy đề nghị Tiếp quỹ" />                                
-                            </ext:ImageCommand>                            
-                        </Commands>
-                        <DirectEvents>
-                            <Command OnEvent="InAn_Click">
-                                <ExtraParams>
-                                    <ext:Parameter Name="ValuesGDN" Value="record.data.MaKeToanNgay" Mode="Raw"/>
-                                </ExtraParams>
-                                <EventMask ShowMask="true" Msg="Đang thực thi ....." />
-                            </Command>
-                        </DirectEvents>
-                    </ext:DateColumn>
+                    <ext:Column runat="server" Text="Đơn vị" DataIndex="TenDonVi" Align="Left" Width="220" StyleSpec="font-weight:bold;"/>
                     <ext:TemplateColumn
                                 runat="server"
                                 Text="ảnh chụp" StyleSpec="font-weight:bold;"
@@ -232,33 +197,15 @@
             <Features>
                 <ext:Summary runat="server"/>
             </Features>
+            <DirectEvents>
+                <ItemDblClick OnEvent="grdGDNTQuy_ClickDup">
+                    <ExtraParams>
+                        <ext:Parameter Name="ValuesCTSTK" Value="Ext.encode(#{grdGDNTQuy}.getRowsValues({selectedOnly:true}))" Mode="Raw" />
+                    </ExtraParams>
+                </ItemDblClick>
+            </DirectEvents>
         </ext:GridPanel>
-
-        <ext:Window runat="server" ID="wNganHang" Icon="Money" Title="Thông tin Ngân hàng" TitleAlign="Center"
-            ButtonAlign="Center" Width="460" Height="360" AutoScroll="true" Hidden="true">
-            <Items>
-                <ext:Panel runat="server" Header="false" Layout="FitLayout" Closable="false">
-                    <Content>
-                        <uc:NganHang ID="ucNganHang1" runat="server" Title="" />
-                    </Content>
-                </ext:Panel>
-            </Items>
-            <Buttons>
-                <ext:Button runat="server" ID="btnCapNhatNH" Text="Cập nhật" Icon="Add" Width="120">
-                    <DirectEvents>
-                        <Click OnEvent="btnCapNhatNH_Click">
-                            <EventMask ShowMask="true" Msg="Đang khởi tạo ....." />
-                        </Click>
-                    </DirectEvents>
-                </ext:Button>
-                <ext:Button runat="server" Text="Đóng" Icon="Cross" Width="120">
-                    <Listeners>
-                        <Click Handler="#{wNganHang}.hide()" />
-                    </Listeners>
-                </ext:Button>
-            </Buttons>
-        </ext:Window>
-
+        
         <ext:Window runat="server" ID="wAnhBanKy" Icon="Image" Title="Ảnh bản ký" TitleAlign="Center"
             ButtonAlign="Center" Width="600" Height="600" AutoScroll="true" Hidden="true">
             <Items>

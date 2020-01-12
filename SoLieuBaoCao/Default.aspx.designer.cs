@@ -58,6 +58,15 @@ namespace SoLieuBaoCao {
         protected global::Ext.Net.TreeList ChucNangTree;
         
         /// <summary>
+        /// treesto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TreeStore treesto;
+        
+        /// <summary>
         /// TabPanelChinh control.
         /// </summary>
         /// <remarks>

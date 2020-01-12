@@ -183,6 +183,9 @@
                         RootVisible="false"
                         Animate="false"
                         HideHeaders="true">
+                        <Store>
+                            <ext:TreeStore runat="server" ID="treesto" />
+                        </Store>
                         <Listeners>
                                 <SelectionChange Fn="ClickItemtree" />
                          </Listeners>

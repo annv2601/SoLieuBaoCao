@@ -128,7 +128,9 @@
     <Content Include="DoanhThuKhachHang\frmDoanhThuKhachHang.aspx" />
     <Content Include="DoanhThuKhachHang\frmKhachHang.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
+    <Content Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSachDonVi.aspx" />
     <Content Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSach.aspx" />
+    <Content Include="GiayDeNghiTiepQuy\ucAnhBanKy.ascx" />
     <Content Include="GiayDeNghiTiepQuy\ucNganHang.ascx" />
     <Content Include="MoHinh\frmMauBieuBaoCao.aspx" />
     <Content Include="MoHinh\frmChiTieuMauBieu.aspx" />
@@ -235,12 +237,26 @@
     <Compile Include="DoanhThuKhachHang\frmKhachHang.aspx.designer.cs">
       <DependentUpon>frmKhachHang.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSachDonVi.aspx.cs">
+      <DependentUpon>frmGiayDeNghiTiepQuyDanhSachDonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSachDonVi.aspx.designer.cs">
+      <DependentUpon>frmGiayDeNghiTiepQuyDanhSachDonVi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSach.aspx.cs">
       <DependentUpon>frmGiayDeNghiTiepQuyDanhSach.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSach.aspx.designer.cs">
       <DependentUpon>frmGiayDeNghiTiepQuyDanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiayDeNghiTiepQuy\ucAnhBanKy.ascx.cs">
+      <DependentUpon>ucAnhBanKy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiayDeNghiTiepQuy\ucAnhBanKy.ascx.designer.cs">
+      <DependentUpon>ucAnhBanKy.ascx</DependentUpon>
     </Compile>
     <Compile Include="GiayDeNghiTiepQuy\ucNganHang.ascx.cs">
       <DependentUpon>ucNganHang.ascx</DependentUpon>

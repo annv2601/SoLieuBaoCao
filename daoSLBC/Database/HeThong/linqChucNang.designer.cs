@@ -77,9 +77,9 @@ namespace daoSLBC.Database.HeThong
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblChucNang_DanhSach_TheoCapTren")]
-		public ISingleResult<sp_tblChucNang_DanhSach_TheoCapTrenResult> sp_tblChucNang_DanhSach_TheoCapTren([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDTren", DbType="Int")] System.Nullable<int> iDTren)
+		public ISingleResult<sp_tblChucNang_DanhSach_TheoCapTrenResult> sp_tblChucNang_DanhSach_TheoCapTren([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDTren", DbType="Int")] System.Nullable<int> iDTren, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CapHienThi", DbType="Int")] System.Nullable<int> capHienThi)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDTren);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDTren, capHienThi);
 			return ((ISingleResult<sp_tblChucNang_DanhSach_TheoCapTrenResult>)(result.ReturnValue));
 		}
 	}

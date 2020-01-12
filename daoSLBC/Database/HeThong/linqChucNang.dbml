@@ -34,6 +34,7 @@
   </Function>
   <Function Name="dbo.sp_tblChucNang_DanhSach_TheoCapTren" Method="sp_tblChucNang_DanhSach_TheoCapTren">
     <Parameter Name="IDTren" Parameter="iDTren" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CapHienThi" Parameter="capHienThi" Type="System.Int32" DbType="Int" />
     <ElementType Name="sp_tblChucNang_DanhSach_TheoCapTrenResult">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

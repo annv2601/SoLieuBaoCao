@@ -33,6 +33,6 @@ namespace daoKeToanSoDu.Properties {
                 //return ((string)(this["KeToanSoDuConnectionString"]));
                 return System.Configuration.ConfigurationManager.ConnectionStrings["KeToanSoDuConnectionString"].ConnectionString;
             }
-        }
+        }        
     }
 }

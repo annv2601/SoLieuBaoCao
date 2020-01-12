@@ -54,10 +54,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>linqDuKienChiTra.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Database\linqGiayDeNghi.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqGiayDeNghi.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\linqKeToanSoDu.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>linqKeToanSoDu.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqNganHang.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqNganHang.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\linqSoDuTGNHCuoiNgay.designer.cs">
       <AutoGen>True</AutoGen>
@@ -71,7 +81,9 @@
     </Compile>
     <Compile Include="daTienIch.cs" />
     <Compile Include="DinhMucLuuQuy\daDinhMucLuuQuy.cs" />
+    <Compile Include="GiayDeNghi\daGiayDeNghi.cs" />
     <Compile Include="KeToanSoDu\daSoDuCuoiNgay.cs" />
+    <Compile Include="NganHang\daNganHang.cs" />
     <Compile Include="PhatSinhGiam\daDuKienChiTra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -100,6 +112,14 @@
     <None Include="Database\linqDuKienChiTra.dbml.layout">
       <DependentUpon>linqDuKienChiTra.dbml</DependentUpon>
     </None>
+    <None Include="Database\linqGiayDeNghi.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqGiayDeNghi.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqGiayDeNghi.dbml.layout">
+      <DependentUpon>linqGiayDeNghi.dbml</DependentUpon>
+    </None>
     <None Include="Database\linqKeToanSoDu.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>linqKeToanSoDu.designer.cs</LastGenOutput>
@@ -107,6 +127,14 @@
     </None>
     <None Include="Database\linqKeToanSoDu.dbml.layout">
       <DependentUpon>linqKeToanSoDu.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqNganHang.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqNganHang.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqNganHang.dbml.layout">
+      <DependentUpon>linqNganHang.dbml</DependentUpon>
     </None>
     <None Include="Database\linqSoDuTGNHCuoiNgay.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

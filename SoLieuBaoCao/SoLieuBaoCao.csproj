@@ -140,6 +140,8 @@
     <Content Include="Resource\Images\TaoBaoCao.png" />
     <Content Include="Resource\JS\main.js" />
     <Content Include="Resource\JS\perfect-scrollbar.min.js" />
+    <Content Include="SoDu\DinhMucLuuQuy\frmDinhMucLuuQuy.aspx" />
+    <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTGNHCuoiNgayDonVi.aspx" />
     <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgayDonVi.aspx" />
     <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgay.aspx" />
     <Content Include="SoLieuPhatHanh\frmChiTietPaypost.aspx" />
@@ -262,6 +264,20 @@
     </Compile>
     <Compile Include="QuyKet\frmTheoDoiQuyKet.aspx.designer.cs">
       <DependentUpon>frmTheoDoiQuyKet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoDu\DinhMucLuuQuy\frmDinhMucLuuQuy.aspx.cs">
+      <DependentUpon>frmDinhMucLuuQuy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoDu\DinhMucLuuQuy\frmDinhMucLuuQuy.aspx.designer.cs">
+      <DependentUpon>frmDinhMucLuuQuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTGNHCuoiNgayDonVi.aspx.cs">
+      <DependentUpon>frmSoDuTGNHCuoiNgayDonVi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTGNHCuoiNgayDonVi.aspx.designer.cs">
+      <DependentUpon>frmSoDuTGNHCuoiNgayDonVi.aspx</DependentUpon>
     </Compile>
     <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgayDonVi.aspx.cs">
       <DependentUpon>frmSoDuTienmatCuoiNgayDonVi.aspx</DependentUpon>

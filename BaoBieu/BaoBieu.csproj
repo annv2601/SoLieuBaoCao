@@ -112,6 +112,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDoanhThuPaypost.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GiayDeNghi\crGiayDeNghiTiepQuyBuuCuc.cs">
+      <DependentUpon>crGiayDeNghiTiepQuyBuuCuc.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GiayDeNghi\crGiayDeNghiTiepQuy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crGiayDeNghiTiepQuy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GiayDeNghi\dsGiayDeNghi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGiayDeNghi.xsd</DependentUpon>
+    </Compile>
     <Compile Include="KeToanDoanhThu\crBaoCaoKeToan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +220,17 @@
     <None Include="DoanhThu\Paypost\dsDoanhThuPaypost.xss">
       <DependentUpon>dsDoanhThuPaypost.xsd</DependentUpon>
     </None>
+    <None Include="GiayDeNghi\dsGiayDeNghi.xsc">
+      <DependentUpon>dsGiayDeNghi.xsd</DependentUpon>
+    </None>
+    <None Include="GiayDeNghi\dsGiayDeNghi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGiayDeNghi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GiayDeNghi\dsGiayDeNghi.xss">
+      <DependentUpon>dsGiayDeNghi.xsd</DependentUpon>
+    </None>
     <None Include="KeToanDoanhThu\dsKeToanTien.xsc">
       <DependentUpon>dsKeToanTien.xsd</DependentUpon>
     </None>
@@ -269,6 +297,14 @@
     <EmbeddedResource Include="DoanhThu\Paypost\crDoanhThuPaypost.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crDoanhThuPaypost.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiayDeNghi\crGiayDeNghiTiepQuyBuuCuc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crGiayDeNghiTiepQuyBuuCuc.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiayDeNghi\crGiayDeNghiTiepQuy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crGiayDeNghiTiepQuy.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KeToanDoanhThu\crBaoCaoKeToan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

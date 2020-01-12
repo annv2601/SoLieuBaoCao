@@ -32,5 +32,12 @@ namespace daoKeToanSoDu.SoDuCuoiNgay
             lst = lTGNH.sp_tblSoDuTGNHCuoiNgay_DanhSachNhap(rMBC, rTNgay, rDNgay).ToList();
             return daTienIch.ToDataTable(lst);
         }
+
+        public DataTable DanhSachDonVi(string rMaDVi, DateTime rNgay)
+        {
+            List<sp_tblSoDuTGNHCuoiNgay_DanhSachDonViResult> lst;
+            lst = lTGNH.sp_tblSoDuTGNHCuoiNgay_DanhSachDonVi(rMaDVi, rNgay).ToList();
+            return daTienIch.ToDataTable(lst);
+        }
     }
 }

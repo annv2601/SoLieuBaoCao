@@ -20,5 +20,12 @@ namespace daoKeToanSoDu.DinhMucLuuQuy
             lDM.sp_tblDinhMucLuuQuy_ThemSua(DMuc.MaBuuCuc, DMuc.DinhMucLuuQuyTCBC, DMuc.DinhMucLuuQuyTKBD, DMuc.DinhMucLuuQuyTCBC_DonVi, DMuc.DinhMucLuuQuyTKBD_DonVi,
                 DMuc.NgayApDung, DMuc.NgayKetThuc, DMuc.GhiChu, rLaDViNhap);
         }
+
+        public DataTable DanhSach(string rMaDVi, DateTime rNgay)
+        {
+            List<sp_tblDinhMucLuuQuy_DanhSachNhapResult> lst;
+            lst = lDM.sp_tblDinhMucLuuQuy_DanhSachNhap(rMaDVi, rNgay).ToList();
+            return daTienIch.ToDataTable(lst);
+        }
     }
 }

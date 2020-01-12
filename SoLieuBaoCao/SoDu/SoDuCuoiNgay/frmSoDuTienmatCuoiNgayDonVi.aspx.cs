@@ -83,7 +83,7 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
                 daDuKienChiTra dDKCT = new daDuKienChiTra();
                 dDKCT.DKCTra.MaKeToanNgay = node.Property("MaKeToanNgay").Value.ToString();
                 dDKCT.DKCTra.MaBuuCuc = node.Property("MaBuuCuc").Value.ToString();
-                dDKCT.DKCTra.Ngay = DateTime.Parse(node.Property("Ngay").Value.ToString());
+                dDKCT.DKCTra.Ngay = NgayThang;
 
                 try
                 {

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KeToanSoDu" Class="linqNganHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=KeToanSoDu;Persist Security Info=True;User ID=sa" SettingsObjectName="daoKeToanSoDu.Properties.Settings" SettingsPropertyName="KeToanSoDuConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblNganHang_ThemSua" Method="sp_tblNganHang_ThemSua">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TenDonViHuong" Parameter="tenDonViHuong" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="SoTaiKhoan" Parameter="soTaiKhoan" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="NganHang" Parameter="nganHang" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="PhongGiaoDich" Parameter="phongGiaoDich" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="IDNhom" Parameter="iDNhom" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblNganHang_ThongTin" Method="sp_tblNganHang_ThongTin">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="IDNhom" Parameter="iDNhom" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblNganHang_ThongTinResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDonViHuong" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SoTaiKhoan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NganHang" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PhongGiaoDich" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IDNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

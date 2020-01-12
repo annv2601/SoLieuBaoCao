@@ -91,7 +91,7 @@
     <ext:ResourceManager runat="server" Locale="vi-VN" Theme="NeptuneTouch" />
     <form id="form1" runat="server">
         <ext:Hidden runat="server" ID="txtNgayThang" />
-        <ext:GridPanel runat="server" ID="grdSoDuTMCuoiNgay" TitleAlign="Center" MinHeight="300" Height="1000" MarginSpec="0 0 0 0">
+        <ext:GridPanel runat="server" ID="grdSoDuTMCuoiNgay" TitleAlign="Center" MinHeight="300" Height="800" MarginSpec="0 0 0 0">
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>                        
@@ -155,10 +155,10 @@
                     <ext:Column runat="server" Text="Đơn vị" Align="Left" DataIndex="DonVi" Width="160" StyleSpec="font-weight:bold;" Locked="true"/>
                     <ext:Column runat="server" Text="Định mức" Locked="true">
                         <Columns>
-                            <ext:Column runat="server" Text="TCBC" DataIndex="DinhMucLuuQuyTCBC" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                            <ext:Column runat="server" Text="TCBC" DataIndex="DinhMucLuuQuyTCBC_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                      <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                              </ext:Column>
-                            <ext:Column runat="server" Text="TKBĐ" DataIndex="DinhMucLuuQuyTKBD" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                            <ext:Column runat="server" Text="TKBĐ" DataIndex="DinhMucLuuQuyTKBD_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                      <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                              </ext:Column>
                         </Columns>
@@ -230,7 +230,7 @@
                              <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                      </ext:Column>
 
-                    <ext:Column runat="server" Text="Ghi chú" DataIndex="GhiChu" Width="400" Align="Center" StyleSpec="font-weight:bold;">
+                    <ext:Column runat="server" Text="Ghi chú" DataIndex="GhiChu" Width="400" Align="Left" StyleSpec="font-weight:bold;">
                         <Editor>
                             <ext:TextField runat="server" />
                         </Editor>

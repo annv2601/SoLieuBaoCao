@@ -75,6 +75,13 @@ namespace daoKeToanSoDu.Database
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc);
 			return ((ISingleResult<sp_tblDinhMucLuuQuy_ThongTinResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblDinhMucLuuQuy_DanhSachNhap")]
+		public ISingleResult<sp_tblDinhMucLuuQuy_DanhSachNhapResult> sp_tblDinhMucLuuQuy_DanhSachNhap([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDonVi", DbType="NVarChar(10)")] string maDonVi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ngay", DbType="Date")] System.Nullable<System.DateTime> ngay)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDonVi, ngay);
+			return ((ISingleResult<sp_tblDinhMucLuuQuy_DanhSachNhapResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_tblDinhMucLuuQuy_ThongTinResult
@@ -112,6 +119,194 @@ namespace daoKeToanSoDu.Database
 				if ((this._MaBuuCuc != value))
 				{
 					this._MaBuuCuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMucLuuQuyTCBC", DbType="Decimal(22,0)")]
+		public System.Nullable<decimal> DinhMucLuuQuyTCBC
+		{
+			get
+			{
+				return this._DinhMucLuuQuyTCBC;
+			}
+			set
+			{
+				if ((this._DinhMucLuuQuyTCBC != value))
+				{
+					this._DinhMucLuuQuyTCBC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMucLuuQuyTKBD", DbType="Decimal(22,0)")]
+		public System.Nullable<decimal> DinhMucLuuQuyTKBD
+		{
+			get
+			{
+				return this._DinhMucLuuQuyTKBD;
+			}
+			set
+			{
+				if ((this._DinhMucLuuQuyTKBD != value))
+				{
+					this._DinhMucLuuQuyTKBD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMucLuuQuyTCBC_DonVi", DbType="Decimal(22,0)")]
+		public System.Nullable<decimal> DinhMucLuuQuyTCBC_DonVi
+		{
+			get
+			{
+				return this._DinhMucLuuQuyTCBC_DonVi;
+			}
+			set
+			{
+				if ((this._DinhMucLuuQuyTCBC_DonVi != value))
+				{
+					this._DinhMucLuuQuyTCBC_DonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMucLuuQuyTKBD_DonVi", DbType="Decimal(22,0)")]
+		public System.Nullable<decimal> DinhMucLuuQuyTKBD_DonVi
+		{
+			get
+			{
+				return this._DinhMucLuuQuyTKBD_DonVi;
+			}
+			set
+			{
+				if ((this._DinhMucLuuQuyTKBD_DonVi != value))
+				{
+					this._DinhMucLuuQuyTKBD_DonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayApDung", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayApDung
+		{
+			get
+			{
+				return this._NgayApDung;
+			}
+			set
+			{
+				if ((this._NgayApDung != value))
+				{
+					this._NgayApDung = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKetThuc", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayKetThuc
+		{
+			get
+			{
+				return this._NgayKetThuc;
+			}
+			set
+			{
+				if ((this._NgayKetThuc != value))
+				{
+					this._NgayKetThuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(250)")]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this._GhiChu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_tblDinhMucLuuQuy_DanhSachNhapResult
+	{
+		
+		private System.Nullable<long> _STT;
+		
+		private string _MaBuuCuc;
+		
+		private string _TenBuuCuc;
+		
+		private System.Nullable<decimal> _DinhMucLuuQuyTCBC;
+		
+		private System.Nullable<decimal> _DinhMucLuuQuyTKBD;
+		
+		private System.Nullable<decimal> _DinhMucLuuQuyTCBC_DonVi;
+		
+		private System.Nullable<decimal> _DinhMucLuuQuyTKBD_DonVi;
+		
+		private System.Nullable<System.DateTime> _NgayApDung;
+		
+		private System.Nullable<System.DateTime> _NgayKetThuc;
+		
+		private string _GhiChu;
+		
+		public sp_tblDinhMucLuuQuy_DanhSachNhapResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="BigInt")]
+		public System.Nullable<long> STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this._STT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBuuCuc", DbType="NVarChar(255)")]
+		public string MaBuuCuc
+		{
+			get
+			{
+				return this._MaBuuCuc;
+			}
+			set
+			{
+				if ((this._MaBuuCuc != value))
+				{
+					this._MaBuuCuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenBuuCuc", DbType="NVarChar(255)")]
+		public string TenBuuCuc
+		{
+			get
+			{
+				return this._TenBuuCuc;
+			}
+			set
+			{
+				if ((this._TenBuuCuc != value))
+				{
+					this._TenBuuCuc = value;
 				}
 			}
 		}

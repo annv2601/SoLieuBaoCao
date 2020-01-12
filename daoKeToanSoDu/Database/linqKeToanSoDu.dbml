@@ -99,4 +99,15 @@
       <Column Name="Khoa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_tblKeToanSoDu_ThongTin_BuuCuc" Method="sp_tblKeToanSoDu_ThongTin_BuuCuc">
+    <Parameter Name="MaBuuCuc" Parameter="maBuuCuc" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblKeToanSoDu_ThongTin_BuuCucResult">
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BuuCuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MaKeToan" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="TenTat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

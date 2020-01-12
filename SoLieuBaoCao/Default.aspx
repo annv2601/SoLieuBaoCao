@@ -247,7 +247,7 @@
                         EmptyText="Nhập mật khẩu" InputType="Password" MarginSpec="10 0 0 0" Width="380"/>
             </Items>
             <Buttons>
-                <ext:Button runat="server" Text="Đăng nhập" ID="btnKiemTraDangNhap">
+                <ext:Button runat="server" Text="Đăng nhập" ID="btnKiemTraDangNhap" Icon="LockBreak">
                     <DirectEvents>
                         <Click OnEvent="btnKiemTraDangNhap_click" />
                     </DirectEvents>

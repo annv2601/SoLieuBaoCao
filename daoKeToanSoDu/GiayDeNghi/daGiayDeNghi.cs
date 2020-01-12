@@ -57,6 +57,21 @@ namespace daoKeToanSoDu.GiayDeNghi
             lGDN.sp_tblGiayDeNghiTiepQuy_CapNhatAnhBanKy(GDN.MaKeToanNgay, GDN.urlAnhBanIn);
         }
 
+        public void CapNhatBangChu()
+        {
+            lGDN.sp_tblGiayDeNghiTiepQuy_CapNhatBangChu(GDN.MaKeToanNgay, GDN.BangChu);
+        }
+
+        public void CapNhatKhoaMo()
+        {
+            lGDN.sp_tblGiayDeNghiTiepQuy_CapNhatKhoaMo(GDN.MaKeToanNgay, GDN.DaKhoa, GDN.NguoiKhoa);
+        }
+
+        public void TongHop()
+        {
+            lGDN.sp_tblGiayDeNghiTiepQuy_TongHopSoLieu(GDN.MaDonVi, GDN.Ngay, GDN.IDNganHang, GDN.NoiDung, GDN.TrinhDonVi, GDN.NoiLuuVB);
+        }
+
         public DataTable DanhSach(string rMaDVi, DateTime rTNgay, DateTime rDNgay)
         {
             List<sp_tblGiayDeNghiTiepQuy_DanhSachResult> lst;

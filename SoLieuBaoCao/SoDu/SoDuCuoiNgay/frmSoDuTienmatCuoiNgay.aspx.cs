@@ -7,7 +7,9 @@ using System.Web.UI.WebControls;
 using daoKeToanSoDu.SoDuCuoiNgay;
 using daoKeToanSoDu.KeToanSoDu;
 using daoKeToanSoDu.PhatSinhGiam;
+using daoKeToanSoDu.Database;
 using daoKeToanSoDu;
+using BaoBieu.GiayDeNghi;
 using Ext.Net;
 
 namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
@@ -162,6 +164,97 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
             }
 
             grdSoDuTMCuoiNgay.GetStore().GetById(id).Commit();
+        }
+
+        protected void InAn_Click(object sender, DirectEventArgs e)
+        {
+            string json = e.ExtraParams["ValuesDCN"];
+            if (json == "")
+            {
+                return;
+            }
+
+            daDuCuoiTienMat dDCTM = new daDuCuoiTienMat();
+            daDuKienChiTra dDK = new daDuKienChiTra();
+
+            sp_tblGiayDeNghiTiepQuy_DanhSachResult pt = new sp_tblGiayDeNghiTiepQuy_DanhSachResult();
+            pt.TongSoDuTien = 0;
+            pt.SoDuTienMat = 0;
+            pt.SoDuTienMatTaiBuuCuc = 0;
+            pt.SoDuTienMatTaiBDH = 0;
+            pt.SoDuTienDangChuyen = 0;
+            pt.dkctBangTienMat = 0;
+            pt.DuKienChiTra = 0;
+            pt.SoTienQuyKhacVay = 0;
+            pt.SoTienVayQuyKhac = 0;
+            dDCTM.TM.MaKeToanNgay = json;
+            if(dDCTM.ThongTin()!=null)
+            {
+                pt.TongSoDuTien = dDCTM.TM.Cong;
+                pt.SoDuTienMat = dDCTM.TM.TCBCTapTrung;
+                pt.SoDuTienMatTaiBuuCuc = dDCTM.TM.TCBCThanhToanTaiDonVi;
+                pt.SoDuTienMatTaiBDH = dDCTM.TM.TKBD;
+                pt.SoDuTienDangChuyen = dDCTM.TM.KinhDoanh;
+            }
+
+            dDK.DKCTra.MaKeToanNgay = json;
+            if(dDK.ThongTin()!=null)
+            {
+                pt.dkctBangTienMat = dDK.DKCTra.Cong;
+                pt.DuKienChiTra = dDK.DKCTra.Cong;
+            }
+
+            pt.SoTienDeNghi = pt.DuKienChiTra - pt.TongSoDuTien;
+            if(pt.SoTienDeNghi<0)
+            {
+                pt.SoTienDeNghi = 0;
+            }
+
+            DocSo.DocSo ds = new DocSo.DocSo();
+            pt.BangChu = ds.DocSoDayDu(pt.SoTienDeNghi.ToString()) + " đồng";
+            pt.Ngay = DateTime.Parse(json.Substring(10, 2) + "/" + json.Substring(12, 2) + "/" + json.Substring(6, 4));
+            pt.NoiDung = "V/v đề nghị tiếp quỹ TCBC Ngày " + pt.Ngay.Value.AddDays(1).ToString("dd/MM/yyyy");
+            pt.NoiLuuVB = "Bưu cục";
+            
+            daSoDuCuoiNgay dSDCK = new daSoDuCuoiNgay();
+            if(dSDCK.ThongTinBuuCuc(UIHelper.daPhien.MaDonVi)!=null)
+            {
+                pt.TrinhDonVi = "Giám đốc " + dSDCK.BuuCuc.DonVi;
+            }
+            List<sp_tblGiayDeNghiTiepQuy_DanhSachResult> lstBC = new List<sp_tblGiayDeNghiTiepQuy_DanhSachResult>();
+            lstBC.Add(pt);
+
+            crGiayDeNghiTiepQuyBuuCuc rptGDN = new crGiayDeNghiTiepQuyBuuCuc();
+            rptGDN.SetDataSource(daTienIch.ToDataTable(lstBC));
+
+            rptGDN.SetParameterValue(0, dSDCK.BuuCuc.DonVi);
+            rptGDN.SetParameterValue(1, dSDCK.BuuCuc.BuuCuc);
+            rptGDN.SetParameterValue(2, dSDCK.BuuCuc.TenTat);
+            string _tf;
+            _tf = UIHelper.daPhien.TenFileInBaoCao("GiayDeNghiTiepQuy");
+            rptGDN.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Server.MapPath("~") + _tf);      
+            string _url = UIHelper.daPhien.LayDiaChiURL(_tf);
+
+            string script = "window.open('" + _url + "', '')";
+            this.btnThangSau.AddScript(script);
+
+            /*crBieuNhapBaoCaoNhanhDonVi rptBCN = new crBieuNhapBaoCaoNhanhDonVi();
+            rptBCN.SetDataSource(dBCN.DanhSachNhapBCN());
+
+            rptBCN.SetParameterValue(0, "BƯU ĐIỆN THÀNH PHỐ HÀ NỘI");
+            rptBCN.SetParameterValue(1, UIHelper.daPhien.ThongTinDN.TenDonVi);
+            rptBCN.SetParameterValue(2, "BÁO CÁO NHANH TÌNH HÌNH SẢN XUẤT KINH DOANH CỦA ĐƠN VỊ");
+            rptBCN.SetParameterValue(3, "Tháng " + Thang.ToString() + " Năm " + Nam.ToString());
+            rptBCN.SetParameterValue(4, UIHelper.daPhien.TenNguoiSuDung);
+
+            string _tf;
+            _tf = UIHelper.daPhien.TenFileInBaoCao("SoLieu");
+            rptBCN.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Server.MapPath("..") + _tf);
+            //string _url = UIHelper.daPhien.LayDiaChiURL("/BaoCao/frmHienThiBaoCao.aspx") + "?TenFilePDF=" + _tf;            
+            string _url = UIHelper.daPhien.LayDiaChiURL(_tf);
+
+            string script = "window.open('" + _url + "', '')";
+            this.btnIn.AddScript(script);*/
         }
         #endregion
     }

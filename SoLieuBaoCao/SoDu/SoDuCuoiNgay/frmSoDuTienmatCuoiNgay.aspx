@@ -95,12 +95,12 @@
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>                        
-                       <ext:Button runat="server" ID="btnThangTruoc" Text="Tháng trước" MarginSpec="0 0 0 20" ToggleGroup="ThangTruoc">
+                       <ext:Button runat="server" ID="btnThangTruoc" Text="Tháng trước" MarginSpec="0 0 0 20" >
                            <DirectEvents>
                                <Click OnEvent="btnThangTruoc_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnThangSau" Text="Tháng sau" MarginSpec="0 0 0 20" ToggleGroup="ThangSau">
+                       <ext:Button runat="server" ID="btnThangSau" Text="Tháng sau" MarginSpec="0 0 0 20" >
                            <DirectEvents>
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>
@@ -150,7 +150,21 @@
             <ColumnModel>
                 <Columns>
                     <ext:RowNumbererColumn runat="server" Text="STT" Align="Center" Width="60" StyleSpec="font-weight:bold;" Locked="true"/>
-                    <ext:DateColumn runat="server" Text="Ngày" DataIndex="Ngay" Align="Center" Width="130" StyleSpec="font-weight:bold;" Format="dd/MM/yyyy" Locked="true"/>
+                    <ext:DateColumn runat="server" Text="Ngày" DataIndex="Ngay" Align="Center" Width="130" StyleSpec="font-weight:bold;" Format="dd/MM/yyyy" Locked="true">
+                        <Commands>
+                            <ext:ImageCommand CommandName="InAn" Icon="Printer" >
+                                <ToolTip Text="In giấy đề nghị Tiếp quỹ" />                                
+                            </ext:ImageCommand>                            
+                        </Commands>
+                        <DirectEvents>
+                            <Command OnEvent="InAn_Click">
+                                <ExtraParams>
+                                    <ext:Parameter Name="ValuesDCN" Value="record.data.MaKeToanNgay" Mode="Raw"/>
+                                </ExtraParams>
+                                <EventMask ShowMask="true" Msg="Đang thực thi ....." />
+                            </Command>
+                        </DirectEvents>
+                    </ext:DateColumn>
                     <ext:Column runat="server" Text="Định mức" Locked="true">
                         <Columns>
                             <ext:Column runat="server" Text="TCBC" DataIndex="DinhMucLuuQuyTCBC_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">

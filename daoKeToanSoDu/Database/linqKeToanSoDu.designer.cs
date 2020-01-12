@@ -96,6 +96,13 @@ namespace daoKeToanSoDu.Database
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDonVi, ngay);
 			return ((ISingleResult<sp_tblKeToanSoDu_DanhSachTheoDonViResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblKeToanSoDu_ThongTin_BuuCuc")]
+		public ISingleResult<sp_tblKeToanSoDu_ThongTin_BuuCucResult> sp_tblKeToanSoDu_ThongTin_BuuCuc([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaBuuCuc", DbType="NVarChar(10)")] string maBuuCuc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maBuuCuc);
+			return ((ISingleResult<sp_tblKeToanSoDu_ThongTin_BuuCucResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_tblKeToanSoDu_BaoCao_DonViResult
@@ -1277,6 +1284,122 @@ namespace daoKeToanSoDu.Database
 				if ((this._Khoa != value))
 				{
 					this._Khoa = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_tblKeToanSoDu_ThongTin_BuuCucResult
+	{
+		
+		private string _MaBuuCuc;
+		
+		private string _BuuCuc;
+		
+		private string _MaDonVi;
+		
+		private string _MaKeToan;
+		
+		private string _DonVi;
+		
+		private string _TenTat;
+		
+		public sp_tblKeToanSoDu_ThongTin_BuuCucResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBuuCuc", DbType="NVarChar(255)")]
+		public string MaBuuCuc
+		{
+			get
+			{
+				return this._MaBuuCuc;
+			}
+			set
+			{
+				if ((this._MaBuuCuc != value))
+				{
+					this._MaBuuCuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BuuCuc", DbType="NVarChar(255)")]
+		public string BuuCuc
+		{
+			get
+			{
+				return this._BuuCuc;
+			}
+			set
+			{
+				if ((this._BuuCuc != value))
+				{
+					this._BuuCuc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonVi", DbType="NVarChar(255)")]
+		public string MaDonVi
+		{
+			get
+			{
+				return this._MaDonVi;
+			}
+			set
+			{
+				if ((this._MaDonVi != value))
+				{
+					this._MaDonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKeToan", DbType="NVarChar(10)")]
+		public string MaKeToan
+		{
+			get
+			{
+				return this._MaKeToan;
+			}
+			set
+			{
+				if ((this._MaKeToan != value))
+				{
+					this._MaKeToan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonVi", DbType="NVarChar(80)")]
+		public string DonVi
+		{
+			get
+			{
+				return this._DonVi;
+			}
+			set
+			{
+				if ((this._DonVi != value))
+				{
+					this._DonVi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTat", DbType="NVarChar(20)")]
+		public string TenTat
+		{
+			get
+			{
+				return this._TenTat;
+			}
+			set
+			{
+				if ((this._TenTat != value))
+				{
+					this._TenTat = value;
 				}
 			}
 		}

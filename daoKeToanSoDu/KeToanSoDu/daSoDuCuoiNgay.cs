@@ -11,6 +11,22 @@ namespace daoKeToanSoDu.KeToanSoDu
     public class daSoDuCuoiNgay
     {
         private linqKeToanSoDuDataContext lSD = new linqKeToanSoDuDataContext();
+        private sp_tblKeToanSoDu_ThongTin_BuuCucResult _BuuCuc = new sp_tblKeToanSoDu_ThongTin_BuuCucResult();
+
+        public sp_tblKeToanSoDu_ThongTin_BuuCucResult BuuCuc { get => _BuuCuc; set => _BuuCuc = value; }
+
+        public sp_tblKeToanSoDu_ThongTin_BuuCucResult ThongTinBuuCuc(string rMa)
+        {
+            try
+            {
+                BuuCuc = lSD.sp_tblKeToanSoDu_ThongTin_BuuCuc(rMa).Single();
+                return BuuCuc;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public DataTable BaoCaoNgay(string rMDV, DateTime rTNgay, DateTime rDNgay)
         {

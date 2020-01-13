@@ -55,5 +55,12 @@ namespace daoKeToanSoDu.KeToanSoDu
             lst = lSD.sp_tblKeToanSoDu_DanhSachTheoDonVi(rMDV, rNgay).ToList();
             return daTienIch.ToDataTable(lst);
         }
+
+        public DataTable SoDuCuoiNgay_DonVi(string rMDV, DateTime rTNgay, DateTime rDNgay, bool rIDNhom)
+        {
+            List<sp_tblKeToanSoDu_BaoCao_SoDuCuoiNgayResult> lst;
+            lst = lSD.sp_tblKeToanSoDu_BaoCao_SoDuCuoiNgay(rTNgay, rDNgay,rMDV,rIDNhom).ToList();
+            return daTienIch.ToDataTable(lst);
+        }
     }
 }

@@ -210,6 +210,8 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
                 pt.SoTienDeNghi = 0;
             }
 
+            pt.SoTienDeNghi = Math.Round((pt.SoTienDeNghi.Value) / 1000000, 0) * 1000000;
+
             DocSo.DocSo ds = new DocSo.DocSo();
             pt.BangChu = ds.DocSoDayDu(pt.SoTienDeNghi.ToString()) + " đồng";
             pt.Ngay = DateTime.Parse(json.Substring(10, 2) + "/" + json.Substring(12, 2) + "/" + json.Substring(6, 4));

@@ -110,4 +110,23 @@
       <Column Name="TenTat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_tblKeToanSoDu_BaoCao_SoDuCuoiNgay" Method="sp_tblKeToanSoDu_BaoCao_SoDuCuoiNgay">
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="NhomDonVi" Parameter="nhomDonVi" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="sp_tblKeToanSoDu_BaoCao_SoDuCuoiNgayResult">
+      <Column Name="MaBuuCuc" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DonVi" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="HinhThuc" Type="System.String" DbType="NVarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="DinhMucLuuQuyTCBC_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

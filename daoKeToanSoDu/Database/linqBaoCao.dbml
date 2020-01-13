@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KeToanSoDu" Class="linqBaoCaoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=KeToanSoDu;Persist Security Info=True;User ID=sa" SettingsObjectName="daoKeToanSoDu.Properties.Settings" SettingsPropertyName="KeToanSoDuConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblKeToanSoDu_BaoCaoTonQuy" Method="sp_tblKeToanSoDu_BaoCaoTonQuy">
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_tblKeToanSoDu_BaoCaoTonQuyResult">
+      <Column Name="STT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTCBC_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DinhMucLuuQuyTKBD_DonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCTapTrung" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TCBCThanhToanTaiDonVi" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="TKBD" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="KinhDoanh" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="Cong" Type="System.Decimal" DbType="Decimal(25,0)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Dam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Nghieng" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

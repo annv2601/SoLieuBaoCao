@@ -9,6 +9,8 @@ using daoKeToanSoDu.KeToanSoDu;
 using daoKeToanSoDu.PhatSinhGiam;
 using daoKeToanSoDu.Database;
 using daoKeToanSoDu;
+using daoKeToanSoDu.BaoCao;
+using BaoBieu.SoDu;
 using BaoBieu.GiayDeNghi;
 using Ext.Net;
 
@@ -257,6 +259,53 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
 
             string script = "window.open('" + _url + "', '')";
             this.btnIn.AddScript(script);*/
+        }
+
+        protected void mnuitemInTonQuy_Click(object sender, DirectEventArgs e)
+        {
+            string json = e.ExtraParams["ValuesSDTM"];
+            if (json == "")
+            {
+                return;
+            }
+            Dictionary<string, string>[] companies = JSON.Deserialize<Dictionary<string, string>[]>(json);
+            string _makt = "";
+            DateTime _ngay=DateTime.Now;
+            foreach (Dictionary<string, string> row in companies)
+            {
+                try
+                {
+                    _makt = row["MaKeToanNgay"];
+                    _ngay = DateTime.Parse(row["Ngay"]);
+                }
+                catch
+                {
+                    _makt = "";
+                }
+            }
+            if (_makt!="")
+            {
+                daBaoCaoSoDu dBCSD = new daBaoCaoSoDu();
+                crTonQuyCuoiNgay rptTonQuy = new crTonQuyCuoiNgay();
+                rptTonQuy.SetDataSource(dBCSD.TonQuyCuoiNgayBuuCuc(UIHelper.daPhien.MaDonVi, _ngay));
+
+                daSoDuCuoiNgay dSDCK = new daSoDuCuoiNgay();
+                dSDCK.ThongTinBuuCuc(UIHelper.daPhien.MaDonVi);
+
+                rptTonQuy.SetParameterValue(0, dSDCK.BuuCuc.DonVi);
+                rptTonQuy.SetParameterValue(1, dSDCK.BuuCuc.BuuCuc);
+                rptTonQuy.SetParameterValue(2, "Ngày " + _ngay.ToString("dd/MM/yyyy"));
+                rptTonQuy.SetParameterValue(3, 2);
+
+                string _tf;
+                _tf = UIHelper.daPhien.TenFileInBaoCao("TonQuyCuoiNgayBC");
+                rptTonQuy.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Server.MapPath("~") + _tf);
+                string _url = UIHelper.daPhien.LayDiaChiURL(_tf);
+
+                string script = "window.open('" + _url + "', '')";
+                this.btnThangTruoc.AddScript(script);
+            }
+            
         }
         #endregion
     }

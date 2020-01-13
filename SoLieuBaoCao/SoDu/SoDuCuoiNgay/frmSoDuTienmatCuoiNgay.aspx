@@ -91,7 +91,20 @@
     <ext:ResourceManager runat="server" Locale="vi-VN" Theme="NeptuneTouch" />
     <form id="form1" runat="server">
         <ext:Hidden runat="server" ID="txtNgayThang" />
-        <ext:GridPanel runat="server" ID="grdSoDuTMCuoiNgay" TitleAlign="Center" MinHeight="300" Height="800" MarginSpec="0 0 0 0">
+        <ext:Menu runat="server" ID="mnuSDTM">
+            <Items>
+                <ext:MenuItem runat="server" ID="mnuitemInTonQuy" Text="In Tốn quỹ cuối ngày" Icon="Printer">
+                    <DirectEvents>
+                        <Click OnEvent="mnuitemInTonQuy_Click">
+                            <ExtraParams>
+                                <ext:Parameter Name="ValuesSDTM" Value="Ext.encode(#{grdSoDuTMCuoiNgay}.getRowsValues({selectedOnly:true}))" Mode="Raw" />
+                            </ExtraParams>
+                        </Click>
+                    </DirectEvents>
+                </ext:MenuItem>
+            </Items>
+        </ext:Menu>
+        <ext:GridPanel runat="server" ID="grdSoDuTMCuoiNgay" TitleAlign="Center" MinHeight="300" Height="800" MarginSpec="0 0 0 0" ContextMenuID="mnuSDTM">
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>                        

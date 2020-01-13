@@ -43,7 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\daBaoCaoSoDu.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Database\clsBaoCao.cs" />
+    <Compile Include="Database\linqBaoCao.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqBaoCao.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\linqDinhMucLuuQuy.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +103,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Database\linqBaoCao.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqBaoCao.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqBaoCao.dbml.layout">
+      <DependentUpon>linqBaoCao.dbml</DependentUpon>
+    </None>
     <None Include="Database\linqDinhMucLuuQuy.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>linqDinhMucLuuQuy.designer.cs</LastGenOutput>

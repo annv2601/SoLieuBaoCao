@@ -15,6 +15,19 @@ namespace daoKeToanSoDu.SoDuCuoiNgay
 
         public sp_tblSoDuTGNHCuoiNgay_ThongTinResult TGNH { get => _TGNH; set => _TGNH = value; }
 
+        public sp_tblSoDuTGNHCuoiNgay_ThongTinResult ThongTin()
+        {
+            try
+            {
+                TGNH = lTGNH.sp_tblSoDuTGNHCuoiNgay_ThongTin(TGNH.MaKeToanNgay).Single();
+                return TGNH;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public void Them()
         {
             lTGNH.sp_tblSoDuTGNHCuoiNgay_ThemSua(TGNH.MaKeToanNgay, TGNH.MaBuuCuc, TGNH.Ngay, TGNH.TCBCTapTrung, TGNH.TCBCThanhToanTaiDonVi, TGNH.TKBD, TGNH.KinhDoanh,

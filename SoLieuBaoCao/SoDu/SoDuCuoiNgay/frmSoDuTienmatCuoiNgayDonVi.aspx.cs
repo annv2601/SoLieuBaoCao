@@ -8,6 +8,8 @@ using daoKeToanSoDu.SoDuCuoiNgay;
 using daoKeToanSoDu.KeToanSoDu;
 using daoKeToanSoDu.PhatSinhGiam;
 using daoKeToanSoDu;
+using daoKeToanSoDu.BaoCao;
+using BaoBieu.SoDu;
 using Ext.Net;
 
 namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
@@ -150,6 +152,29 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
             }
 
             grdSoDuTMCuoiNgay.GetStore().GetById(id).Commit();
+        }
+
+        protected void btnInTonQuy_Click(object sender, DirectEventArgs e)
+        {
+            daBaoCaoSoDu dBCSD = new daBaoCaoSoDu();
+            crTonQuyCuoiNgay rptTonQuy = new crTonQuyCuoiNgay();
+            rptTonQuy.SetDataSource(dBCSD.TonQuyCuoiNgay(UIHelper.daPhien.MaDonVi, NgayThang));
+
+            daSoDuCuoiNgay dSDCK = new daSoDuCuoiNgay();
+            dSDCK.ThongTinBuuCuc(UIHelper.daPhien.MaDonVi);
+
+            rptTonQuy.SetParameterValue(0, dSDCK.BuuCuc.DonVi);
+            rptTonQuy.SetParameterValue(1, dSDCK.BuuCuc.BuuCuc);
+            rptTonQuy.SetParameterValue(2, "Ngày " + NgayThang.ToString("dd/MM/yyyy"));
+            rptTonQuy.SetParameterValue(3, 1);
+
+            string _tf;
+            _tf = UIHelper.daPhien.TenFileInBaoCao("TonQuyCuoiNgay");
+            rptTonQuy.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Server.MapPath("~") + _tf);
+            string _url = UIHelper.daPhien.LayDiaChiURL(_tf);
+
+            string script = "window.open('" + _url + "', '')";
+            this.btnInTonQuy.AddScript(script);
         }
         #endregion
     }

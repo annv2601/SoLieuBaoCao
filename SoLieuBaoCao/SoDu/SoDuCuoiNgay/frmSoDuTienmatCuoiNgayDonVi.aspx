@@ -105,7 +105,11 @@
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       
+                       <ext:Button runat="server" ID="btnInTonQuy" Text="In Tồn quỹ" Icon="Printer" MarginSpec="0 0 0 20">
+                           <DirectEvents>
+                               <Click OnEvent="btnInTonQuy_Click" />
+                           </DirectEvents>
+                       </ext:Button>
                    </Items>
                 </ext:Toolbar>
             </TopBar>
@@ -155,80 +159,92 @@
                     <ext:Column runat="server" Text="Đơn vị" Align="Left" DataIndex="DonVi" Width="160" StyleSpec="font-weight:bold;" Locked="true"/>
                     <ext:Column runat="server" Text="Định mức" Locked="true">
                         <Columns>
-                            <ext:Column runat="server" Text="TCBC" DataIndex="DinhMucLuuQuyTCBC_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                            <ext:SummaryColumn runat="server" Text="TCBC" SummaryType="Sum" DataIndex="DinhMucLuuQuyTCBC_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                      <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
-                             </ext:Column>
-                            <ext:Column runat="server" Text="TKBĐ" DataIndex="DinhMucLuuQuyTKBD_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                                    <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="TKBĐ" SummaryType="Sum" DataIndex="DinhMucLuuQuyTKBD_DonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                      <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
-                             </ext:Column>
+                                    <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                             </ext:SummaryColumn>
                         </Columns>
                     </ext:Column>
                     
                     <ext:Column runat="server" Text="Số dư Tiền mặt cuối ngày">
                         <Columns>
-                            <ext:Column runat="server" Text="Tập trung" DataIndex="TCBCTapTrung" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                            <ext:SummaryColumn runat="server" Text="Tập trung" SummaryType="Sum" DataIndex="TCBCTapTrung" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                 <Renderer Fn="mauDuCuoi" />
-                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />                                
+                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
-                            <ext:Column runat="server" Text="Tại đơn vị" DataIndex="TCBCThanhToanTaiDonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="Tại đơn vị" SummaryType="Sum" DataIndex="TCBCThanhToanTaiDonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
-                            <ext:Column runat="server" Text="TKBĐ" DataIndex="TKBD" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="TKBĐ" SummaryType="Sum" DataIndex="TKBD" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
-                            <ext:Column runat="server" Text="Kinh doanh" DataIndex="KinhDoanh" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="Kinh doanh" SummaryType="Sum" DataIndex="KinhDoanh" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
+                             </ext:SummaryColumn>
                         </Columns>
                     </ext:Column>
-                    <ext:Column runat="server" Text="Cộng dư cuối" DataIndex="Cong" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                    <ext:SummaryColumn runat="server" Text="Cộng dư cuối" SummaryType="Sum" DataIndex="Cong" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                              <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
-                     </ext:Column>
+                            <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                     </ext:SummaryColumn>
 
                      <ext:Column runat="server" Text="Dự kiến chi trả cho Ngày hôm sau">
                         <Columns>
-                            <ext:Column runat="server" Text="Tập trung" DataIndex="dkTCBCTapTrung" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                            <ext:SummaryColumn runat="server" Text="Tập trung" SummaryType="Sum" DataIndex="dkTCBCTapTrung" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="mauDuKienChi" />
                                 <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
-                            <ext:Column runat="server" Text="Tại đơn vị" DataIndex="dkTCBCThanhToanTaiDonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="Tại đơn vị" SummaryType="Sum" DataIndex="dkTCBCThanhToanTaiDonVi" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
-                            <ext:Column runat="server" Text="TKBĐ" DataIndex="dkTKBD" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="TKBĐ" SummaryType="Sum" DataIndex="dkTKBD" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
-                            <ext:Column runat="server" Text="Kinh doanh" DataIndex="dkKinhDoanh" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                             </ext:SummaryColumn>
+                            <ext:SummaryColumn runat="server" Text="Kinh doanh" SummaryType="Sum" DataIndex="dkKinhDoanh" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                                <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                                <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
                                 <Editor>
                                     <ext:NumberField runat="server" MinValue="0" AllowDecimals="false" />
                                 </Editor>
-                             </ext:Column>
+                             </ext:SummaryColumn>
                         </Columns>
                     </ext:Column>
-                    <ext:Column runat="server" Text="Cộng dự kiến trả" DataIndex="dkCong" Align="Right" Width="120" StyleSpec="font-weight:bold;">
+                    <ext:SummaryColumn runat="server" Text="Cộng dự kiến trả" SummaryType="Sum" DataIndex="dkCong" Align="Right" Width="120" StyleSpec="font-weight:bold;">
                              <Renderer Fn="Ext.util.Format.numberRenderer('0,000')" />
-                     </ext:Column>
+                            <SummaryRenderer Fn="Ext.util.Format.numberRenderer('0,000')" />
+                     </ext:SummaryColumn>
 
                     <ext:Column runat="server" Text="Ghi chú" DataIndex="GhiChu" Width="400" Align="Left" StyleSpec="font-weight:bold;">
                         <Editor>
@@ -249,6 +265,9 @@
                     </Listeners>
                 </ext:CellEditing>
             </Plugins>
+            <Features>
+                            <ext:Summary ID="Summary1" runat="server" />
+                        </Features>
         </ext:GridPanel>
     </form>
 </body>

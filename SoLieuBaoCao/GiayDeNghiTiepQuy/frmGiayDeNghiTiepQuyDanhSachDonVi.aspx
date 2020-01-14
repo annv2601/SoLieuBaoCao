@@ -99,12 +99,12 @@
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>
-                       <ext:Button runat="server" ID="btnThangTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" >
+                       <ext:Button runat="server" ID="btnThangTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" UI="Info">
                            <DirectEvents>
                                <Click OnEvent="btnThangTruoc_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnThangSau" Text="Ngày sau" MarginSpec="0 0 0 20" >
+                       <ext:Button runat="server" ID="btnThangSau" Text="Ngày sau" MarginSpec="0 0 0 20" UI="Info">
                            <DirectEvents>
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>

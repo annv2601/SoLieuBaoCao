@@ -56,13 +56,17 @@
          };
 
          function getRowClass(record) {
-             if (record.data.Khoa) {
-                return "GridPanelUsersRowYellow";
-            }
-            else
-            {
-                return "GridPanelUsersRowWhite";
-            }
+             if (record.data.ChuaNhap) {
+                 return "GridPanelUsersRowKhan";
+             }
+             else {
+                 if (record.data.Khoa) {
+                     return "GridPanelUsersRowYellow";
+                 }
+                 else {
+                     return "GridPanelUsersRowWhite";
+                 }
+             }
          }
 
         var edit = function (editor, e)
@@ -95,19 +99,24 @@
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>                        
-                       <ext:Button runat="server" ID="btnNgayTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" >
+                       <ext:Button runat="server" ID="btnNgayTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" UI="Primary">
                            <DirectEvents>
                                <Click OnEvent="btnThangTruoc_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnNgaySau" Text="Ngày sau" MarginSpec="0 0 0 20">
+                       <ext:Button runat="server" ID="btnNgaySau" Text="Ngày sau" MarginSpec="0 0 0 20" UI="Primary">
                            <DirectEvents>
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnInTonQuy" Text="In Tồn quỹ" Icon="Printer" MarginSpec="0 0 0 20">
+                       <ext:Button runat="server" ID="btnInTonQuy" Text="In Tồn quỹ" Icon="Printer" MarginSpec="0 0 0 20" UI="Success">
                            <DirectEvents>
                                <Click OnEvent="btnInTonQuy_Click" />
+                           </DirectEvents>
+                       </ext:Button>
+                       <ext:Button runat="server" ID="btnXuatExcel" Text="Xuất Excel" Icon="PageExcel" MarginSpec="0 0 0 20" UI="Info">
+                           <DirectEvents>
+                               <Click OnEvent="btnXuatExcel_Click" />
                            </DirectEvents>
                        </ext:Button>
                    </Items>
@@ -142,6 +151,7 @@
 
                                 <ext:ModelField Name="GhiChu" />
                                 <ext:ModelField Name="Khoa" />
+                                <ext:ModelField Name="ChuaNhap" />
                             </Fields>
                         </ext:Model>
                     </Model>

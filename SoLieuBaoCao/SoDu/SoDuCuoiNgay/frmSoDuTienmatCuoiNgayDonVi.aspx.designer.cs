@@ -67,6 +67,15 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay {
         protected global::Ext.Net.Button btnInTonQuy;
         
         /// <summary>
+        /// btnXuatExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnXuatExcel;
+        
+        /// <summary>
         /// stoSoDuTMCuoiNgay control.
         /// </summary>
         /// <remarks>

@@ -420,6 +420,7 @@
     <Content Include="Resource\FileMauExcel\MauBaoCaoB0205.xls" />
     <Content Include="Resource\FileMauExcel\MauBGGTri.xls" />
     <Content Include="Resource\FileMauExcel\MauDoanhThuCTiet.xls" />
+    <Content Include="Resource\FileMauExcel\TonQuyCuoiNgay.xls" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

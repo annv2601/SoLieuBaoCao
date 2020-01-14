@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using daoKeToanSoDu.Database;
+using NPOI.HSSF.Model;
+using NPOI.HSSF.UserModel;
+
 
 namespace daoKeToanSoDu.BaoCao
 {
@@ -62,5 +65,6 @@ namespace daoKeToanSoDu.BaoCao
 
             return daTienIch.ToDataTable(lst);
         }
+
     }
 }

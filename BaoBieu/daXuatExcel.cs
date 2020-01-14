@@ -60,6 +60,14 @@ namespace BaoBieu
             get { return _DuLieuTong; }
             set { _DuLieuTong = value; }
         }
+
+        public string TenDonVi { get => _TenDonVi; set => _TenDonVi = value; }
+        public string NgayHienThi { get => _NgayHienThi; set => _NgayHienThi = value; }
+
+        private string _TenDonVi;
+
+        private string _NgayHienThi;
+
         #endregion
 
         public bool IsNumeric(DataColumn col)
@@ -100,6 +108,26 @@ namespace BaoBieu
             }
 
             sh = (HSSFSheet)wb.GetSheet("Sheet1");
+
+            if(sh.GetRow(0)==null)
+            {
+                sh.CreateRow(0);
+            }
+            if (sh.GetRow(2) == null)
+            {
+                sh.CreateRow(2);
+            }
+            if (sh.GetRow(0).GetCell(0) == null)
+            {
+                sh.CreateRow(0).CreateCell(0);
+            }
+            if (sh.GetRow(2).GetCell(0) == null)
+            {
+                sh.CreateRow(2).CreateCell(0);
+            }
+
+            sh.GetRow(0).GetCell(0).SetCellValue(TenDonVi);
+            sh.GetRow(2).GetCell(0).SetCellValue(NgayHienThi);
 
             //Day dong ky xuong cuoi cung
             int _DongCuoi = sh.LastRowNum;

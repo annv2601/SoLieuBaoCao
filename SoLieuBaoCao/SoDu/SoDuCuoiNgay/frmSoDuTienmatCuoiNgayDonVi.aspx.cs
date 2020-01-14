@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using daoKeToanSoDu.SoDuCuoiNgay;
 using daoKeToanSoDu.KeToanSoDu;
 using daoKeToanSoDu.PhatSinhGiam;
 using daoKeToanSoDu;
 using daoKeToanSoDu.BaoCao;
 using BaoBieu.SoDu;
+using BaoBieu;
 using Ext.Net;
 
 namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
@@ -175,6 +177,33 @@ namespace SoLieuBaoCao.SoDu.SoDuCuoiNgay
 
             string script = "window.open('" + _url + "', '')";
             this.btnInTonQuy.AddScript(script);
+        }
+
+        protected void btnXuatExcel_Click(object sender, DirectEventArgs e)
+        {
+            daBaoCaoSoDu dBCSD = new daBaoCaoSoDu();
+            DataTable dt;
+            dt = dBCSD.TonQuyCuoiNgay(UIHelper.daPhien.MaDonVi, NgayThang);
+            try
+            {
+                dt.Columns.Remove("Dam");
+                dt.Columns.Remove("Nghieng");
+                dt.Columns.Remove("Muc");
+            }
+            catch { }
+
+            daXuatExcel dXuatE = new daXuatExcel();
+            dXuatE.TenFileExcel = "TonQuyCuoiNgayBDH" + DateTime.Now.ToString("ddMMyyyHHmmss") + ".xls";
+            dXuatE.DuongDan = Server.MapPath("~");
+
+            dXuatE.TenFileMau = dXuatE.DuongDan + "\\Resource\\FileMauExcel\\TonQuyCuoiNgay.xls";
+            
+            dXuatE.DuLieu = dt;
+            dXuatE.TenDonVi = UIHelper.daPhien.MaDonVi;
+            dXuatE.NgayHienThi = "Ngày " + NgayThang.ToString("dd/MM/yyyy");
+
+            string _url = UIHelper.daPhien.LayDiaChiURL(dXuatE.XuatFileExcel_TheoMau());
+            Response.Redirect(_url);
         }
         #endregion
     }

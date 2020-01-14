@@ -76,13 +76,6 @@ namespace daoKeToanSoDu.Database
 			return ((ISingleResult<sp_tblSoDuTienMatCuoiNgay_ThongTinResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonVi")]
-		public ISingleResult<sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonViResult> sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonVi([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDonVi", DbType="NVarChar(10)")] string maDonVi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ngay", DbType="Date")] System.Nullable<System.DateTime> ngay)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDonVi, ngay);
-			return ((ISingleResult<sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonViResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblSoDuTienMatCuoiNgay_KhoaMo")]
 		public int sp_tblSoDuTienMatCuoiNgay_KhoaMo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaKeToanNgay", DbType="NVarChar(20)")] string maKeToanNgay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Khoa", DbType="Bit")] System.Nullable<bool> khoa, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NguoiKhoa", DbType="NVarChar(20)")] string nguoiKhoa)
 		{
@@ -95,6 +88,13 @@ namespace daoKeToanSoDu.Database
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKeToanNgay, maBuuCuc, ngay, tCBCTapTrung, tCBCThanhToanTaiDonVi, tKBD, kinhDoanh, cong, ghiChu);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonVi")]
+		public ISingleResult<sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonViResult> sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonVi([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDonVi", DbType="NVarChar(10)")] string maDonVi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ngay", DbType="Date")] System.Nullable<System.DateTime> ngay)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDonVi, ngay);
+			return ((ISingleResult<sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonViResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -671,6 +671,10 @@ namespace daoKeToanSoDu.Database
 		
 		private System.Nullable<bool> _Khoa;
 		
+		private System.Nullable<System.DateTime> _NgayKhoa;
+		
+		private string _NguoiKhoa;
+		
 		public sp_tblSoDuTienMatCuoiNgay_DanhSachTheoDonViResult()
 		{
 		}
@@ -927,6 +931,38 @@ namespace daoKeToanSoDu.Database
 				if ((this._Khoa != value))
 				{
 					this._Khoa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKhoa", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayKhoa
+		{
+			get
+			{
+				return this._NgayKhoa;
+			}
+			set
+			{
+				if ((this._NgayKhoa != value))
+				{
+					this._NgayKhoa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiKhoa", DbType="NVarChar(20)")]
+		public string NguoiKhoa
+		{
+			get
+			{
+				return this._NguoiKhoa;
+			}
+			set
+			{
+				if ((this._NguoiKhoa != value))
+				{
+					this._NguoiKhoa = value;
 				}
 			}
 		}

@@ -75,6 +75,13 @@ namespace daoSLBC.Database.HeThong
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNSD, maDonVi);
 			return ((ISingleResult<sp_KiemTraDangNhapResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DonVi_DanhSach")]
+		public ISingleResult<sp_DonVi_DanhSachResult> sp_DonVi_DanhSach()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_DonVi_DanhSachResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class sp_NguoiSuDung_DanhSachResult
@@ -268,6 +275,266 @@ namespace daoSLBC.Database.HeThong
 				if ((this._MaSTK1 != value))
 				{
 					this._MaSTK1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_DonVi_DanhSachResult
+	{
+		
+		private int _ID;
+		
+		private string _Ma;
+		
+		private string _Ten;
+		
+		private System.Nullable<int> _Cap;
+		
+		private string _TenTat;
+		
+		private string _TenRutGon;
+		
+		private System.Nullable<decimal> _STTsx;
+		
+		private string _MaSTK1;
+		
+		private string _MaBuuChinh;
+		
+		private System.Nullable<decimal> _STTdt;
+		
+		private string _MaDonViBCOL;
+		
+		private string _TenDonViDTPC;
+		
+		private string _TenDonViDTPC2;
+		
+		private string _MaPaypost;
+		
+		public sp_DonVi_DanhSachResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ma", DbType="NVarChar(10)")]
+		public string Ma
+		{
+			get
+			{
+				return this._Ma;
+			}
+			set
+			{
+				if ((this._Ma != value))
+				{
+					this._Ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ten", DbType="NVarChar(80)")]
+		public string Ten
+		{
+			get
+			{
+				return this._Ten;
+			}
+			set
+			{
+				if ((this._Ten != value))
+				{
+					this._Ten = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cap", DbType="Int")]
+		public System.Nullable<int> Cap
+		{
+			get
+			{
+				return this._Cap;
+			}
+			set
+			{
+				if ((this._Cap != value))
+				{
+					this._Cap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTat", DbType="NVarChar(20)")]
+		public string TenTat
+		{
+			get
+			{
+				return this._TenTat;
+			}
+			set
+			{
+				if ((this._TenTat != value))
+				{
+					this._TenTat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenRutGon", DbType="NVarChar(40)")]
+		public string TenRutGon
+		{
+			get
+			{
+				return this._TenRutGon;
+			}
+			set
+			{
+				if ((this._TenRutGon != value))
+				{
+					this._TenRutGon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STTsx", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> STTsx
+		{
+			get
+			{
+				return this._STTsx;
+			}
+			set
+			{
+				if ((this._STTsx != value))
+				{
+					this._STTsx = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSTK1", DbType="NVarChar(10)")]
+		public string MaSTK1
+		{
+			get
+			{
+				return this._MaSTK1;
+			}
+			set
+			{
+				if ((this._MaSTK1 != value))
+				{
+					this._MaSTK1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBuuChinh", DbType="NVarChar(10)")]
+		public string MaBuuChinh
+		{
+			get
+			{
+				return this._MaBuuChinh;
+			}
+			set
+			{
+				if ((this._MaBuuChinh != value))
+				{
+					this._MaBuuChinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STTdt", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> STTdt
+		{
+			get
+			{
+				return this._STTdt;
+			}
+			set
+			{
+				if ((this._STTdt != value))
+				{
+					this._STTdt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonViBCOL", DbType="NVarChar(10)")]
+		public string MaDonViBCOL
+		{
+			get
+			{
+				return this._MaDonViBCOL;
+			}
+			set
+			{
+				if ((this._MaDonViBCOL != value))
+				{
+					this._MaDonViBCOL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDonViDTPC", DbType="NVarChar(150)")]
+		public string TenDonViDTPC
+		{
+			get
+			{
+				return this._TenDonViDTPC;
+			}
+			set
+			{
+				if ((this._TenDonViDTPC != value))
+				{
+					this._TenDonViDTPC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDonViDTPC2", DbType="NVarChar(150)")]
+		public string TenDonViDTPC2
+		{
+			get
+			{
+				return this._TenDonViDTPC2;
+			}
+			set
+			{
+				if ((this._TenDonViDTPC2 != value))
+				{
+					this._TenDonViDTPC2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPaypost", DbType="NVarChar(10)")]
+		public string MaPaypost
+		{
+			get
+			{
+				return this._MaPaypost;
+			}
+			set
+			{
+				if ((this._MaPaypost != value))
+				{
+					this._MaPaypost = value;
 				}
 			}
 		}

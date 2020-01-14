@@ -20,4 +20,22 @@
       <Column Name="MaSTK1" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_DonVi_DanhSach" Method="sp_DonVi_DanhSach">
+    <ElementType Name="sp_DonVi_DanhSachResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Cap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenTat" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TenRutGon" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="MaSTK1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaBuuChinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="STTdt" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="MaDonViBCOL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDonViDTPC" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="TenDonViDTPC2" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MaPaypost" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

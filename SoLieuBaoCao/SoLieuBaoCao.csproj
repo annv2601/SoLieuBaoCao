@@ -149,6 +149,7 @@
     <Content Include="Resource\JS\main.js" />
     <Content Include="Resource\JS\perfect-scrollbar.min.js" />
     <Content Include="SoDu\DinhMucLuuQuy\frmDinhMucLuuQuy.aspx" />
+    <Content Include="SoDu\frmQuanLyKhoaBaoCaoSoDu.aspx" />
     <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTGNHCuoiNgayDonVi.aspx" />
     <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgayDonVi.aspx" />
     <Content Include="SoDu\SoDuCuoiNgay\frmSoDuTienmatCuoiNgay.aspx" />
@@ -307,6 +308,13 @@
     </Compile>
     <Compile Include="SoDu\DinhMucLuuQuy\frmDinhMucLuuQuy.aspx.designer.cs">
       <DependentUpon>frmDinhMucLuuQuy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoDu\frmQuanLyKhoaBaoCaoSoDu.aspx.cs">
+      <DependentUpon>frmQuanLyKhoaBaoCaoSoDu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoDu\frmQuanLyKhoaBaoCaoSoDu.aspx.designer.cs">
+      <DependentUpon>frmQuanLyKhoaBaoCaoSoDu.aspx</DependentUpon>
     </Compile>
     <Compile Include="SoDu\SoDuCuoiNgay\frmSoDuTGNHCuoiNgayDonVi.aspx.cs">
       <DependentUpon>frmSoDuTGNHCuoiNgayDonVi.aspx</DependentUpon>

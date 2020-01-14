@@ -59,5 +59,13 @@ namespace daoSLBC.HeThong
             
             return daTienIch.ToDataTable(lst);
         }
+
+        public DataTable DanhSachDonVi()
+        {
+            List<sp_DonVi_DanhSachResult> lst;
+            lst = lDN.sp_DonVi_DanhSach().ToList();
+
+            return daTienIch.ToDataTable(lst);
+        }
     }
 }

@@ -47,12 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaoCao\daBaoCaoSoDu.cs" />
+    <Compile Include="Bieu02TQ\daBieu02TQ.cs" />
+    <Compile Include="Bieu02TQ\daBieu02TQDuLieu.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Database\clsBaoCao.cs" />
     <Compile Include="Database\linqBaoCao.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>linqBaoCao.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\linqBieu02TQ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqBieu02TQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\linqDinhMucLuuQuy.designer.cs">
       <AutoGen>True</AutoGen>
@@ -113,6 +120,14 @@
     </None>
     <None Include="Database\linqBaoCao.dbml.layout">
       <DependentUpon>linqBaoCao.dbml</DependentUpon>
+    </None>
+    <None Include="Database\linqBieu02TQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqBieu02TQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\linqBieu02TQ.dbml.layout">
+      <DependentUpon>linqBieu02TQ.dbml</DependentUpon>
     </None>
     <None Include="Database\linqDinhMucLuuQuy.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

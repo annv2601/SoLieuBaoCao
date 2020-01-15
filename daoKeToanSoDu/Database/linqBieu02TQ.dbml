@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KeToanSoDu" Class="linqBieu02TQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.10.200.167;Initial Catalog=KeToanSoDu;Persist Security Info=True;User ID=sa" SettingsObjectName="daoKeToanSoDu.Properties.Settings" SettingsPropertyName="KeToanSoDuConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_tblBieuBaoCao02TQ_KhoaMo" Method="sp_tblBieuBaoCao02TQ_KhoaMo">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KhoaMo" Parameter="khoaMo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="NguoiKhoa" Parameter="nguoiKhoa" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao02TQDuLieu_TongHopDuLieu" Method="sp_tblBieuBaoCao02TQDuLieu_TongHopDuLieu">
+    <Parameter Name="IDBieuBaoCao" Parameter="iDBieuBaoCao" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao02TQ_Them" Method="sp_tblBieuBaoCao02TQ_Them">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="LoaiBaoCao" Parameter="loaiBaoCao" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TieuDeBaoCao" Parameter="tieuDeBaoCao" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="sp_tblBieuBaoCao02TQ_ThemResult">
+      <Column Name="IDThem02TQ" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao02TQ_ThongTin" Method="sp_tblBieuBaoCao02TQ_ThongTin">
+    <Parameter Name="Ngay" Parameter="ngay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblBieuBaoCao02TQ_ThongTinResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="LoaiBaoCao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TieuDeBaoCao" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DaKhoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgayKhoa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiKhoa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao02TQDuLieu_BaoCao" Method="sp_tblBieuBaoCao02TQDuLieu_BaoCao">
+    <Parameter Name="IDBieuBaoCao" Parameter="iDBieuBaoCao" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_tblBieuBaoCao02TQDuLieu_BaoCaoResult">
+      <Column Name="STT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TonDauNgay" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaThuDichVu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaChiDichVu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="VayQuyKhac" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="QuyKhacVay" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaNhanTiepQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaNopQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDuTienCuoiNgay" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DuKienCacKhoanChiDichVu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="HanMucLuuQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoTiepCanTiepHoacNopQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InNghieng" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_tblBieuBaoCao02TQDuLieu_ThongTin" Method="sp_tblBieuBaoCao02TQDuLieu_ThongTin">
+    <Parameter Name="IDBieuBaoCao" Parameter="iDBieuBaoCao" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MaDonVi" Parameter="maDonVi" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="sp_tblBieuBaoCao02TQDuLieu_ThongTinResult">
+      <Column Name="IDBieuBaoCao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STT" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MaDonVi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TenDonVi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TonDauNgay" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaThuDichVu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaChiDichVu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="VayQuyKhac" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="QuyKhacVay" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaNhanTiepQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDaNopQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoDuTienCuoiNgay" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="DuKienCacKhoanChiDichVu" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="HanMucLuuQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="SoTiepCanTiepHoacNopQuy" Type="System.Decimal" DbType="Decimal(22,0)" CanBeNull="true" />
+      <Column Name="STTsx" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="InDam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InNghieng" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgayHeThong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

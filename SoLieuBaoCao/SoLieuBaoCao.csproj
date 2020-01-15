@@ -128,6 +128,7 @@
     <Content Include="DoanhThuKhachHang\frmDoanhThuKhachHang.aspx" />
     <Content Include="DoanhThuKhachHang\frmKhachHang.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
+    <Content Include="GiayDeNghiTiepQuy\frmBieu02TQDanhSach.aspx" />
     <Content Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSachDonVi.aspx" />
     <Content Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSach.aspx" />
     <Content Include="GiayDeNghiTiepQuy\ucAnhBanKy.ascx" />
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="DoanhThuKhachHang\frmKhachHang.aspx.designer.cs">
       <DependentUpon>frmKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiayDeNghiTiepQuy\frmBieu02TQDanhSach.aspx.cs">
+      <DependentUpon>frmBieu02TQDanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiayDeNghiTiepQuy\frmBieu02TQDanhSach.aspx.designer.cs">
+      <DependentUpon>frmBieu02TQDanhSach.aspx</DependentUpon>
     </Compile>
     <Compile Include="GiayDeNghiTiepQuy\frmGiayDeNghiTiepQuyDanhSachDonVi.aspx.cs">
       <DependentUpon>frmGiayDeNghiTiepQuyDanhSachDonVi.aspx</DependentUpon>

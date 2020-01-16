@@ -99,22 +99,22 @@
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>                        
-                       <ext:Button runat="server" ID="btnNgayTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" UI="Primary">
+                       <ext:Button runat="server" ID="btnNgayTruoc" Text="Ngày trước" MarginSpec="0 0 0 20" UI="Primary" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnThangTruoc_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnNgaySau" Text="Ngày sau" MarginSpec="0 0 0 20" UI="Primary">
+                       <ext:Button runat="server" ID="btnNgaySau" Text="Ngày sau" MarginSpec="0 0 0 20" UI="Primary" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnInTonQuy" Text="In Tồn quỹ" Icon="Printer" MarginSpec="0 0 0 20" UI="Success">
+                       <ext:Button runat="server" ID="btnInTonQuy" Text="In Tồn quỹ" Icon="Printer" MarginSpec="0 0 0 20" UI="Success" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnInTonQuy_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnXuatExcel" Text="Xuất Excel" Icon="PageExcel" MarginSpec="0 0 0 20" UI="Info">
+                       <ext:Button runat="server" ID="btnXuatExcel" Text="Xuất Excel" Icon="PageExcel" MarginSpec="0 0 0 20" UI="Info" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnXuatExcel_Click" />
                            </DirectEvents>

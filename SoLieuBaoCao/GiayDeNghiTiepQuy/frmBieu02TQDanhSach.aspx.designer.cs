@@ -67,6 +67,15 @@ namespace SoLieuBaoCao.GiayDeNghiTiepQuy {
         protected global::Ext.Net.Button btnInAn;
         
         /// <summary>
+        /// btnXuatExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnXuatExcel;
+        
+        /// <summary>
         /// stoB02 control.
         /// </summary>
         /// <remarks>

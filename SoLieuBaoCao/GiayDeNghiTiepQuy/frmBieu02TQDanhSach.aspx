@@ -79,12 +79,12 @@
             <TopBar>
                 <ext:Toolbar runat="server">
                    <Items>
-                       <ext:DateField runat="server" ID="txtNgayTongHop" FieldLabel="Ngày" LabelWidth="60">
+                       <ext:DateField runat="server" ID="txtNgayTongHop" FieldLabel="Ngày" LabelWidth="60" Width="220">
                            <Listeners>
                                <Select Handler="#{stoB02}.reload();" />
                            </Listeners>
                        </ext:DateField>
-                       <ext:Button runat="server" ID="btnTongHop" Text="Lập Đề nghị" MarginSpec="0 0 0 20" UI="Success" >
+                       <ext:Button runat="server" ID="btnTongHop" Text="Lập Đề nghị" MarginSpec="0 0 0 20" UI="Success" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnTongHop_Click">
                                    <EventMask ShowMask="true" Msg="Đang thực hiện ....." />
@@ -92,12 +92,17 @@
                            </DirectEvents>
                        </ext:Button>
 
-                      <ext:Button runat="server" ID="btnInAn" Text="In ấn" MarginSpec="0 0 0 20" UI="Info" Icon="Printer">
+                      <ext:Button runat="server" ID="btnInAn" Text="In ấn" MarginSpec="0 0 0 20" UI="Info" Icon="Printer" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnInAn_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       
+                       <ext:Button runat="server" ID="btnXuatExcel" Text="Xuất Excel" MarginSpec="0 0 0 20" UI="Primary" Icon="PageExcel" Width="160">
+                           <DirectEvents>
+                               <Click OnEvent="btnXuatExcel_Click" />
+                           </DirectEvents>
+                       </ext:Button>
+
                    </Items>
                 </ext:Toolbar>
             </TopBar>

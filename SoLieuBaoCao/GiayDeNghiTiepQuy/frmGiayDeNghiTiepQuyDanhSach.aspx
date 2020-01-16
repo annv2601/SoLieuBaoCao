@@ -107,7 +107,7 @@
                 <ext:Toolbar runat="server">
                    <Items>
                        <ext:DateField runat="server" ID="txtNgayTongHop" FieldLabel="Ngày" LabelWidth="60" />
-                       <ext:Button runat="server" ID="btnTongHop" Text="Lập Đề nghị" MarginSpec="0 0 0 20" UI="Success" >
+                       <ext:Button runat="server" ID="btnTongHop" Text="Lập Đề nghị" MarginSpec="0 0 0 20" UI="Success" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnTongHop_Click">
                                    <EventMask ShowMask="true" Msg="Đang thực hiện ....." />
@@ -115,18 +115,18 @@
                            </DirectEvents>
                        </ext:Button>
 
-                       <ext:Button runat="server" ID="btnNganHang" Text="TT Ngân hàng" MarginSpec="0 0 0 20" ui="Info">
+                       <ext:Button runat="server" ID="btnNganHang" Text="TT Ngân hàng" MarginSpec="0 0 0 20" ui="Info" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnNganHang_Click" />
                            </DirectEvents>
                        </ext:Button>
 
-                       <ext:Button runat="server" ID="btnThangTruoc" Text="Tháng trước" MarginSpec="0 0 0 20" ui="Primary">
+                       <ext:Button runat="server" ID="btnThangTruoc" Text="Tháng trước" MarginSpec="0 0 0 20" ui="Primary" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnThangTruoc_Click" />
                            </DirectEvents>
                        </ext:Button>
-                       <ext:Button runat="server" ID="btnThangSau" Text="Tháng sau" MarginSpec="0 0 0 20" ui="Primary">
+                       <ext:Button runat="server" ID="btnThangSau" Text="Tháng sau" MarginSpec="0 0 0 20" ui="Primary" Width="160">
                            <DirectEvents>
                                <Click OnEvent="btnThangSau_Click" />
                            </DirectEvents>
